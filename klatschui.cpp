@@ -6,6 +6,8 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+//New Comment
+
 klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschui) {
 
     ui->setupUi(this);
