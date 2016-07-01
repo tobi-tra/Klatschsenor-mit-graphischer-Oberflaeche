@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>812</width>
+    <width>885</width>
     <height>618</height>
    </rect>
   </property>
@@ -17,10 +17,10 @@
    <widget class="QTabWidget" name="TabMuster">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>10</y>
-      <width>801</width>
-      <height>551</height>
+      <width>891</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -33,2553 +33,2295 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>260</x>
         <y>30</y>
-        <width>391</width>
-        <height>29</height>
+        <width>280</width>
+        <height>417</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="LampenZeile">
-       <item>
-        <widget class="QLabel" name="label_14">
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="4" column="0">
+        <widget class="QLabel" name="steuGerTitel_2">
          <property name="text">
-          <string>Lampen Name</string>
+          <string>Gerät 1</string>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox">
+       <item row="12" column="2">
+        <widget class="QPushButton" name="steuGerAus_20">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QPushButton" name="steuGerAus_6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="steuGerTitel_10">
+         <property name="text">
+          <string>Gerät 8</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QLabel" name="steuGerStatus_6">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QLabel" name="label_15">
+       <item row="11" column="2">
+        <widget class="QPushButton" name="steuGerAus_10">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
-          <string>🌕</string>
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QPushButton" name="steuGerEin_9">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QPushButton" name="steuGerAus_9">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="3">
+        <widget class="QLabel" name="steuGerStatus_8">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QPushButton" name="steuGerAus_4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QPushButton" name="steuGerEin_21">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QPushButton" name="steuGerAus_7">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="steuGerTitel_7">
+         <property name="text">
+          <string>Gerät 5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="steuGerTitel_0">
+         <property name="text">
+          <string>Gerät 0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="3">
+        <widget class="QLabel" name="steuGerStatus_21">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="steuGerTitel_5">
+         <property name="text">
+          <string>Gerät 3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="3">
+        <widget class="QLabel" name="steuGerStatus_10">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLabel" name="steuGerStatus_5">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="steuGerEin_4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="steuGerTitel_8">
+         <property name="text">
+          <string>Gerät 6</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="3">
+        <widget class="QLabel" name="steuGerStatus_9">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="steuGerTitel_3">
+         <property name="text">
+          <string>Gerät 2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QPushButton" name="steuGerEin_20">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLabel" name="steuGerStatus_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="3">
+        <widget class="QLabel" name="steuGerStatus_7">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QPushButton" name="steuGerAus_5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QPushButton" name="steuGerEin_10">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="steuGerEin_7">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QPushButton" name="steuGerEin_6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="steuGerTitel_6">
+         <property name="text">
+          <string>Gerät 4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="3">
+        <widget class="QLabel" name="steuGerStatus_20">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="steuGerTitel_9">
+         <property name="text">
+          <string>Gerät 7</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="steuGerTitel_21">
+         <property name="text">
+          <string>Gerät 10</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="steuGerEin_5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="steuGerEin_2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QPushButton" name="steuGerAus_21">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="steuGerAus_2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QPushButton" name="steuGerEin_8">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="steuGerTitel_20">
+         <property name="text">
+          <string>Gerät 9</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="QPushButton" name="steuGerAus_8">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="steuGerStatus_2">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="steuGerEin_0">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>ein</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="steuGerAus_0">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>aus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="steuGerStatus_0">
+         <property name="text">
+          <string/>
          </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QTextBrowser" name="terminal">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>60</y>
-        <width>491</width>
-        <height>192</height>
-       </rect>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tabMuster">
      <attribute name="title">
       <string>Muster</string>
      </attribute>
-     <widget class="QLabel" name="musLab8">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>290</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>8</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab10">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>350</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>10</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab1">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>80</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab0">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>50</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab5">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>200</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>140</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab7">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>260</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>110</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab4">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>170</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab6">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>230</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="musLab9">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>320</y>
-        <width>35</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>9</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_0">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_48">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>30</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Titel</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_1">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>80</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>110</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_3">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>140</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_4">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>170</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_5">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>200</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_6">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>230</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_7">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>260</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_8">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>290</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_9">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>320</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musLine_10">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>350</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="mus0m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus0m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus0m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus0m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus0m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus0m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>50</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus1m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>80</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus2m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>110</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus3m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>140</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus4m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>170</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus5m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>200</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus6m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>230</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus7m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>260</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus8m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>290</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus9m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>320</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m1">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m6">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m5">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m4">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="mus10m2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>350</y>
-        <width>41</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>-</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>k</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>l</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label_49">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>30</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Muster</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_50">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>30</y>
-        <width>211</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Geräte (Durch Kommas getrennt)</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_0">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>50</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_1">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>80</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_2">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>110</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_3">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>140</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_4">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>170</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_5">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>200</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_6">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>230</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_7">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>260</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_8">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>290</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_9">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>320</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="musGer_10">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>350</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="musAction_0">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>50</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_1">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>80</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_2">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>110</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_3">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>140</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_4">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>170</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_5">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>200</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_6">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>230</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_7">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>260</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_8">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>290</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_9">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>320</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="musAction_10">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>350</y>
-        <width>71</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>aus</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>an</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>toggle</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QPushButton" name="musSave">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>390</y>
-        <width>115</width>
-        <height>32</height>
+        <y>10</y>
+        <width>871</width>
+        <height>444</height>
        </rect>
       </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_0">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>50</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_1">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>80</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_2">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>110</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_3">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>140</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_4">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>170</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_5">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>200</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_6">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>230</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_7">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>260</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_8">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>290</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_9">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>320</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_10">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>350</y>
-        <width>91</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Speichern</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="musSave_11">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>390</y>
-        <width>211</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Alle vom Arduino entfernen</string>
-      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="1" colspan="2">
+        <widget class="QLabel" name="label_48">
+         <property name="text">
+          <string>Titel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" colspan="3">
+        <widget class="QLabel" name="label_49">
+         <property name="text">
+          <string>Muster</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="9">
+        <widget class="QLabel" name="label_50">
+         <property name="text">
+          <string>Geräte (CSV)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="musLab0">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_0"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QComboBox" name="mus0m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QComboBox" name="mus0m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QComboBox" name="mus0m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="6">
+        <widget class="QComboBox" name="mus0m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="7">
+        <widget class="QComboBox" name="mus0m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="8">
+        <widget class="QComboBox" name="mus0m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="9">
+        <widget class="QLineEdit" name="musGer_0"/>
+       </item>
+       <item row="1" column="10">
+        <widget class="QComboBox" name="musAction_0">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="11">
+        <widget class="QPushButton" name="musSave_0">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="musLab1">
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_1"/>
+       </item>
+       <item row="2" column="3">
+        <widget class="QComboBox" name="mus1m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QComboBox" name="mus1m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="5">
+        <widget class="QComboBox" name="mus1m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="6">
+        <widget class="QComboBox" name="mus1m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="7">
+        <widget class="QComboBox" name="mus1m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="8">
+        <widget class="QComboBox" name="mus1m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="9">
+        <widget class="QLineEdit" name="musGer_1"/>
+       </item>
+       <item row="2" column="10">
+        <widget class="QComboBox" name="musAction_1">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="11">
+        <widget class="QPushButton" name="musSave_1">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="musLab2">
+         <property name="text">
+          <string>2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_2"/>
+       </item>
+       <item row="3" column="3">
+        <widget class="QComboBox" name="mus2m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QComboBox" name="mus2m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QComboBox" name="mus2m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="6">
+        <widget class="QComboBox" name="mus2m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="7">
+        <widget class="QComboBox" name="mus2m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="8">
+        <widget class="QComboBox" name="mus2m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="9">
+        <widget class="QLineEdit" name="musGer_2"/>
+       </item>
+       <item row="3" column="10">
+        <widget class="QComboBox" name="musAction_2">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="11">
+        <widget class="QPushButton" name="musSave_2">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="musLab3">
+         <property name="text">
+          <string>3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_3"/>
+       </item>
+       <item row="4" column="3">
+        <widget class="QComboBox" name="mus3m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QComboBox" name="mus3m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QComboBox" name="mus3m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="6">
+        <widget class="QComboBox" name="mus3m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="7">
+        <widget class="QComboBox" name="mus3m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="8">
+        <widget class="QComboBox" name="mus3m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="9">
+        <widget class="QLineEdit" name="musGer_3"/>
+       </item>
+       <item row="4" column="10">
+        <widget class="QComboBox" name="musAction_3">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="11">
+        <widget class="QPushButton" name="musSave_3">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="musLab4">
+         <property name="text">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_4"/>
+       </item>
+       <item row="5" column="3">
+        <widget class="QComboBox" name="mus4m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="4">
+        <widget class="QComboBox" name="mus4m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="5">
+        <widget class="QComboBox" name="mus4m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="6">
+        <widget class="QComboBox" name="mus4m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="7">
+        <widget class="QComboBox" name="mus4m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="8">
+        <widget class="QComboBox" name="mus4m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="9">
+        <widget class="QLineEdit" name="musGer_4"/>
+       </item>
+       <item row="5" column="10">
+        <widget class="QComboBox" name="musAction_4">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="11">
+        <widget class="QPushButton" name="musSave_4">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="musLab5">
+         <property name="text">
+          <string>5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_5"/>
+       </item>
+       <item row="6" column="3">
+        <widget class="QComboBox" name="mus5m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="4">
+        <widget class="QComboBox" name="mus5m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="5">
+        <widget class="QComboBox" name="mus5m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="6">
+        <widget class="QComboBox" name="mus5m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="7">
+        <widget class="QComboBox" name="mus5m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="8">
+        <widget class="QComboBox" name="mus5m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="9">
+        <widget class="QLineEdit" name="musGer_5"/>
+       </item>
+       <item row="6" column="10">
+        <widget class="QComboBox" name="musAction_5">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="11">
+        <widget class="QPushButton" name="musSave_5">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="musLab6">
+         <property name="text">
+          <string>6</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_6"/>
+       </item>
+       <item row="7" column="3">
+        <widget class="QComboBox" name="mus6m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="4">
+        <widget class="QComboBox" name="mus6m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="5">
+        <widget class="QComboBox" name="mus6m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="6">
+        <widget class="QComboBox" name="mus6m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="7">
+        <widget class="QComboBox" name="mus6m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="8">
+        <widget class="QComboBox" name="mus6m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="9">
+        <widget class="QLineEdit" name="musGer_6"/>
+       </item>
+       <item row="7" column="10">
+        <widget class="QComboBox" name="musAction_6">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="11">
+        <widget class="QPushButton" name="musSave_6">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="musLab7">
+         <property name="text">
+          <string>7</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_7"/>
+       </item>
+       <item row="8" column="3">
+        <widget class="QComboBox" name="mus7m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="4">
+        <widget class="QComboBox" name="mus7m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="5">
+        <widget class="QComboBox" name="mus7m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="6">
+        <widget class="QComboBox" name="mus7m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="7">
+        <widget class="QComboBox" name="mus7m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="8">
+        <widget class="QComboBox" name="mus7m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="9">
+        <widget class="QLineEdit" name="musGer_7"/>
+       </item>
+       <item row="8" column="10">
+        <widget class="QComboBox" name="musAction_7">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="11">
+        <widget class="QPushButton" name="musSave_7">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="musLab8">
+         <property name="text">
+          <string>8</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_8"/>
+       </item>
+       <item row="9" column="3">
+        <widget class="QComboBox" name="mus8m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="4">
+        <widget class="QComboBox" name="mus8m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="5">
+        <widget class="QComboBox" name="mus8m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="6">
+        <widget class="QComboBox" name="mus8m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="7">
+        <widget class="QComboBox" name="mus8m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="8">
+        <widget class="QComboBox" name="mus8m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="9">
+        <widget class="QLineEdit" name="musGer_8"/>
+       </item>
+       <item row="9" column="10">
+        <widget class="QComboBox" name="musAction_8">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="11">
+        <widget class="QPushButton" name="musSave_8">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="musLab9">
+         <property name="text">
+          <string>9</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_9"/>
+       </item>
+       <item row="10" column="3">
+        <widget class="QComboBox" name="mus9m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="4">
+        <widget class="QComboBox" name="mus9m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="5">
+        <widget class="QComboBox" name="mus9m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="6">
+        <widget class="QComboBox" name="mus9m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="7">
+        <widget class="QComboBox" name="mus9m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="8">
+        <widget class="QComboBox" name="mus9m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="9">
+        <widget class="QLineEdit" name="musGer_9"/>
+       </item>
+       <item row="10" column="10">
+        <widget class="QComboBox" name="musAction_9">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="11">
+        <widget class="QPushButton" name="musSave_9">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="musLab10">
+         <property name="text">
+          <string>10</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" colspan="2">
+        <widget class="QLineEdit" name="musLine_10"/>
+       </item>
+       <item row="11" column="3">
+        <widget class="QComboBox" name="mus10m1">
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="4">
+        <widget class="QComboBox" name="mus10m2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="5">
+        <widget class="QComboBox" name="mus10m3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="6">
+        <widget class="QComboBox" name="mus10m4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="7">
+        <widget class="QComboBox" name="mus10m5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="8">
+        <widget class="QComboBox" name="mus10m6">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>k</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>l</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="9">
+        <widget class="QLineEdit" name="musGer_10"/>
+       </item>
+       <item row="11" column="10">
+        <widget class="QComboBox" name="musAction_10">
+         <item>
+          <property name="text">
+           <string>aus</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>an</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>toggle</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="11">
+        <widget class="QPushButton" name="musSave_10">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QPushButton" name="musSave">
+         <property name="text">
+          <string>Speichern</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2" colspan="5">
+        <widget class="QPushButton" name="musClear">
+         <property name="text">
+          <string>Alle vom Arduino entfernen</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="Geraete">
      <attribute name="title">
       <string>Geräte</string>
      </attribute>
-     <widget class="QPushButton" name="neuesGeraetBtn">
+     <widget class="QPushButton" name="GerSave">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -3746,43 +3488,127 @@
      <widget class="QGroupBox" name="groupConfigPin">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>10</y>
-        <width>571</width>
+        <width>791</width>
         <height>271</height>
        </rect>
       </property>
       <property name="title">
        <string>Pin-Belegungen</string>
       </property>
-      <widget class="QPushButton" name="meldung">
-       <property name="geometry">
-        <rect>
-         <x>430</x>
-         <y>220</y>
-         <width>112</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Meldung</string>
-       </property>
-      </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>16</x>
          <y>19</y>
-         <width>541</width>
-         <height>239</height>
+         <width>761</width>
+         <height>181</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="4" column="1">
+        <item row="3" column="1">
          <widget class="QPushButton" name="configPinAktualisierenBtn">
           <property name="text">
            <string>Aktualisieren</string>
           </property>
+         </widget>
+        </item>
+        <item row="3" column="2" colspan="2">
+         <widget class="QPushButton" name="configPinVerbinden">
+          <property name="text">
+           <string>Verbinden</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="4">
+         <widget class="QComboBox" name="configPinArduino">
+          <property name="currentIndex">
+           <number>-1</number>
+          </property>
+          <property name="maxVisibleItems">
+           <number>14</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="configPinPieperTitel">
+          <property name="text">
+           <string>Pieper</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="configPinSoundTitel">
+          <property name="text">
+           <string>Soundsensor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="configPinArduinoTitel">
+          <property name="text">
+           <string>Arduino-Port</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="4">
+         <widget class="QLabel" name="configPinStatus1">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;span style='color:yellow;'&gt;◉   &lt;/span&gt;Status: Nicht Verbunden&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QPushButton" name="configPinDisconnect">
+          <property name="text">
+           <string>Disconnect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="configPinSound">
+          <property name="maxVisibleItems">
+           <number>6</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A5</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="1" column="1" colspan="2">
@@ -3870,207 +3696,67 @@
           </item>
          </widget>
         </item>
-        <item row="4" column="2" colspan="2">
-         <widget class="QPushButton" name="configPinVerbinden">
-          <property name="text">
-           <string>Verbinden</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1" colspan="4">
-         <widget class="QComboBox" name="configPinArduino">
-          <property name="currentIndex">
-           <number>-1</number>
-          </property>
-          <property name="maxVisibleItems">
-           <number>14</number>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1" colspan="2">
-         <widget class="QComboBox" name="configPinTaster">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="editable">
-           <bool>false</bool>
-          </property>
-          <property name="currentIndex">
-           <number>12</number>
-          </property>
-          <property name="maxVisibleItems">
-           <number>14</number>
-          </property>
-          <item>
-           <property name="text">
-            <string>0</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="configPinSoundTitel">
-          <property name="text">
-           <string>Soundsensor</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1" colspan="4">
-         <widget class="QLabel" name="configPinStatus1">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="text">
-           <string>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;span style='color:yellow;'&gt;◉   &lt;/span&gt;Status: Nicht Verbunden&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="configPinPieperTitel">
-          <property name="text">
-           <string>Pieper</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="configPinArduinoTitel">
-          <property name="text">
-           <string>Arduino-Port</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="configPinTasterTitel">
-          <property name="text">
-           <string>Taster</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="4">
-         <widget class="QPushButton" name="configPinDisconnect">
-          <property name="text">
-           <string>Disconnect</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1" colspan="2">
-         <widget class="QComboBox" name="configPinSound">
-          <property name="maxVisibleItems">
-           <number>6</number>
-          </property>
-          <item>
-           <property name="text">
-            <string>-</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A0</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>A5</string>
-           </property>
-          </item>
-         </widget>
-        </item>
        </layout>
       </widget>
-      <zorder>layoutWidget</zorder>
-      <zorder>meldung</zorder>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>220</y>
+         <width>551</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nach neu Verbinden Standard Werte neu checken</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="configSaveBtn">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>230</y>
+         <width>105</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>271</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Idee: Save config to txt file</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="configPinDisconnect_3">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>220</y>
+         <width>152</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fehlerhafter-Button</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupConfigInt">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>280</y>
-        <width>571</width>
+        <width>791</width>
         <height>241</height>
        </rect>
       </property>
@@ -4081,8 +3767,8 @@
        <property name="geometry">
         <rect>
          <x>21</x>
-         <y>30</y>
-         <width>521</width>
+         <y>20</y>
+         <width>751</width>
          <height>203</height>
         </rect>
        </property>
@@ -4260,45 +3946,6 @@
        </layout>
       </widget>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>280</y>
-        <width>271</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Idee: Save config to txt file</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="configSaveBtn">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>270</y>
-        <width>105</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>90</y>
-        <width>481</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nach neu Verbinden Standard Werte neu checken</string>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
@@ -4307,7 +3954,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>812</width>
+     <width>885</width>
      <height>22</height>
     </rect>
    </property>

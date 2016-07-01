@@ -7,6 +7,7 @@
 #include <QString>
 #include <QtDebug>
 #include <QMainWindow>
+#include <QTime>
 
 #include <QMutex>
 
@@ -16,7 +17,6 @@ class SerialPortListener : public QThread {
     Q_OBJECT
 public:
     SerialPortListener(QSerialPort* serialPort, ulong speed);
-    //SerialPortListener(ulong speed);
     ~SerialPortListener();
 protected:
     virtual void run();
@@ -25,25 +25,19 @@ private slots:
     void AvailablePorts();
     void Connect(QString);
     void Close();
-
-    //void writeToArduino(QString str);
 private:
     void decodeSerialData();
-
-    void Stack();
-    QString pop();
     void push(QString str);
-
+    void clearStack();
+    QString pop();
     QSerialPort * serialPort;
     ulong speed;
-
-    QString buffer[200]; // Stack
+    QString queue[200]; // Stack
     int count_elem;
-
     QString data;
     QByteArray bytes;
-
     bool waitingForAnswer;
+    QTime lastSend;
 signals:
     void dataReceived(QString);
     void sendBackAvailablePorts(QList<QSerialPortInfo>, int, QString);

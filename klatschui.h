@@ -27,15 +27,8 @@ public:
     ~klatschui();
 
 private slots:
-    void fuckingSend(QByteArray data);
 
     //void handleErrors(QSerialPort::SerialPortError);
-
-    void readArduinoData(QString text);
-
-    void closeArduinoPort();
-
-    void writeArduinoData(QString str);
 
     void on_configIntAufnahme_valueChanged();
 
@@ -63,41 +56,13 @@ private slots:
 
     void on_configPinDisconnect_clicked();
 
-    void on_configPinSound_currentIndexChanged(const QString &arg1);
-
     void on_configPinSound_currentTextChanged(const QString &arg1);
 
     void on_configPinPieper_currentTextChanged(const QString &arg1);
 
-    void sendCurrentValues();
-
-    void changeAufnahme(int value);
-
-    void changeSchwelle(int value);
-
-    void changeToleranz (int value);
-
-    void changeStille(int value);
-
-    void changePieper(int value);
-
-    void changeSound(QString value);
-
-    void on_meldung_clicked();
-
-    void on_neuesGeraetBtn_clicked();
-
-    void WhenHandledConnected(int, QString);
-
-    void PortListeAktualisieren(QList<QSerialPortInfo>, int, QString);
+    void on_GerSave_clicked();
 
     void on_musSave_0_clicked();
-
-    void clearAllMuster();
-
-    int addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString R6, QString Geraete, QString Action);
-
-    void DisplayPopup(QString);
 
     void on_musSave_1_clicked();
 
@@ -121,12 +86,207 @@ private slots:
 
     void on_musSave_clicked();
 
-    void on_musSave_11_clicked();
+    void on_musClear_clicked();
+
+    void on_mus0m1_currentTextChanged(const QString &arg1);
+
+    void on_mus0m2_currentTextChanged(const QString &arg1);
+
+    void on_mus0m3_currentTextChanged(const QString &arg1);
+
+    void on_mus0m4_currentTextChanged(const QString &arg1);
+
+    void on_mus0m5_currentTextChanged(const QString &arg1);
+
+    void on_mus1m1_currentTextChanged(const QString &arg1);
+
+    void on_mus1m2_currentTextChanged(const QString &arg1);
+
+    void on_mus1m3_currentTextChanged(const QString &arg1);
+
+    void on_mus1m4_currentTextChanged(const QString &arg1);
+
+    void on_mus1m5_currentTextChanged(const QString &arg1);
+
+    void on_mus2m1_currentTextChanged(const QString &arg1);
+
+    void on_mus2m2_currentTextChanged(const QString &arg1);
+
+    void on_mus2m3_currentTextChanged(const QString &arg1);
+
+    void on_mus2m4_currentTextChanged(const QString &arg1);
+
+    void on_mus2m5_currentTextChanged(const QString &arg1);
+
+    void on_mus3m1_currentTextChanged(const QString &arg1);
+
+    void on_mus3m2_currentTextChanged(const QString &arg1);
+
+    void on_mus3m3_currentTextChanged(const QString &arg1);
+
+    void on_mus3m4_currentTextChanged(const QString &arg1);
+
+    void on_mus3m5_currentTextChanged(const QString &arg1);
+
+    void on_mus4m1_currentTextChanged(const QString &arg1);
+
+    void on_mus4m2_currentTextChanged(const QString &arg1);
+
+    void on_mus4m3_currentTextChanged(const QString &arg1);
+
+    void on_mus4m4_currentTextChanged(const QString &arg1);
+
+    void on_mus4m5_currentTextChanged(const QString &arg1);
+
+    void on_mus5m1_currentTextChanged(const QString &arg1);
+
+    void on_mus5m2_currentTextChanged(const QString &arg1);
+
+    void on_mus5m3_currentTextChanged(const QString &arg1);
+
+    void on_mus5m4_currentTextChanged(const QString &arg1);
+
+    void on_mus5m5_currentTextChanged(const QString &arg1);
+
+    void on_mus6m1_currentTextChanged(const QString &arg1);
+
+    void on_mus6m2_currentTextChanged(const QString &arg1);
+
+    void on_mus6m3_currentTextChanged(const QString &arg1);
+
+    void on_mus6m4_currentTextChanged(const QString &arg1);
+
+    void on_mus6m5_currentTextChanged(const QString &arg1);
+
+    void on_mus7m1_currentTextChanged(const QString &arg1);
+
+    void on_mus7m2_currentTextChanged(const QString &arg1);
+
+    void on_mus7m3_currentTextChanged(const QString &arg1);
+
+    void on_mus7m4_currentTextChanged(const QString &arg1);
+
+    void on_mus7m5_currentTextChanged(const QString &arg1);
+
+    void on_mus8m1_currentTextChanged(const QString &arg1);
+
+    void on_mus8m2_currentTextChanged(const QString &arg1);
+
+    void on_mus8m3_currentTextChanged(const QString &arg1);
+
+    void on_mus8m4_currentTextChanged(const QString &arg1);
+
+    void on_mus8m5_currentTextChanged(const QString &arg1);
+
+    void on_mus9m1_currentTextChanged(const QString &arg1);
+
+    void on_mus9m2_currentTextChanged(const QString &arg1);
+
+    void on_mus9m3_currentTextChanged(const QString &arg1);
+
+    void on_mus9m4_currentTextChanged(const QString &arg1);
+
+    void on_mus9m5_currentTextChanged(const QString &arg1);
+
+    void on_mus10m1_currentTextChanged(const QString &arg1);
+
+    void on_mus10m2_currentTextChanged(const QString &arg1);
+
+    void on_mus10m3_currentTextChanged(const QString &arg1);
+
+    void on_mus10m4_currentTextChanged(const QString &arg1);
+
+    void on_mus10m5_currentTextChanged(const QString &arg1);
+
+    void on_steuGerEin_0_clicked();
+
+    void on_steuGerEin_2_clicked();
+
+    void on_steuGerEin_4_clicked();
+
+    void on_steuGerEin_5_clicked();
+
+    void on_steuGerEin_6_clicked();
+
+    void on_steuGerEin_7_clicked();
+
+    void on_steuGerEin_8_clicked();
+
+    void on_steuGerEin_9_clicked();
+
+    void on_steuGerEin_10_clicked();
+
+    void on_steuGerEin_20_clicked();
+
+    void on_steuGerEin_21_clicked();
+
+    void on_steuGerAus_0_clicked();
+
+    void on_steuGerAus_2_clicked();
+
+    void on_steuGerAus_4_clicked();
+
+    void on_steuGerAus_5_clicked();
+
+    void on_steuGerAus_6_clicked();
+
+    void on_steuGerAus_7_clicked();
+
+    void on_steuGerAus_8_clicked();
+
+    void on_steuGerAus_9_clicked();
+
+    void on_steuGerAus_10_clicked();
+
+    void on_steuGerAus_20_clicked();
+
+    void on_steuGerAus_21_clicked();
+
+    void readArduinoData(QString text);
+
+    void PortListeAktualisieren(QList<QSerialPortInfo>, int, QString);
+
+    void WhenHandledConnected(int, QString);
+
+    void Send(QByteArray data);
+
+
+    void on_configPinDisconnect_3_clicked();
 
 private:
     Ui::klatschui *ui;
     QSerialPort *SerialPort;
     SerialPortListener *SPL;
+    bool disconnected = false;
+
+    void changeLampe0 (int LampenZustand);
+    void changeLampe1 (int LampenZustand);
+    void changeLampe2 (int LampenZustand);
+    void changeLampe3 (int LampenZustand);
+    void changeLampe4 (int LampenZustand);
+    void changeLampe5 (int LampenZustand);
+    void changeLampe6 (int LampenZustand);
+    void changeLampe7 (int LampenZustand);
+    void changeLampe8 (int LampenZustand);
+    void changeLampe9 (int LampenZustand);
+    void changeLampe10 (int LampenZustand);
+    void changeLampenUI(int LampenId, int LampenZustand);
+    int addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString R6, QString Geraete, QString Action);
+    void clearAllMuster();
+    void DisplayPopup(QString);
+    void configResetAll ();
+    void sendCurrentValues();
+    void changeAufnahme(int value);
+    void changeSchwelle(int value);
+    void changeToleranz (int value);
+    void changeStille(int value);
+    void changePieper(int value);
+    void changeSound(QString value);
+    void closeArduinoPort();
+    void writeArduinoData(QString str);
+    void setLampenMode(int, int);
+    void gerSaveAll();
+    void saveAllMuster(bool showInfo);
 
 signals:
     void writeToArduino(QString);
