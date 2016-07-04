@@ -271,6 +271,7 @@ void loop() {
       //Serial.print(F("Laenge:    "));Serial.println(inputGeraetestring.length());Serial.println("");
 
       for (int i = 0; i < geraete_size; i++) {    // Gerätespeicher leeren 
+          digitalWrite(geraete[i].pin, 0);        // Beim Löschen eines Pins alle zurücksetzen
           geraete[i].pin = 0;
           geraete[i].zustand = 0;
       }
