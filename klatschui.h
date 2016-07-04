@@ -96,8 +96,6 @@ private slots:
 
     void on_mus0m4_currentTextChanged(const QString &arg1);
 
-    void on_mus0m5_currentTextChanged(const QString &arg1);
-
     void on_mus1m1_currentTextChanged(const QString &arg1);
 
     void on_mus1m2_currentTextChanged(const QString &arg1);
@@ -105,8 +103,6 @@ private slots:
     void on_mus1m3_currentTextChanged(const QString &arg1);
 
     void on_mus1m4_currentTextChanged(const QString &arg1);
-
-    void on_mus1m5_currentTextChanged(const QString &arg1);
 
     void on_mus2m1_currentTextChanged(const QString &arg1);
 
@@ -116,8 +112,6 @@ private slots:
 
     void on_mus2m4_currentTextChanged(const QString &arg1);
 
-    void on_mus2m5_currentTextChanged(const QString &arg1);
-
     void on_mus3m1_currentTextChanged(const QString &arg1);
 
     void on_mus3m2_currentTextChanged(const QString &arg1);
@@ -125,8 +119,6 @@ private slots:
     void on_mus3m3_currentTextChanged(const QString &arg1);
 
     void on_mus3m4_currentTextChanged(const QString &arg1);
-
-    void on_mus3m5_currentTextChanged(const QString &arg1);
 
     void on_mus4m1_currentTextChanged(const QString &arg1);
 
@@ -136,8 +128,6 @@ private slots:
 
     void on_mus4m4_currentTextChanged(const QString &arg1);
 
-    void on_mus4m5_currentTextChanged(const QString &arg1);
-
     void on_mus5m1_currentTextChanged(const QString &arg1);
 
     void on_mus5m2_currentTextChanged(const QString &arg1);
@@ -145,8 +135,6 @@ private slots:
     void on_mus5m3_currentTextChanged(const QString &arg1);
 
     void on_mus5m4_currentTextChanged(const QString &arg1);
-
-    void on_mus5m5_currentTextChanged(const QString &arg1);
 
     void on_mus6m1_currentTextChanged(const QString &arg1);
 
@@ -156,8 +144,6 @@ private slots:
 
     void on_mus6m4_currentTextChanged(const QString &arg1);
 
-    void on_mus6m5_currentTextChanged(const QString &arg1);
-
     void on_mus7m1_currentTextChanged(const QString &arg1);
 
     void on_mus7m2_currentTextChanged(const QString &arg1);
@@ -165,8 +151,6 @@ private slots:
     void on_mus7m3_currentTextChanged(const QString &arg1);
 
     void on_mus7m4_currentTextChanged(const QString &arg1);
-
-    void on_mus7m5_currentTextChanged(const QString &arg1);
 
     void on_mus8m1_currentTextChanged(const QString &arg1);
 
@@ -176,8 +160,6 @@ private slots:
 
     void on_mus8m4_currentTextChanged(const QString &arg1);
 
-    void on_mus8m5_currentTextChanged(const QString &arg1);
-
     void on_mus9m1_currentTextChanged(const QString &arg1);
 
     void on_mus9m2_currentTextChanged(const QString &arg1);
@@ -186,8 +168,6 @@ private slots:
 
     void on_mus9m4_currentTextChanged(const QString &arg1);
 
-    void on_mus9m5_currentTextChanged(const QString &arg1);
-
     void on_mus10m1_currentTextChanged(const QString &arg1);
 
     void on_mus10m2_currentTextChanged(const QString &arg1);
@@ -195,8 +175,6 @@ private slots:
     void on_mus10m3_currentTextChanged(const QString &arg1);
 
     void on_mus10m4_currentTextChanged(const QString &arg1);
-
-    void on_mus10m5_currentTextChanged(const QString &arg1);
 
     void on_steuGerEin_0_clicked();
 
@@ -271,17 +249,17 @@ private:
     void changeLampe9 (int LampenZustand);
     void changeLampe10 (int LampenZustand);
     void changeLampenUI(int LampenId, int LampenZustand);
-    int addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString R6, QString Geraete, QString Action);
+    int addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString Geraete, QString Action);
     void clearAllMuster();
     void DisplayPopup(QString);
     void configResetAll ();
     void sendCurrentValues();
-    void changeAufnahme(int value);
-    void changeSchwelle(int value);
-    void changeToleranz (int value);
-    void changeStille(int value);
-    void changePieper(int value);
-    void changeSound(QString value);
+    void changeAufnahme(int value, bool send = 1);
+    void changeSchwelle(int value, bool send = 1);
+    void changeToleranz (int value, bool send = 1);
+    void changeStille(int value, bool send = 1);
+    void changePieper(int value, bool send = 1);
+    void changeSound(QString value, bool send = 1);
     void closeArduinoPort();
     void writeArduinoData(QString str);
     void setLampenMode(int, int);
@@ -293,6 +271,7 @@ signals:
     void AvailablePorts();
     void Connect(QString);
     void Close();
+    void clearStack();
 };
 
 #endif // KLATSCHUI_H

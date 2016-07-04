@@ -135,5 +135,6 @@ void SerialPortListener::clearStack()
   }
   count_elem = 0;
   mutex.unlock();
+  qDebug() << "Stack cleared";
   return;
 }

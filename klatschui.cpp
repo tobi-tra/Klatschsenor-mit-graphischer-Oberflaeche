@@ -30,14 +30,16 @@ klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschu
             SPL,  SLOT(writeToQueue(QString)));
     connect(SPL,  SIGNAL(sendDataToGuiToArduino(QByteArray)),
             this, SLOT(Send(QByteArray)));
+    connect(this, SIGNAL(clearStack()),
+            SPL, SLOT(clearStack()));
 
     //connect(SerialPort, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(handleErrors(QSerialPort::SerialPortError)));
 
-    /*changeAufnahme(ui->configIntAufnahme->value());
-    changeSchwelle(ui->configIntSchwelle->value());
-    changeStille(ui->configIntStille->value());
-    changeToleranz(ui->configIntToleranz->value());
-*/
+    changeAufnahme(ui->configIntAufnahme->value(), 0);
+    changeSchwelle(ui->configIntSchwelle->value(), 0);
+    changeStille(ui->configIntStille->value(), 0);
+    changeToleranz(ui->configIntToleranz->value(), 0);
+
     emit AvailablePorts();
     ui->configPinDisconnect->setDisabled(1);
 }
@@ -91,14 +93,15 @@ void klatschui::on_configPinVerbinden_clicked()
 
 void klatschui::WhenHandledConnected(int connectedTrueFalse, QString portName) { // bei Signal von PL aufgerufen. Ändert Texte, startet Run-Funktion des PL
     if(connectedTrueFalse){
+        emit clearStack();
         SPL->start();
         ui->configPinStatus1->setText("<table><tr><td><span style='color:green;'>◉  </span></td><td>Status: Verbunden mit <b>" + portName + "</b></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr></table>");
         ui->configPinDisconnect->setDisabled(0);
         ui->configPinVerbinden->setDisabled(1);
 
-        if (disconnected) {
-          sendCurrentValues();
-        }
+        //if (disconnected) {
+        sendCurrentValues();
+        //}
     } else{
         ui->configPinStatus1->setText("<table><tr><td><span style='color:red;'>◉  </span></td><td>Status: Nicht Verbunden</td></tr><tr><td>&nbsp;</td><td>Verbindungsversuch mit <b>"+ ui->configPinArduino->currentText() + "</b> fehlgeschlagen.</td></tr></table>");
     }
@@ -123,14 +126,16 @@ void klatschui::closeArduinoPort()
 
 void klatschui::readArduinoData(QString text)
 {
-    if (text.contains("StatusLampe")) {
-        int Delim                  = text.contains("~");
-        int LampenId           = text.mid(11, Delim).toInt();
-        int LampenZustand = text.mid(Delim+1).toInt();
-
+    if (text.indexOf("statusLampe") >= 0) {
+        QString input = text.mid(text.indexOf("statusLampe")+11);
+        int Delim         = input.indexOf("~");
+        int LampenId      = input.mid(0, Delim).toInt();
+        int LampenZustand = input.mid(Delim+1, 1).toInt();
+        // qDebug() << "delim:" << Delim << "id: " << LampenId << "zustan: " << LampenZustand;
         qDebug() << "Delim pos.: " + QString::number(Delim) + "; ID: " + QString::number(LampenId) + "; Zustand: " + QString::number(LampenZustand);
 
         changeLampenUI(LampenId, LampenZustand);
+
     } else if (text.contains("Notice:")) {
       DisplayPopup(text.mid(7));
     } else if (text.contains("Error10")) {
@@ -161,7 +166,7 @@ void klatschui::changeLampenUI(int LampenId, int LampenZustand) // Ruft die rich
     } else if (LampenId == 8) {
          changeLampe8(LampenZustand);
     } else if (LampenId == 9) {
-         changeLampe0(LampenZustand);
+         changeLampe9(LampenZustand);
     } else if (LampenId == 10) {
          changeLampe10(LampenZustand);
     }
@@ -201,51 +206,63 @@ void klatschui::sendCurrentValues()
 }
 
 // change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino
-void klatschui::changeAufnahme(int value)
+void klatschui::changeAufnahme(int value, bool send) // send standardmäßig auf 1
 {
     ui->configIntAufnahmeWert->setText(QString::number(value));
     ui->configIntAufnahme->setValue(value);
-    QString send = "setIntAufnahme";
-    send += QString::number(value);
-    writeArduinoData(send);
+    if (send) {
+        QString send = "setIntAufnahme";
+        send += QString::number(value);
+        writeArduinoData(send);
+    }
 }
-void klatschui::changeSchwelle(int value)
+void klatschui::changeSchwelle(int value, bool send)
 {
     ui->configIntSchwelleWert->setText(QString::number(value));
     ui->configIntSchwelle->setValue(value);
-    QString send = "setIntSchwelle";
-    send += QString::number(value);
-    writeArduinoData(send);
+    if (send) {
+        QString send = "setIntSchwelle";
+        send += QString::number(value);
+        writeArduinoData(send);
+    }
 }
-void klatschui::changeStille(int value)
+void klatschui::changeStille(int value, bool send)
 {
     ui->configIntStilleWert->setText(QString::number(value));
     ui->configIntStille->setValue(value);
-    QString send = "setIntStille";
-    send += QString::number(value);
-    writeArduinoData(send);
+    if (send) {
+        QString send = "setIntStille";
+        send += QString::number(value);
+        writeArduinoData(send);
+    }
 }
-void klatschui::changeToleranz(int value)
+void klatschui::changeToleranz(int value, bool send)
 {
     ui->configIntToleranzWert->setText(QString::number(value));
     ui->configIntToleranz->setValue(value);
-    QString send = "setIntToleranz";
-    send += QString::number(value);
-    writeArduinoData(send);
+        if (send) {
+        QString send = "setIntToleranz";
+        send += QString::number(value);
+        writeArduinoData(send);
+    }
 }
-void klatschui::changePieper(int value)
+void klatschui::changePieper(int value, bool send)
 {
-    QString send = "setPinModePieper";
-    send += QString::number(value);
-    writeArduinoData(send);
     ui->configPinPieper->setCurrentText(QString::number(value));
+    if (send) {
+        QString send = "setPinModePieper";
+        send += QString::number(value);
+        writeArduinoData(send);
+    }
 }
-void klatschui::changeSound(QString value)
+void klatschui::changeSound(QString value, bool send)
 {
-    QString send = "setPinModeSound";
-    send += value;
-    writeArduinoData(send);
     ui->configPinSound->setCurrentText(value);
+    if (send) {
+        QString send = "setPinModeSound";
+        send += value;
+        writeArduinoData(send);
+    }
 }
 
 void klatschui::gerSaveAll() // Speichert neue Geräte
@@ -258,14 +275,16 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_0->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_0->setDisabled(0);
+          /*ui->steuGerAus_0->setDisabled(0);
           ui->steuGerEin_0->setDisabled(1);
-          ui->steuGerStatus_0->setText("🌕");
+          ui->steuGerStatus_0->setText("🌕");*/
+          changeLampe0(1);
       } else if (ui->gerStart_0->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_0->setDisabled(1);
+          /*ui->steuGerAus_0->setDisabled(1);
           ui->steuGerEin_0->setDisabled(0);
-          ui->steuGerStatus_0->setText("🌑");
+          ui->steuGerStatus_0->setText("🌑");*/
+          changeLampe0(0);
       }
       send += '~';
 
@@ -281,14 +300,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_1->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_2->setDisabled(0);
-          ui->steuGerEin_2->setDisabled(1);
-          ui->steuGerStatus_2->setText("🌕");
+          changeLampe1(1);
       } else if (ui->gerStart_1->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_2->setDisabled(1);
-          ui->steuGerEin_2->setDisabled(0);
-          ui->steuGerStatus_2->setText("🌑");
+          changeLampe1(0);
       }
       send += '~';
   } else {
@@ -302,14 +317,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_2->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_4->setDisabled(0);
-          ui->steuGerEin_4->setDisabled(1);
-          ui->steuGerStatus_4->setText("🌕");
+          changeLampe2(1);
       } else if (ui->gerStart_2->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_4->setDisabled(1);
-          ui->steuGerEin_4->setDisabled(0);
-          ui->steuGerStatus_4->setText("🌑");
+          changeLampe2(0);
       }
       send += '~';
   } else {
@@ -323,14 +334,13 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_3->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_5->setDisabled(0);
-          ui->steuGerEin_5->setDisabled(1);
-          ui->steuGerStatus_5->setText("🌕");
+          changeLampe3(1);
       } else if (ui->gerStart_3->currentText() == "aus") {
           send += "0";
           ui->steuGerAus_5->setDisabled(1);
           ui->steuGerEin_5->setDisabled(0);
           ui->steuGerStatus_5->setText("🌑");
+          changeLampe3(0);
       }
       send += '~';
   } else {
@@ -344,14 +354,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_4->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_6->setDisabled(0);
-          ui->steuGerEin_6->setDisabled(1);
-          ui->steuGerStatus_6->setText("🌕");
+          changeLampe4(1);
       } else if (ui->gerStart_4->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_6->setDisabled(1);
-          ui->steuGerEin_6->setDisabled(0);
-          ui->steuGerStatus_6->setText("🌑");
+          changeLampe4(0);
       }
       send += '~';
   } else {
@@ -365,14 +371,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_5->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_7->setDisabled(0);
-          ui->steuGerEin_7->setDisabled(1);
-          ui->steuGerStatus_7->setText("🌕");
+          changeLampe5(1);
       } else if (ui->gerStart_5->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_7->setDisabled(1);
-          ui->steuGerEin_7->setDisabled(0);
-          ui->steuGerStatus_7->setText("🌑");
+          changeLampe5(0);
       }
       send += '~';
   } else {
@@ -386,14 +388,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_6->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_8->setDisabled(0);
-          ui->steuGerEin_8->setDisabled(1);
-          ui->steuGerStatus_8->setText("🌕");
+          changeLampe6(1);
       } else if (ui->gerStart_6->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_8->setDisabled(1);
-          ui->steuGerEin_8->setDisabled(0);
-          ui->steuGerStatus_8->setText("🌑");
+          changeLampe6(0);
       }
       send += '~';
   } else {
@@ -407,14 +405,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_7->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_9->setDisabled(0);
-          ui->steuGerEin_9->setDisabled(1);
-          ui->steuGerStatus_9->setText("🌕");
+          changeLampe7(1);
       } else if (ui->gerStart_7->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_9->setDisabled(1);
-          ui->steuGerEin_9->setDisabled(0);
-          ui->steuGerStatus_9->setText("🌑");
+          changeLampe7(0);
       }
       send += '~';
   } else {
@@ -428,14 +422,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_8->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_10->setDisabled(0);
-          ui->steuGerEin_10->setDisabled(1);
-          ui->steuGerStatus_10->setText("🌕");
+          changeLampe8(1);
       } else if (ui->gerStart_8->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_10->setDisabled(1);
-          ui->steuGerEin_10->setDisabled(0);
-          ui->steuGerStatus_10->setText("🌑");
+          changeLampe8(0);
       }
       send += '~';
   } else {
@@ -449,14 +439,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_9->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_20->setDisabled(0);
-          ui->steuGerEin_20->setDisabled(1);
-          ui->steuGerStatus_20->setText("🌕");
+          changeLampe9(1);
       } else if (ui->gerStart_9->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_20->setDisabled(1);
-          ui->steuGerEin_20->setDisabled(0);
-          ui->steuGerStatus_20->setText("🌑");
+          changeLampe9(0);
       }
       send += '~';
   } else {
@@ -470,14 +456,10 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_10->currentText() == "an") {
           send += "1";
-          ui->steuGerAus_21->setDisabled(0);
-          ui->steuGerEin_21->setDisabled(1);
-          ui->steuGerStatus_21->setText("🌕");
+          changeLampe10(1);
       } else if (ui->gerStart_10->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_21->setDisabled(1);
-          ui->steuGerEin_21->setDisabled(0);
-          ui->steuGerStatus_21->setText("🌑");
+          changeLampe10(0);
       }
       send += '~';
   } else {
@@ -489,7 +471,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
   writeArduinoData(send);
 }
 
-int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString R6, QString Geraete, QString Action) // analysiert eine Zeile. Erfolg: sendet an Arduino
+int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString Geraete, QString Action) // analysiert eine Zeile. Erfolg: sendet an Arduino
 {
     int stopRythm = 0;
     QString send = "setLampe";
@@ -529,12 +511,6 @@ int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QStr
                     } else {
                         //send += ",";
                         send += R5;
-                        if (R6.contains("-") && stopRythm) {
-                            stopRythm = 1;
-                        } else {
-                            //send += ",";
-                            send += R6;
-                        }
                     }
                 }
             }
@@ -713,7 +689,6 @@ void klatschui::on_musSave_0_clicked()
               ui->mus0m3->currentText(),
               ui->mus0m4->currentText(),
               ui->mus0m5->currentText(),
-              ui->mus0m6->currentText(),
               ui->musGer_0->text(),
               ui->musAction_0->currentText() ))
     {
@@ -723,7 +698,6 @@ void klatschui::on_musSave_0_clicked()
         ui->mus0m3->setDisabled(1);
         ui->mus0m4->setDisabled(1);
         ui->mus0m5->setDisabled(1);
-        ui->mus0m6->setDisabled(1);
         ui->musGer_0->setDisabled(1);
         ui->musAction_0->setDisabled(1);
         ui->musSave_0->setDisabled(1);
@@ -737,7 +711,6 @@ void klatschui::on_musSave_1_clicked()
               ui->mus1m3->currentText(),
               ui->mus1m4->currentText(),
               ui->mus1m5->currentText(),
-              ui->mus1m6->currentText(),
               ui->musGer_1->text(),
               ui->musAction_1->currentText() ))
     {
@@ -747,7 +720,6 @@ void klatschui::on_musSave_1_clicked()
         ui->mus1m3->setDisabled(1);
         ui->mus1m4->setDisabled(1);
         ui->mus1m5->setDisabled(1);
-        ui->mus1m6->setDisabled(1);
         ui->musGer_1->setDisabled(1);
         ui->musAction_1->setDisabled(1);
         ui->musSave_1->setDisabled(1);
@@ -761,7 +733,6 @@ void klatschui::on_musSave_2_clicked()
               ui->mus2m3->currentText(),
               ui->mus2m4->currentText(),
               ui->mus2m5->currentText(),
-              ui->mus2m6->currentText(),
               ui->musGer_2->text(),
               ui->musAction_2->currentText() ))
     {
@@ -771,7 +742,6 @@ void klatschui::on_musSave_2_clicked()
         ui->mus2m3->setDisabled(1);
         ui->mus2m4->setDisabled(1);
         ui->mus2m5->setDisabled(1);
-        ui->mus2m6->setDisabled(1);
         ui->musGer_2->setDisabled(1);
         ui->musAction_2->setDisabled(1);
         ui->musSave_2->setDisabled(1);
@@ -785,7 +755,6 @@ void klatschui::on_musSave_3_clicked()
               ui->mus3m3->currentText(),
               ui->mus3m4->currentText(),
               ui->mus3m5->currentText(),
-              ui->mus3m6->currentText(),
               ui->musGer_3->text(),
               ui->musAction_3->currentText() ))
     {
@@ -795,7 +764,6 @@ void klatschui::on_musSave_3_clicked()
         ui->mus3m3->setDisabled(1);
         ui->mus3m4->setDisabled(1);
         ui->mus3m5->setDisabled(1);
-        ui->mus3m6->setDisabled(1);
         ui->musGer_3->setDisabled(1);
         ui->musAction_3->setDisabled(1);
         ui->musSave_3->setDisabled(1);
@@ -809,7 +777,6 @@ void klatschui::on_musSave_4_clicked()
               ui->mus4m3->currentText(),
               ui->mus4m4->currentText(),
               ui->mus4m5->currentText(),
-              ui->mus4m6->currentText(),
               ui->musGer_4->text(),
               ui->musAction_4->currentText() ))
     {
@@ -819,7 +786,6 @@ void klatschui::on_musSave_4_clicked()
         ui->mus4m3->setDisabled(1);
         ui->mus4m4->setDisabled(1);
         ui->mus4m5->setDisabled(1);
-        ui->mus4m6->setDisabled(1);
         ui->musGer_4->setDisabled(1);
         ui->musAction_4->setDisabled(1);
         ui->musSave_4->setDisabled(1);
@@ -833,7 +799,6 @@ void klatschui::on_musSave_5_clicked()
               ui->mus5m3->currentText(),
               ui->mus5m4->currentText(),
               ui->mus5m5->currentText(),
-              ui->mus5m6->currentText(),
               ui->musGer_5->text(),
               ui->musAction_5->currentText() ))
     {
@@ -843,7 +808,6 @@ void klatschui::on_musSave_5_clicked()
         ui->mus5m3->setDisabled(1);
         ui->mus5m4->setDisabled(1);
         ui->mus5m5->setDisabled(1);
-        ui->mus5m6->setDisabled(1);
         ui->musGer_5->setDisabled(1);
         ui->musAction_5->setDisabled(1);
         ui->musSave_5->setDisabled(1);
@@ -857,7 +821,6 @@ void klatschui::on_musSave_6_clicked()
               ui->mus6m3->currentText(),
               ui->mus6m4->currentText(),
               ui->mus6m5->currentText(),
-              ui->mus6m6->currentText(),
               ui->musGer_6->text(),
               ui->musAction_6->currentText() ))
     {
@@ -867,7 +830,6 @@ void klatschui::on_musSave_6_clicked()
         ui->mus6m3->setDisabled(1);
         ui->mus6m4->setDisabled(1);
         ui->mus6m5->setDisabled(1);
-        ui->mus6m6->setDisabled(1);
         ui->musGer_6->setDisabled(1);
         ui->musAction_6->setDisabled(1);
         ui->musSave_6->setDisabled(1);
@@ -881,7 +843,6 @@ void klatschui::on_musSave_7_clicked()
               ui->mus7m3->currentText(),
               ui->mus7m4->currentText(),
               ui->mus7m5->currentText(),
-              ui->mus7m6->currentText(),
               ui->musGer_7->text(),
               ui->musAction_7->currentText() ))
     {
@@ -891,7 +852,6 @@ void klatschui::on_musSave_7_clicked()
         ui->mus7m3->setDisabled(1);
         ui->mus7m4->setDisabled(1);
         ui->mus7m5->setDisabled(1);
-        ui->mus7m6->setDisabled(1);
         ui->musGer_7->setDisabled(1);
         ui->musAction_7->setDisabled(1);
         ui->musSave_7->setDisabled(1);
@@ -905,7 +865,6 @@ void klatschui::on_musSave_8_clicked()
               ui->mus8m3->currentText(),
               ui->mus8m4->currentText(),
               ui->mus8m5->currentText(),
-              ui->mus8m6->currentText(),
               ui->musGer_8->text(),
               ui->musAction_8->currentText() ))
     {
@@ -915,7 +874,6 @@ void klatschui::on_musSave_8_clicked()
         ui->mus8m3->setDisabled(1);
         ui->mus8m4->setDisabled(1);
         ui->mus8m5->setDisabled(1);
-        ui->mus8m6->setDisabled(1);
         ui->musGer_8->setDisabled(1);
         ui->musAction_8->setDisabled(1);
         ui->musSave_8->setDisabled(1);
@@ -929,7 +887,6 @@ void klatschui::on_musSave_9_clicked()
               ui->mus9m3->currentText(),
               ui->mus9m4->currentText(),
               ui->mus9m5->currentText(),
-              ui->mus9m6->currentText(),
               ui->musGer_9->text(),
               ui->musAction_9->currentText() ))
     {
@@ -939,7 +896,6 @@ void klatschui::on_musSave_9_clicked()
         ui->mus9m3->setDisabled(1);
         ui->mus9m4->setDisabled(1);
         ui->mus9m5->setDisabled(1);
-        ui->mus9m6->setDisabled(1);
         ui->musGer_9->setDisabled(1);
         ui->musAction_9->setDisabled(1);
         ui->musSave_9->setDisabled(1);
@@ -953,7 +909,6 @@ void klatschui::on_musSave_10_clicked()
               ui->mus10m3->currentText(),
               ui->mus10m4->currentText(),
               ui->mus10m5->currentText(),
-              ui->mus10m6->currentText(),
               ui->musGer_10->text(),
               ui->musAction_10->currentText() ))
     {
@@ -963,7 +918,6 @@ void klatschui::on_musSave_10_clicked()
         ui->mus10m3->setDisabled(1);
         ui->mus10m4->setDisabled(1);
         ui->mus10m5->setDisabled(1);
-        ui->mus10m6->setDisabled(1);
         ui->musGer_10->setDisabled(1);
         ui->musAction_10->setDisabled(1);
         ui->musSave_10->setDisabled(1);
@@ -990,15 +944,11 @@ void klatschui::on_mus0m1_currentTextChanged(const QString &arg1)
         if (ui->mus0m4->currentText() != "-") {
             ui->mus0m5->setEnabled(1);
         }
-        if (ui->mus0m5->currentText() != "-") {
-            ui->mus0m6->setEnabled(1);
-        }
       } else {
         ui->mus0m2->setEnabled(0);
         ui->mus0m3->setEnabled(0);
         ui->mus0m4->setEnabled(0);
         ui->mus0m5->setEnabled(0);
-        ui->mus0m6->setEnabled(0);
       }
 }
 void klatschui::on_mus0m2_currentTextChanged(const QString &arg1)
@@ -1011,14 +961,10 @@ void klatschui::on_mus0m2_currentTextChanged(const QString &arg1)
       if (ui->mus0m4->currentText() != "-") {
           ui->mus0m5->setEnabled(1);
       }
-      if (ui->mus0m5->currentText() != "-") {
-          ui->mus0m6->setEnabled(1);
-      }
   } else {
       ui->mus0m3->setEnabled(0);
       ui->mus0m4->setEnabled(0);
       ui->mus0m5->setEnabled(0);
-      ui->mus0m6->setEnabled(0);
     }
 }
 void klatschui::on_mus0m3_currentTextChanged(const QString &arg1)
@@ -1028,35 +974,20 @@ void klatschui::on_mus0m3_currentTextChanged(const QString &arg1)
       if (ui->mus0m4->currentText() != "-") {
           ui->mus0m5->setEnabled(1);
       }
-      if (ui->mus0m5->currentText() != "-") {
-          ui->mus0m6->setEnabled(1);
-      }
   } else {
       ui->mus0m4->setEnabled(0);
       ui->mus0m5->setEnabled(0);
-      ui->mus0m6->setEnabled(0);
     }
 }
 void klatschui::on_mus0m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus0m5->setEnabled(1);
-      if (ui->mus0m5->currentText() != "-") {
-          ui->mus0m6->setEnabled(1);
-      }
   }else {
       ui->mus0m5->setEnabled(0);
-      ui->mus0m6->setEnabled(0);
     }
 }
-void klatschui::on_mus0m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus0m6->setEnabled(1);
-  } else {
-      ui->mus0m6->setEnabled(0);
-    }
-}
+
 void klatschui::on_mus1m1_currentTextChanged(const QString &arg1)
 {
       if (arg1 != "-") {
@@ -1070,15 +1001,11 @@ void klatschui::on_mus1m1_currentTextChanged(const QString &arg1)
         if (ui->mus1m4->currentText() != "-") {
             ui->mus1m5->setEnabled(1);
         }
-        if (ui->mus1m5->currentText() != "-") {
-            ui->mus1m6->setEnabled(1);
-        }
       } else {
         ui->mus1m2->setEnabled(0);
         ui->mus1m3->setEnabled(0);
         ui->mus1m4->setEnabled(0);
         ui->mus1m5->setEnabled(0);
-        ui->mus1m6->setEnabled(0);
       }
 }
 void klatschui::on_mus1m2_currentTextChanged(const QString &arg1)
@@ -1091,14 +1018,10 @@ void klatschui::on_mus1m2_currentTextChanged(const QString &arg1)
       if (ui->mus1m4->currentText() != "-") {
           ui->mus1m5->setEnabled(1);
       }
-      if (ui->mus1m5->currentText() != "-") {
-          ui->mus1m6->setEnabled(1);
-      }
   } else {
       ui->mus1m3->setEnabled(0);
       ui->mus1m4->setEnabled(0);
       ui->mus1m5->setEnabled(0);
-      ui->mus1m6->setEnabled(0);
     }
 }
 void klatschui::on_mus1m3_currentTextChanged(const QString &arg1)
@@ -1108,33 +1031,17 @@ void klatschui::on_mus1m3_currentTextChanged(const QString &arg1)
       if (ui->mus1m4->currentText() != "-") {
           ui->mus1m5->setEnabled(1);
       }
-      if (ui->mus1m5->currentText() != "-") {
-          ui->mus1m6->setEnabled(1);
-      }
   } else {
       ui->mus1m4->setEnabled(0);
       ui->mus1m5->setEnabled(0);
-      ui->mus1m6->setEnabled(0);
     }
 }
 void klatschui::on_mus1m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus1m5->setEnabled(1);
-      if (ui->mus1m5->currentText() != "-") {
-          ui->mus1m6->setEnabled(1);
-      }
   }else {
       ui->mus1m5->setEnabled(0);
-      ui->mus1m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus1m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus1m6->setEnabled(1);
-  } else {
-      ui->mus1m6->setEnabled(0);
     }
 }
 void klatschui::on_mus2m1_currentTextChanged(const QString &arg1)
@@ -1150,15 +1057,11 @@ void klatschui::on_mus2m1_currentTextChanged(const QString &arg1)
         if (ui->mus2m4->currentText() != "-") {
             ui->mus2m5->setEnabled(1);
         }
-        if (ui->mus2m5->currentText() != "-") {
-            ui->mus2m6->setEnabled(1);
-        }
       } else {
         ui->mus2m2->setEnabled(0);
         ui->mus2m3->setEnabled(0);
         ui->mus2m4->setEnabled(0);
         ui->mus2m5->setEnabled(0);
-        ui->mus2m6->setEnabled(0);
       }
 }
 void klatschui::on_mus2m2_currentTextChanged(const QString &arg1)
@@ -1171,14 +1074,10 @@ void klatschui::on_mus2m2_currentTextChanged(const QString &arg1)
       if (ui->mus2m4->currentText() != "-") {
           ui->mus2m5->setEnabled(1);
       }
-      if (ui->mus2m5->currentText() != "-") {
-          ui->mus2m6->setEnabled(1);
-      }
   } else {
       ui->mus2m3->setEnabled(0);
       ui->mus2m4->setEnabled(0);
       ui->mus2m5->setEnabled(0);
-      ui->mus2m6->setEnabled(0);
     }
 }
 void klatschui::on_mus2m3_currentTextChanged(const QString &arg1)
@@ -1188,33 +1087,17 @@ void klatschui::on_mus2m3_currentTextChanged(const QString &arg1)
       if (ui->mus2m4->currentText() != "-") {
           ui->mus2m5->setEnabled(1);
       }
-      if (ui->mus2m5->currentText() != "-") {
-          ui->mus2m6->setEnabled(1);
-      }
   } else {
       ui->mus2m4->setEnabled(0);
       ui->mus2m5->setEnabled(0);
-      ui->mus2m6->setEnabled(0);
     }
 }
 void klatschui::on_mus2m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus2m5->setEnabled(1);
-      if (ui->mus2m5->currentText() != "-") {
-          ui->mus2m6->setEnabled(1);
-      }
   }else {
       ui->mus2m5->setEnabled(0);
-      ui->mus2m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus2m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus2m6->setEnabled(1);
-  } else {
-      ui->mus2m6->setEnabled(0);
     }
 }
 void klatschui::on_mus3m1_currentTextChanged(const QString &arg1)
@@ -1230,15 +1113,11 @@ void klatschui::on_mus3m1_currentTextChanged(const QString &arg1)
         if (ui->mus3m4->currentText() != "-") {
             ui->mus3m5->setEnabled(1);
         }
-        if (ui->mus3m5->currentText() != "-") {
-            ui->mus3m6->setEnabled(1);
-        }
       } else {
         ui->mus3m2->setEnabled(0);
         ui->mus3m3->setEnabled(0);
         ui->mus3m4->setEnabled(0);
         ui->mus3m5->setEnabled(0);
-        ui->mus3m6->setEnabled(0);
       }
 }
 void klatschui::on_mus3m2_currentTextChanged(const QString &arg1)
@@ -1251,14 +1130,10 @@ void klatschui::on_mus3m2_currentTextChanged(const QString &arg1)
       if (ui->mus3m4->currentText() != "-") {
           ui->mus3m5->setEnabled(1);
       }
-      if (ui->mus3m5->currentText() != "-") {
-          ui->mus3m6->setEnabled(1);
-      }
   } else {
       ui->mus3m3->setEnabled(0);
       ui->mus3m4->setEnabled(0);
       ui->mus3m5->setEnabled(0);
-      ui->mus3m6->setEnabled(0);
     }
 }
 void klatschui::on_mus3m3_currentTextChanged(const QString &arg1)
@@ -1268,33 +1143,17 @@ void klatschui::on_mus3m3_currentTextChanged(const QString &arg1)
       if (ui->mus3m4->currentText() != "-") {
           ui->mus3m5->setEnabled(1);
       }
-      if (ui->mus3m5->currentText() != "-") {
-          ui->mus3m6->setEnabled(1);
-      }
   } else {
       ui->mus3m4->setEnabled(0);
       ui->mus3m5->setEnabled(0);
-      ui->mus3m6->setEnabled(0);
     }
 }
 void klatschui::on_mus3m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus3m5->setEnabled(1);
-      if (ui->mus3m5->currentText() != "-") {
-          ui->mus3m6->setEnabled(1);
-      }
   }else {
       ui->mus3m5->setEnabled(0);
-      ui->mus3m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus3m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus3m6->setEnabled(1);
-  } else {
-      ui->mus3m6->setEnabled(0);
     }
 }
 void klatschui::on_mus4m1_currentTextChanged(const QString &arg1)
@@ -1310,15 +1169,11 @@ void klatschui::on_mus4m1_currentTextChanged(const QString &arg1)
         if (ui->mus4m4->currentText() != "-") {
             ui->mus4m5->setEnabled(1);
         }
-        if (ui->mus4m5->currentText() != "-") {
-            ui->mus4m6->setEnabled(1);
-        }
       } else {
         ui->mus4m2->setEnabled(0);
         ui->mus4m3->setEnabled(0);
         ui->mus4m4->setEnabled(0);
         ui->mus4m5->setEnabled(0);
-        ui->mus4m6->setEnabled(0);
       }
 }
 void klatschui::on_mus4m2_currentTextChanged(const QString &arg1)
@@ -1331,14 +1186,10 @@ void klatschui::on_mus4m2_currentTextChanged(const QString &arg1)
       if (ui->mus4m4->currentText() != "-") {
           ui->mus4m5->setEnabled(1);
       }
-      if (ui->mus4m5->currentText() != "-") {
-          ui->mus4m6->setEnabled(1);
-      }
   } else {
       ui->mus4m3->setEnabled(0);
       ui->mus4m4->setEnabled(0);
       ui->mus4m5->setEnabled(0);
-      ui->mus4m6->setEnabled(0);
     }
 }
 void klatschui::on_mus4m3_currentTextChanged(const QString &arg1)
@@ -1348,33 +1199,17 @@ void klatschui::on_mus4m3_currentTextChanged(const QString &arg1)
       if (ui->mus4m4->currentText() != "-") {
           ui->mus4m5->setEnabled(1);
       }
-      if (ui->mus4m5->currentText() != "-") {
-          ui->mus4m6->setEnabled(1);
-      }
   } else {
       ui->mus4m4->setEnabled(0);
       ui->mus4m5->setEnabled(0);
-      ui->mus4m6->setEnabled(0);
     }
 }
 void klatschui::on_mus4m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus4m5->setEnabled(1);
-      if (ui->mus4m5->currentText() != "-") {
-          ui->mus4m6->setEnabled(1);
-      }
   }else {
       ui->mus4m5->setEnabled(0);
-      ui->mus4m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus4m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus4m6->setEnabled(1);
-  } else {
-      ui->mus4m6->setEnabled(0);
     }
 }
 void klatschui::on_mus5m1_currentTextChanged(const QString &arg1)
@@ -1390,15 +1225,11 @@ void klatschui::on_mus5m1_currentTextChanged(const QString &arg1)
         if (ui->mus5m4->currentText() != "-") {
             ui->mus5m5->setEnabled(1);
         }
-        if (ui->mus5m5->currentText() != "-") {
-            ui->mus5m6->setEnabled(1);
-        }
       } else {
         ui->mus5m2->setEnabled(0);
         ui->mus5m3->setEnabled(0);
         ui->mus5m4->setEnabled(0);
         ui->mus5m5->setEnabled(0);
-        ui->mus5m6->setEnabled(0);
       }
 }
 void klatschui::on_mus5m2_currentTextChanged(const QString &arg1)
@@ -1411,14 +1242,10 @@ void klatschui::on_mus5m2_currentTextChanged(const QString &arg1)
       if (ui->mus5m4->currentText() != "-") {
           ui->mus5m5->setEnabled(1);
       }
-      if (ui->mus5m5->currentText() != "-") {
-          ui->mus5m6->setEnabled(1);
-      }
   } else {
       ui->mus5m3->setEnabled(0);
       ui->mus5m4->setEnabled(0);
       ui->mus5m5->setEnabled(0);
-      ui->mus5m6->setEnabled(0);
     }
 }
 void klatschui::on_mus5m3_currentTextChanged(const QString &arg1)
@@ -1428,33 +1255,17 @@ void klatschui::on_mus5m3_currentTextChanged(const QString &arg1)
       if (ui->mus5m4->currentText() != "-") {
           ui->mus5m5->setEnabled(1);
       }
-      if (ui->mus5m5->currentText() != "-") {
-          ui->mus5m6->setEnabled(1);
-      }
   } else {
       ui->mus5m4->setEnabled(0);
       ui->mus5m5->setEnabled(0);
-      ui->mus5m6->setEnabled(0);
     }
 }
 void klatschui::on_mus5m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus5m5->setEnabled(1);
-      if (ui->mus5m5->currentText() != "-") {
-          ui->mus5m6->setEnabled(1);
-      }
   }else {
       ui->mus5m5->setEnabled(0);
-      ui->mus5m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus5m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus5m6->setEnabled(1);
-  } else {
-      ui->mus5m6->setEnabled(0);
     }
 }
 void klatschui::on_mus6m1_currentTextChanged(const QString &arg1)
@@ -1470,15 +1281,11 @@ void klatschui::on_mus6m1_currentTextChanged(const QString &arg1)
         if (ui->mus6m4->currentText() != "-") {
             ui->mus6m5->setEnabled(1);
         }
-        if (ui->mus6m5->currentText() != "-") {
-            ui->mus6m6->setEnabled(1);
-        }
       } else {
         ui->mus6m2->setEnabled(0);
         ui->mus6m3->setEnabled(0);
         ui->mus6m4->setEnabled(0);
         ui->mus6m5->setEnabled(0);
-        ui->mus6m6->setEnabled(0);
       }
 }
 void klatschui::on_mus6m2_currentTextChanged(const QString &arg1)
@@ -1491,14 +1298,10 @@ void klatschui::on_mus6m2_currentTextChanged(const QString &arg1)
       if (ui->mus6m4->currentText() != "-") {
           ui->mus6m5->setEnabled(1);
       }
-      if (ui->mus6m5->currentText() != "-") {
-          ui->mus6m6->setEnabled(1);
-      }
   } else {
       ui->mus6m3->setEnabled(0);
       ui->mus6m4->setEnabled(0);
       ui->mus6m5->setEnabled(0);
-      ui->mus6m6->setEnabled(0);
     }
 }
 void klatschui::on_mus6m3_currentTextChanged(const QString &arg1)
@@ -1508,33 +1311,17 @@ void klatschui::on_mus6m3_currentTextChanged(const QString &arg1)
       if (ui->mus6m4->currentText() != "-") {
           ui->mus6m5->setEnabled(1);
       }
-      if (ui->mus6m5->currentText() != "-") {
-          ui->mus6m6->setEnabled(1);
-      }
   } else {
       ui->mus6m4->setEnabled(0);
       ui->mus6m5->setEnabled(0);
-      ui->mus6m6->setEnabled(0);
     }
 }
 void klatschui::on_mus6m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus6m5->setEnabled(1);
-      if (ui->mus6m5->currentText() != "-") {
-          ui->mus6m6->setEnabled(1);
-      }
   }else {
       ui->mus6m5->setEnabled(0);
-      ui->mus6m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus6m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus6m6->setEnabled(1);
-  } else {
-      ui->mus6m6->setEnabled(0);
     }
 }
 void klatschui::on_mus7m1_currentTextChanged(const QString &arg1)
@@ -1550,15 +1337,11 @@ void klatschui::on_mus7m1_currentTextChanged(const QString &arg1)
         if (ui->mus7m4->currentText() != "-") {
             ui->mus7m5->setEnabled(1);
         }
-        if (ui->mus7m5->currentText() != "-") {
-            ui->mus7m6->setEnabled(1);
-        }
       } else {
         ui->mus7m2->setEnabled(0);
         ui->mus7m3->setEnabled(0);
         ui->mus7m4->setEnabled(0);
         ui->mus7m5->setEnabled(0);
-        ui->mus7m6->setEnabled(0);
       }
 }
 void klatschui::on_mus7m2_currentTextChanged(const QString &arg1)
@@ -1571,14 +1354,10 @@ void klatschui::on_mus7m2_currentTextChanged(const QString &arg1)
       if (ui->mus7m4->currentText() != "-") {
           ui->mus7m5->setEnabled(1);
       }
-      if (ui->mus7m5->currentText() != "-") {
-          ui->mus7m6->setEnabled(1);
-      }
   } else {
       ui->mus7m3->setEnabled(0);
       ui->mus7m4->setEnabled(0);
       ui->mus7m5->setEnabled(0);
-      ui->mus7m6->setEnabled(0);
     }
 }
 void klatschui::on_mus7m3_currentTextChanged(const QString &arg1)
@@ -1588,33 +1367,17 @@ void klatschui::on_mus7m3_currentTextChanged(const QString &arg1)
       if (ui->mus7m4->currentText() != "-") {
           ui->mus7m5->setEnabled(1);
       }
-      if (ui->mus7m5->currentText() != "-") {
-          ui->mus7m6->setEnabled(1);
-      }
   } else {
       ui->mus7m4->setEnabled(0);
       ui->mus7m5->setEnabled(0);
-      ui->mus7m6->setEnabled(0);
     }
 }
 void klatschui::on_mus7m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus7m5->setEnabled(1);
-      if (ui->mus7m5->currentText() != "-") {
-          ui->mus7m6->setEnabled(1);
-      }
   }else {
       ui->mus7m5->setEnabled(0);
-      ui->mus7m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus7m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus7m6->setEnabled(1);
-  } else {
-      ui->mus7m6->setEnabled(0);
     }
 }
 void klatschui::on_mus8m1_currentTextChanged(const QString &arg1)
@@ -1630,15 +1393,11 @@ void klatschui::on_mus8m1_currentTextChanged(const QString &arg1)
         if (ui->mus8m4->currentText() != "-") {
             ui->mus8m5->setEnabled(1);
         }
-        if (ui->mus8m5->currentText() != "-") {
-            ui->mus8m6->setEnabled(1);
-        }
       } else {
         ui->mus8m2->setEnabled(0);
         ui->mus8m3->setEnabled(0);
         ui->mus8m4->setEnabled(0);
         ui->mus8m5->setEnabled(0);
-        ui->mus8m6->setEnabled(0);
       }
 }
 void klatschui::on_mus8m2_currentTextChanged(const QString &arg1)
@@ -1651,14 +1410,10 @@ void klatschui::on_mus8m2_currentTextChanged(const QString &arg1)
       if (ui->mus8m4->currentText() != "-") {
           ui->mus8m5->setEnabled(1);
       }
-      if (ui->mus8m5->currentText() != "-") {
-          ui->mus8m6->setEnabled(1);
-      }
   } else {
       ui->mus8m3->setEnabled(0);
       ui->mus8m4->setEnabled(0);
       ui->mus8m5->setEnabled(0);
-      ui->mus8m6->setEnabled(0);
     }
 }
 void klatschui::on_mus8m3_currentTextChanged(const QString &arg1)
@@ -1668,33 +1423,17 @@ void klatschui::on_mus8m3_currentTextChanged(const QString &arg1)
       if (ui->mus8m4->currentText() != "-") {
           ui->mus8m5->setEnabled(1);
       }
-      if (ui->mus8m5->currentText() != "-") {
-          ui->mus8m6->setEnabled(1);
-      }
   } else {
       ui->mus8m4->setEnabled(0);
       ui->mus8m5->setEnabled(0);
-      ui->mus8m6->setEnabled(0);
     }
 }
 void klatschui::on_mus8m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus8m5->setEnabled(1);
-      if (ui->mus8m5->currentText() != "-") {
-          ui->mus8m6->setEnabled(1);
-      }
   }else {
       ui->mus8m5->setEnabled(0);
-      ui->mus8m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus8m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus8m6->setEnabled(1);
-  } else {
-      ui->mus8m6->setEnabled(0);
     }
 }
 void klatschui::on_mus9m1_currentTextChanged(const QString &arg1)
@@ -1710,15 +1449,11 @@ void klatschui::on_mus9m1_currentTextChanged(const QString &arg1)
         if (ui->mus9m4->currentText() != "-") {
             ui->mus9m5->setEnabled(1);
         }
-        if (ui->mus9m5->currentText() != "-") {
-            ui->mus9m6->setEnabled(1);
-        }
       } else {
         ui->mus9m2->setEnabled(0);
         ui->mus9m3->setEnabled(0);
         ui->mus9m4->setEnabled(0);
         ui->mus9m5->setEnabled(0);
-        ui->mus9m6->setEnabled(0);
       }
 }
 void klatschui::on_mus9m2_currentTextChanged(const QString &arg1)
@@ -1731,14 +1466,10 @@ void klatschui::on_mus9m2_currentTextChanged(const QString &arg1)
       if (ui->mus9m4->currentText() != "-") {
           ui->mus9m5->setEnabled(1);
       }
-      if (ui->mus9m5->currentText() != "-") {
-          ui->mus9m6->setEnabled(1);
-      }
   } else {
       ui->mus9m3->setEnabled(0);
       ui->mus9m4->setEnabled(0);
       ui->mus9m5->setEnabled(0);
-      ui->mus9m6->setEnabled(0);
     }
 }
 void klatschui::on_mus9m3_currentTextChanged(const QString &arg1)
@@ -1748,33 +1479,17 @@ void klatschui::on_mus9m3_currentTextChanged(const QString &arg1)
       if (ui->mus9m4->currentText() != "-") {
           ui->mus9m5->setEnabled(1);
       }
-      if (ui->mus9m5->currentText() != "-") {
-          ui->mus9m6->setEnabled(1);
-      }
   } else {
       ui->mus9m4->setEnabled(0);
       ui->mus9m5->setEnabled(0);
-      ui->mus9m6->setEnabled(0);
     }
 }
 void klatschui::on_mus9m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus9m5->setEnabled(1);
-      if (ui->mus9m5->currentText() != "-") {
-          ui->mus9m6->setEnabled(1);
-      }
   }else {
       ui->mus9m5->setEnabled(0);
-      ui->mus9m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus9m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus9m6->setEnabled(1);
-  } else {
-      ui->mus9m6->setEnabled(0);
     }
 }
 void klatschui::on_mus10m1_currentTextChanged(const QString &arg1)
@@ -1790,15 +1505,11 @@ void klatschui::on_mus10m1_currentTextChanged(const QString &arg1)
         if (ui->mus10m4->currentText() != "-") {
             ui->mus10m5->setEnabled(1);
         }
-        if (ui->mus10m5->currentText() != "-") {
-            ui->mus10m6->setEnabled(1);
-        }
       } else {
         ui->mus10m2->setEnabled(0);
         ui->mus10m3->setEnabled(0);
         ui->mus10m4->setEnabled(0);
         ui->mus10m5->setEnabled(0);
-        ui->mus10m6->setEnabled(0);
       }
 }
 void klatschui::on_mus10m2_currentTextChanged(const QString &arg1)
@@ -1811,14 +1522,10 @@ void klatschui::on_mus10m2_currentTextChanged(const QString &arg1)
       if (ui->mus10m4->currentText() != "-") {
           ui->mus10m5->setEnabled(1);
       }
-      if (ui->mus10m5->currentText() != "-") {
-          ui->mus10m6->setEnabled(1);
-      }
   } else {
       ui->mus10m3->setEnabled(0);
       ui->mus10m4->setEnabled(0);
       ui->mus10m5->setEnabled(0);
-      ui->mus10m6->setEnabled(0);
     }
 }
 void klatschui::on_mus10m3_currentTextChanged(const QString &arg1)
@@ -1828,33 +1535,17 @@ void klatschui::on_mus10m3_currentTextChanged(const QString &arg1)
       if (ui->mus10m4->currentText() != "-") {
           ui->mus10m5->setEnabled(1);
       }
-      if (ui->mus10m5->currentText() != "-") {
-          ui->mus10m6->setEnabled(1);
-      }
   } else {
       ui->mus10m4->setEnabled(0);
       ui->mus10m5->setEnabled(0);
-      ui->mus10m6->setEnabled(0);
     }
 }
 void klatschui::on_mus10m4_currentTextChanged(const QString &arg1)
 {
   if (arg1 != "-") {
       ui->mus10m5->setEnabled(1);
-      if (ui->mus10m5->currentText() != "-") {
-          ui->mus10m6->setEnabled(1);
-      }
   }else {
       ui->mus10m5->setEnabled(0);
-      ui->mus10m6->setEnabled(0);
-    }
-}
-void klatschui::on_mus10m5_currentTextChanged(const QString &arg1)
-{
-  if (arg1 != "-") {
-      ui->mus10m6->setEnabled(1);
-  } else {
-      ui->mus10m6->setEnabled(0);
     }
 }
 

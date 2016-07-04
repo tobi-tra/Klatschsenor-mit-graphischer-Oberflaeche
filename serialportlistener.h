@@ -25,10 +25,10 @@ private slots:
     void AvailablePorts();
     void Connect(QString);
     void Close();
+    void clearStack();
 private:
     void decodeSerialData();
     void push(QString str);
-    void clearStack();
     QString pop();
     QSerialPort * serialPort;
     ulong speed;
