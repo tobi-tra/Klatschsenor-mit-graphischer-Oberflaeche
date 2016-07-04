@@ -26,6 +26,7 @@ private slots:
     void Connect(QString);
     void Close();
     void clearStack();
+    void fixProcessed();
 private:
     void decodeSerialData();
     void push(QString str);
@@ -43,6 +44,7 @@ signals:
     void sendBackAvailablePorts(QList<QSerialPortInfo>, int, QString);
     void backToConnect(int, QString);
     void sendDataToGuiToArduino(QByteArray);
+    void numberInStack(int);
 };
 
 #endif // SERIALPORTLISTENER_H

@@ -18,13 +18,13 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>10</y>
+      <y>20</y>
       <width>891</width>
-      <height>541</height>
+      <height>531</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Steuerung">
      <attribute name="title">
@@ -3261,7 +3261,7 @@
          <x>16</x>
          <y>19</y>
          <width>761</width>
-         <height>181</height>
+         <height>205</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -3454,46 +3454,24 @@
           </item>
          </widget>
         </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Wert anzeigen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="configSoundWert">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
        </layout>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>220</y>
-         <width>551</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Nach neu Verbinden Standard Werte neu checken</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="configSaveBtn">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>230</y>
-         <width>105</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Save</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>240</y>
-         <width>271</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Idee: Save config to txt file</string>
-       </property>
       </widget>
       <widget class="QPushButton" name="configPinDisconnect_3">
        <property name="geometry">
@@ -3506,6 +3484,19 @@
        </property>
        <property name="text">
         <string>Fehlerhafter-Button</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>230</y>
+         <width>161</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Problemlösung</string>
        </property>
       </widget>
      </widget>
@@ -3705,6 +3696,32 @@
       </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>0</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Befehle in Arbeit:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="BefehleInArbeitWert">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>0</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

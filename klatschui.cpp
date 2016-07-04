@@ -2,8 +2,7 @@
 #include "klatschui.h"
 #include "ui_klatschui.h"
 #include "serialportlistener.h"
-#include <QFile>
-#include <QTextStream>
+//#include <QTextStream>
 #include <QMessageBox>
 
 klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschui) {
@@ -32,6 +31,10 @@ klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschu
             this, SLOT(Send(QByteArray)));
     connect(this, SIGNAL(clearStack()),
             SPL, SLOT(clearStack()));
+    connect(SPL, SIGNAL(numberInStack(int)),
+            this, SLOT(numberInStackToGUI(int)));
+    connect(this, SIGNAL(fixProcessed()),
+            SPL, SLOT(fixProcessed()));
 
     //connect(SerialPort, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(handleErrors(QSerialPort::SerialPortError)));
 
@@ -59,16 +62,6 @@ void klatschui::on_configIntAllDef_clicked()
     configResetAll();
 }
 
-void klatschui::on_configSaveBtn_clicked() // not in use
-{
-    QString filename = "C:/Data.txt";
-    QFile file(filename);
-    if (file.open(QIODevice::ReadWrite)) {
-        QTextStream stream(&file);
-        stream << "something" << endl;
-    }
-}
-
 void klatschui::PortListeAktualisieren(QList<QSerialPortInfo> portInfoList, int isOpen, QString portName) // Bekommt Daten von PL
 {
     ui->configPinArduino->clear(); // aktuelle Liste löschen
@@ -94,14 +87,12 @@ void klatschui::on_configPinVerbinden_clicked()
 void klatschui::WhenHandledConnected(int connectedTrueFalse, QString portName) { // bei Signal von PL aufgerufen. Ändert Texte, startet Run-Funktion des PL
     if(connectedTrueFalse){
         emit clearStack();
+            clearAllMuster();
         SPL->start();
         ui->configPinStatus1->setText("<table><tr><td><span style='color:green;'>◉  </span></td><td>Status: Verbunden mit <b>" + portName + "</b></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr></table>");
         ui->configPinDisconnect->setDisabled(0);
         ui->configPinVerbinden->setDisabled(1);
-
-        //if (disconnected) {
         sendCurrentValues();
-        //}
     } else{
         ui->configPinStatus1->setText("<table><tr><td><span style='color:red;'>◉  </span></td><td>Status: Nicht Verbunden</td></tr><tr><td>&nbsp;</td><td>Verbindungsversuch mit <b>"+ ui->configPinArduino->currentText() + "</b> fehlgeschlagen.</td></tr></table>");
     }
@@ -119,7 +110,6 @@ void klatschui::closeArduinoPort()
     ui->configPinDisconnect->setDisabled(1);
     ui->configPinVerbinden->setDisabled(0);
     disconnected = true;
-    clearAllMuster();
     emit Close();
     // hier quit SPL implementieren
 }
@@ -135,7 +125,9 @@ void klatschui::readArduinoData(QString text)
         qDebug() << "Delim pos.: " + QString::number(Delim) + "; ID: " + QString::number(LampenId) + "; Zustand: " + QString::number(LampenZustand);
 
         changeLampenUI(LampenId, LampenZustand);
-
+    } else if (text.indexOf("SoundWert") >= 0) {
+        QString input = text.mid(text.indexOf("SoundWert")+9);
+        ui->configSoundWert->setText(input.mid(0,4));
     } else if (text.contains("Notice:")) {
       DisplayPopup(text.mid(7));
     } else if (text.contains("Error10")) {
@@ -177,6 +169,10 @@ void klatschui::writeArduinoData(QString str)
     qDebug() << "to SPL:" << str;
     QByteArray data = str.toUtf8();
     emit writeToArduino(data);
+}
+
+void klatschui::numberInStackToGUI(int elem) {
+    ui->BefehleInArbeitWert->setText(QString::number(elem));
 }
 
 /*void klatschui::handleErrors(QSerialPort::SerialPortError error)
@@ -275,15 +271,9 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       send += ',';
       if (ui->gerStart_0->currentText() == "an") {
           send += "1";
-          /*ui->steuGerAus_0->setDisabled(0);
-          ui->steuGerEin_0->setDisabled(1);
-          ui->steuGerStatus_0->setText("🌕");*/
           changeLampe0(1);
       } else if (ui->gerStart_0->currentText() == "aus") {
           send += "0";
-          /*ui->steuGerAus_0->setDisabled(1);
-          ui->steuGerEin_0->setDisabled(0);
-          ui->steuGerStatus_0->setText("🌑");*/
           changeLampe0(0);
       }
       send += '~';
@@ -1860,4 +1850,35 @@ void klatschui::on_configPinAktualisierenBtn_clicked() // Signal an PL. PortList
 void klatschui::on_configPinDisconnect_3_clicked()
 {
     writeArduinoData("murks");
+}
+
+void klatschui::on_sendTBtn_clicked()
+{
+    writeToArduino("showInfo0");
+}
+
+void klatschui::on_sendTBtn_2_clicked()
+{
+    writeToArduino("showInfo1");
+}
+
+void klatschui::on_sendTBtn_3_clicked()
+{
+    writeToArduino("showInfo2");
+}
+
+void klatschui::on_pushButton_pressed()
+{
+    writeToArduino("ConfigSoundStart");
+}
+
+void klatschui::on_pushButton_released()
+{
+    writeToArduino("ConfigSoundStop");
+    ui->configSoundWert->setText("");
+}
+
+void klatschui::on_pushButton_2_clicked()
+{
+    emit fixProcessed();
 }

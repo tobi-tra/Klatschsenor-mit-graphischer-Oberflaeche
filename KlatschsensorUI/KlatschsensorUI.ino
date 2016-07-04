@@ -9,7 +9,6 @@
  ****************************/
 
 #include <stdint.h>
-//#include "einstellvariablen.h"  // In der h-Datei lassen sich die Anschlusspins sowie Schwell- und Toleranzwerte einstellen
 
 /**   Funktionen   **/
 int  check_config();
@@ -25,7 +24,7 @@ void zeit(uint8_t zustand);
 int16_t MAX_STILLE, TOLERANZ = -1; // MAX_STILLE: Zeit in Millisekunden bis die Auswertung gestartet wird; TOLERANZ: Unterschreitet die Differenz zw. längster und kürzester Pause diesen Wert, werden die Pausen als gleich lang betrachtet
 int8_t  SOUNDSENSOR, PIEPER, AUFNAHMEZEIT, SCHWELLE = -1;   // Anschlusspin von Soundsensor und Pieper; Zeit für Aufnahme und Wert für akustiche Schwelle
 
-boolean       eingang, loaded_config, ende, just_shown = 0;
+boolean       eingang, loaded_config, ende, just_shown, ConfigSend = 0;
 // Pegel-Startzeit, Stille-Startzeit, Stille-Endzeit, Stille-Differenz (=Stille-Zeit)
 unsigned long p_s, s_s, s_e      = 0;    // Zeitmessungsvariablen auf 0 setzen; long ermöglich 23,1 Tage Laufzeit
 unsigned int  toleranzbereich, s_z, checksum = 0;     // Stille-Zeit und Checksum auf 0 setzen
@@ -46,36 +45,20 @@ uint8_t muster_size, geraete_size, delimGeraete, currentCount = 0;
 int8_t delimName, delimMuster, delimAction, delimTilde, delimKomma = 0; ///// hier geändert
 String input, inputName, inputMuster, inputGeraete, inputAction, inputEinGeraet, inputGeraetestring, pin = "";
 
-struct Geraet geraete[] = {};
+struct Geraet geraete[11] = {};
 
 struct Muster {                     // Struct für eingespeicherte Muster
-  char* titel;                      // Titel für die Ausgabe
   uint8_t rhythmus[6];              // Klatschrhythmus
   uint8_t geraete_ids[12];          // Angesteuerte Geräte, maximal 12, da mit dieser Arduino-Verion nicht mehr Pins vorhanden sind
   uint8_t action;                   // 0 = aus, 1 = an, 2 = toggle;
   uint8_t geraete_count;            // Im Setup wird die Anzahl der angesteuerten Geräte gezählt und hier gespeichert
-  uint8_t checksum;                 // Im Setup wird aus dem gespeicherten Rhythmus eine Checksum gebildet und gespeichert
+  int checksum;                 // Im Setup wird aus dem gespeicherten Rhythmus eine Checksum gebildet und gespeichert
 };
 
 struct Muster muster[10] = {};
 
 void setup() {
   Serial.begin(9600);                                           // Serielle Verbindung initiieren
-  //pinMode(SOUNDSENSOR, INPUT);                                // Soundsensor als Eingang definieren
-  //pinMode(CONFIG, INPUT);                                     // Konfigurations-Taster als Eingang definieren
-  //pinMode(PIEPER, OUTPUT);                                    // Pieper als Ausgang definieren
-  //for (uint8_t i = 0; i < geraete_size; i++) {                // Vorhandene Geräte als Ausgänge definieren
-  //  pinMode(geraete[i].pin, OUTPUT);
-  //}
-
-  /*for (uint8_t j = 0; j < muster_size; j++) {                 // Checksumme jedes einzelnen Musters bilden und im Muster-Struct speichern
-    //muster[j].checksum = 1*muster[j].rhythmus[0]+8*muster[j].rhythmus[1]+27*muster[j].rhythmus[2]+125*muster[j].rhythmus[3]+343*muster[j].rhythmus[4]+1331*muster[j].rhythmus[5];
-    uint8_t count = 1;                                 // Angesteuerte Geräte zählen
-    for (uint8_t i = 1; i < geraete_size && (muster[j].geraete_ids[i] != muster[j].geraete_ids[i+1]); i++) { // Anzahl der Geräte pro Muster ermitteln. Annahmme: Mindestens ein Gerät vorhanden, Gerät "0" muss zuerst genannt werden
-        count++;
-    }
-    muster[j].geraete_count = count; // Anzahl der Geräte pro Muster in Struct-Muster speichern
-  }*/
 
   Serial.println(F("setPinModePieper2"));
   Serial.println(F("setPinModeSound10"));
@@ -87,47 +70,19 @@ void setup() {
   Serial.println(F("setGeraete3,1~91,1~5,1"));
   Serial.println(F("setGeraete3,1~11,1~8,1~2,0~5,1~12,1~"));
   Serial.println(F("setGeraete11,0~8,0~3,0~"));
-  
-/*for (uint8_t i = 0; i < muster_size; i++) {
-    
-    Serial.print(i);Serial.print(F(")  "));
-    for (uint8_t j = 0; j < sechser_size; j++) {
-      const char * text[4] = {"      ","","kurz  ","lang  "};
-      Serial.print(text[muster[i].rhythmus[j]]);
-    }
-    Serial.print(muster[i].geraete_ids[0]+1);
-    if (muster[i].geraete_ids[1] != 0) {
-      Serial.print(F(", "));
-    } else {
-      Serial.print(F("   "));
-    }
-    for (uint8_t j = 1; j < geraete_size; j++) {
-      if (muster[i].geraete_ids[j] != 0) {
-        Serial.print(muster[i].geraete_ids[j]+1);
-      }
-      if (muster[i].geraete_ids[j+1] != 0) {
-        Serial.print(F(", "));
-      } else {
-        Serial.print(F("   "));
-      }
-    }
-    const char * text[3] = {"ausschalten","einschalten","invertieren"};
-    Serial.print(text[muster[i].action]);
-    Serial.println(F("\n"));
-  }
-  Serial.println(F("\nPinbelegung: Geraet -> Pin\n"));
-  for (uint8_t i = 0; i < geraete_size; i++) {
-    Serial.print(i+1);
-    Serial.print(F(" -> "));
-    Serial.println(geraete[i].pin);
-  }
-  delay(500); */
   Serial.println(F("processed"));
 
   
 }
 
 void loop() {
+  if(ConfigSend)
+  {
+    Serial.print("SoundWert");
+    Serial.println(analogRead(SOUNDSENSOR));
+    delay(800);
+  }
+  
   if (Serial.available() > 0) {
       
     input = Serial.readStringUntil(10); // 10 = linefeed
@@ -188,25 +143,31 @@ void loop() {
           Serial.println(input.substring(14,18));
           TOLERANZ = input.substring(14,18).toInt();
           Serial.println("processed");
-    }  
+    }
+      else if (input.substring(0,16) == "ConfigSoundStart")
+    {
+          ConfigSend = 1;
+          Serial.println("processed");
+    }
+      else if (input.substring(0,15) == "ConfigSoundStop")
+    {
+          ConfigSend = 0; 
+          Serial.println("processed"); 
+    }
       else if (input.substring(0,8) == "setLampe") //.readString
     {
-      // {"Haake Beck",     {k,k,k},    {0},           2,        0, 0},
       // HaakeBeck ~ kkk    ~ 0,9,3,11 ~ 2
-      // Name        Muster   Lampen     Aktion
       // Hilfsvariablen für die Trennung der einzelnen Komponenten:
       delimName        = input.indexOf('~', 0);
       delimMuster      = input.indexOf('~', delimName+1);
       delimGeraete     = input.indexOf('~', delimMuster+1);
       delimAction      = input.indexOf('~', delimGeraete+1);
       
-      inputName     = input.substring(8, delimName);                  // Name des Musters
+      //inputName     = input.substring(8, delimName);                  // Name des Musters
       inputMuster   = input.substring(delimName+1, delimMuster);      // Muster der Lampe
       inputGeraete  = input.substring(delimMuster+1, delimGeraete);   // Angesteuerte Lampen
       inputAction   = input.substring(delimGeraete+1, delimAction);   // Aktion (An/Aus/Toggle)
-
-      muster[muster_size].titel = const_cast<char*>(inputName.c_str());   // Einspeichern des Muster-Namens
-                   
+         
       for (int i = 0; i < inputMuster.length(); i++) {    // Einspeichern des Musters
         if (inputMuster.charAt(i) == 'k') {
           muster[muster_size].rhythmus[i] = k;
@@ -237,10 +198,12 @@ void loop() {
       muster[muster_size].action = inputAction.toInt();   // Einspeichern der Aktion
 
       // Bildung der Checksumme:
-      muster[muster_size].checksum = 1*muster[muster_size].rhythmus[0]+8*muster[muster_size].rhythmus[1]+27*muster[muster_size].rhythmus[2]+125*muster[muster_size].rhythmus[3]+343*muster[muster_size].rhythmus[4]+1331*muster[muster_size].rhythmus[5];
-      
+      int zwischen = 1*muster[muster_size].rhythmus[0]+8*muster[muster_size].rhythmus[1]+27*muster[muster_size].rhythmus[2]+125*muster[muster_size].rhythmus[3]+343*muster[muster_size].rhythmus[4]+1331*muster[muster_size].rhythmus[5];
+      Serial.println(zwischen);
+      muster[muster_size].checksum = zwischen;
+       Serial.println(muster[muster_size].checksum);
       /*
-      Serial.println(muster[muster_size].titel);
+      // Serial.println(muster[muster_size].titel);
       Serial.print(muster[muster_size].rhythmus[0]);
       Serial.print(muster[muster_size].rhythmus[1]);
       Serial.print(muster[muster_size].rhythmus[2]);
@@ -262,7 +225,30 @@ void loop() {
       muster_size++;                  // Hochzählen der Anzahl der Muster
       Serial.println("processed");    // Statusmeldung OK
       
-    } 
+    }
+      else if (input.substring(0,8) == "showInfo")
+    { 
+      muster_size = input.substring(8,9).toInt();
+      Serial.print(muster[muster_size].rhythmus[0]);
+      Serial.print(muster[muster_size].rhythmus[1]);
+      Serial.print(muster[muster_size].rhythmus[2]);
+      Serial.print(muster[muster_size].rhythmus[3]);
+      Serial.print(muster[muster_size].rhythmus[4]);
+      Serial.print(muster[muster_size].rhythmus[5]);
+      Serial.println("");
+      Serial.print("CurrentCount: ");Serial.println(muster[muster_size].geraete_count);
+      Serial.print(muster[muster_size].geraete_ids[0]);Serial.print(" ");
+      Serial.print(muster[muster_size].geraete_ids[1]);Serial.print(" ");
+      Serial.print(muster[muster_size].geraete_ids[2]);Serial.print(" ");
+      Serial.print(muster[muster_size].geraete_ids[3]);Serial.print(" ");
+      Serial.print(muster[muster_size].geraete_ids[4]);Serial.print(" ");
+      Serial.println("");
+      Serial.println(muster[muster_size].action);
+      Serial.println(muster[muster_size].geraete_count);
+      Serial.println(muster[muster_size].checksum);
+      Serial.println("processed");
+      
+    }
       else if (input.substring(0,10) == "setGeraete")
     {
       
@@ -276,57 +262,56 @@ void loop() {
           geraete[i].zustand = 0;
       }
 
-      
       geraete_size = 0;
       uint8_t i = 0;
       delimTilde = 0;
       delimKomma = 0;
       inputEinGeraet = "";
-      
-      
+            
       while (i < inputGeraetestring.length()) {     // Abspeichern von Pin und Zustand
         //vllt hier Daten nur zwischenspeichern, auf Fehler überprüfen und erst am Ende speichern
         
         delimTilde = inputGeraetestring.indexOf('~',i);    // Aufteilen des Strings in "Untergeräte"
-        //Serial.print("delimTilde:        ");Serial.println(delimTilde);
+        Serial.print("delimTilde:        ");Serial.println(delimTilde);
         
         inputEinGeraet = inputGeraetestring.substring(i,delimTilde);
-        //Serial.print("inputEinGeraet:    ");Serial.println(inputEinGeraet);
+        Serial.print("inputEinGeraet:    ");Serial.println(inputEinGeraet);
         
-        delimKomma = inputEinGeraet.indexOf(',', 0);    // Aufteilen der "Untergeräte" in Pin und Zustand
-        //Serial.print("delimKomma:        ");Serial.println(delimKomma);
+        delimKomma = inputEinGeraet.indexOf(',',0);    // Aufteilen der "Untergeräte" in Pin und Zustand
+        Serial.print("delimKomma:        ");Serial.println(delimKomma);
         
         geraete[geraete_size].pin = inputEinGeraet.substring(0,delimKomma).toInt();    // Abspeichern des Gerätepins        Hier war der Fehler, Leerzeichen vor delimKomma.
-        //Serial.print("Pin:               ");Serial.println(geraete[geraete_size].pin);
+        Serial.print("Pin:               ");Serial.println(geraete[geraete_size].pin);
+
+        Serial.print("iput.gerstr: ");Serial.println(inputGeraetestring);
         
-        if (inputEinGeraet.substring(delimKomma+1) == "1") {    // Abspeichern des Zustandes
+        if (inputEinGeraet.substring(delimKomma+1,delimKomma+2) == "1") {    // Abspeichern des Zustandes
             geraete[geraete_size].zustand = 1;    // an
-            //Serial.print("Zustand:           ");Serial.println("an");
-        } else if (inputEinGeraet.substring(delimKomma+1) == "0") {
+            Serial.print("Zustand:           ");Serial.println("an");
+        } else if (inputEinGeraet.substring(delimKomma+1,delimKomma+2) == "0") {
             geraete[geraete_size].zustand = 0;    // aus
-            //Serial.print("Zustand:           ");Serial.println("aus");
+            Serial.print("Zustand:           ");Serial.println("aus");
         } else {
-            Serial.println("Error09: Falscher Zustand");
+            Serial.print("Error09: Falscher Zustand bei Pin ");Serial.println(geraete[geraete_size].pin);
         }
         
         pinMode(geraete[geraete_size].pin, OUTPUT);
         digitalWrite(geraete[geraete_size].pin, geraete[geraete_size].zustand); 
         
         i = delimTilde + 1;
-        //Serial.print("i:                 ");Serial.println(i);
+        Serial.print("i:                 ");Serial.println(i);
         
         geraete_size++;
-        //Serial.print("Anzahl der Geraete: ");Serial.println(geraete_size);
+        Serial.print("Anzahl der Geraete: ");Serial.println(geraete_size);
         
         if (delimTilde == -1) {
           break;
         }
-        Serial.println("\n\n");
       }
       //Serial.println(geraete_size);
       for (int i = 0; i < geraete_size; i++) {
-      Serial.print("Pin: ");Serial.println(geraete[i].pin);
-      Serial.print("Zustand: ");Serial.println(geraete[i].zustand);
+        Serial.print("Pin: ");Serial.println(geraete[i].pin);
+        Serial.print("Zustand: ");Serial.println(geraete[i].zustand);
       }
       Serial.println("processed");
     }
@@ -335,16 +320,10 @@ void loop() {
       Serial.println("Error10:Befehl nicht gefunden.");
       Serial.println("processed");
     }
-
-  /*while(i < inputGeraetestring.length()){
-        delimTilde = inputGeraetestring.indexOf('~',i);
-        inputEinGeraet = inputGeraetestring.substring(i,delimTilde);
-        delimKomma = inputEinGeraet.indexOf(',',0);
-        geraete[geraete_size].pin = inputEinGeraet.substring(0,delimKomma).toInt();
-      } */
-    if (!loaded_config) {
+    
+    //if (!loaded_config) {
       check_config();
-    }
+    //}
   }
   
  
@@ -355,12 +334,6 @@ void loop() {
       just_shown = 1;
     }
     return;
-  } else {
-    if (!just_shown) {
-      Serial.println(F("Super, jetzt ist alles soweit!"));
-      just_shown = 0;
-    }
-    //return;
   }
   
   unsigned long aufnahme_start = millis();
@@ -520,7 +493,7 @@ void auswertung(uint8_t signale[6]) {
 void schalten(uint8_t musterid) {        // Geräte werden geschaltet
   switch (muster[musterid].action) {     // Gucken, welche Action angegeben (an, aus, invertiert)
     case 2: // Ganz oben, da häufigste Action
-      for (uint8_t i = 0; i < (muster[musterid].geraete_count); i++) {
+      for (uint8_t i = 0; i <= (muster[musterid].geraete_count); i++) {
         geraete[muster[musterid].geraete_ids[i]].zustand = !geraete[muster[musterid].geraete_ids[i]].zustand; // Jeweilige Geräte invertieren. Nicht mehr TILDE, da 0 zu = -1 wurde
         digitalWrite(geraete[muster[musterid].geraete_ids[i]].pin, geraete[muster[musterid].geraete_ids[i]].zustand); // Pin auf HIGH oder LOW setzen
         
@@ -528,7 +501,7 @@ void schalten(uint8_t musterid) {        // Geräte werden geschaltet
       }
       break;
     case 0: // An zweiter Stelle, da Action "0" am zweit-häufigsten verwendet wird
-      for (uint8_t i = 0; i < (muster[musterid].geraete_count); i++) {
+      for (uint8_t i = 0; i <= (muster[musterid].geraete_count); i++) {
         geraete[muster[musterid].geraete_ids[i]].zustand = 0; // Jeweilige Geräte ausschalten
         digitalWrite(geraete[muster[musterid].geraete_ids[i]].pin, geraete[muster[musterid].geraete_ids[i]].zustand);
         
@@ -536,7 +509,7 @@ void schalten(uint8_t musterid) {        // Geräte werden geschaltet
       }
       break;
     case 1: // An lezter Stelle, da am wenigsten auftretend
-      for (uint8_t i = 0; i < (muster[musterid].geraete_count); i++) {
+      for (uint8_t i = 0; i <= (muster[musterid].geraete_count); i++) {
         geraete[muster[musterid].geraete_ids[i]].zustand = 1; // Jeweilige Geräte einschalten
         digitalWrite(geraete[muster[musterid].geraete_ids[i]].pin, geraete[muster[musterid].geraete_ids[i]].zustand);
         
@@ -547,16 +520,6 @@ void schalten(uint8_t musterid) {        // Geräte werden geschaltet
       Serial.println("Fehler: 'action' nicht bekannt. In Daten aendern.");
       return;
   }
-  // Gerätename und Zustand wird auf dem LC-Display ausgegeben
-  Serial.print(muster[musterid].titel);
-  if (muster[musterid].geraete_count == 1) { // Pluralunterscheidungen
-    Serial.print(" ist ");
-  } else {
-    Serial.print(" sind ");
-  }
-  // Je nach Action unterschiedlichen Text anzeigen
-  Serial.print(meldung[muster[musterid].action]);
-  Serial.println("");
 }
 
 void SingleSchalten(int geraet, int action) {

@@ -103,6 +103,7 @@ QString SerialPortListener::pop()
     }
     --count_elem;				// Position des Kopfes um einen verringern
     mutex.unlock();
+    emit numberInStack(count_elem);
     return (strbuffer);                         // Obersten Wert des Stacks zurückgeben
 }
 
@@ -137,4 +138,9 @@ void SerialPortListener::clearStack()
   mutex.unlock();
   qDebug() << "Stack cleared";
   return;
+}
+
+void SerialPortListener::fixProcessed() {
+    waitingForAnswer = false;
+    qDebug() << "Zeitüberschreitung/Übertragungsproblemlösung.";
 }

@@ -87,132 +87,121 @@ public:
     QWidget *tabMuster;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout_8;
-    QLabel *label_48;
-    QLabel *label_49;
-    QLabel *label_50;
-    QLabel *musLab0;
-    QLineEdit *musLine_0;
-    QComboBox *mus0m1;
-    QComboBox *mus0m2;
-    QComboBox *mus0m3;
-    QComboBox *mus0m4;
-    QComboBox *mus0m5;
-    QComboBox *mus0m6;
-    QLineEdit *musGer_0;
-    QComboBox *musAction_0;
-    QPushButton *musSave_0;
-    QLabel *musLab1;
-    QLineEdit *musLine_1;
-    QComboBox *mus1m1;
-    QComboBox *mus1m2;
-    QComboBox *mus1m3;
-    QComboBox *mus1m4;
-    QComboBox *mus1m5;
-    QComboBox *mus1m6;
-    QLineEdit *musGer_1;
-    QComboBox *musAction_1;
-    QPushButton *musSave_1;
-    QLabel *musLab2;
-    QLineEdit *musLine_2;
-    QComboBox *mus2m1;
-    QComboBox *mus2m2;
-    QComboBox *mus2m3;
-    QComboBox *mus2m4;
-    QComboBox *mus2m5;
-    QComboBox *mus2m6;
-    QLineEdit *musGer_2;
-    QComboBox *musAction_2;
-    QPushButton *musSave_2;
-    QLabel *musLab3;
-    QLineEdit *musLine_3;
-    QComboBox *mus3m1;
-    QComboBox *mus3m2;
-    QComboBox *mus3m3;
-    QComboBox *mus3m4;
-    QComboBox *mus3m5;
-    QComboBox *mus3m6;
-    QLineEdit *musGer_3;
-    QComboBox *musAction_3;
-    QPushButton *musSave_3;
-    QLabel *musLab4;
-    QLineEdit *musLine_4;
-    QComboBox *mus4m1;
-    QComboBox *mus4m2;
-    QComboBox *mus4m3;
-    QComboBox *mus4m4;
-    QComboBox *mus4m5;
-    QComboBox *mus4m6;
-    QLineEdit *musGer_4;
-    QComboBox *musAction_4;
-    QPushButton *musSave_4;
-    QLabel *musLab5;
-    QLineEdit *musLine_5;
-    QComboBox *mus5m1;
-    QComboBox *mus5m2;
-    QComboBox *mus5m3;
-    QComboBox *mus5m4;
-    QComboBox *mus5m5;
-    QComboBox *mus5m6;
-    QLineEdit *musGer_5;
-    QComboBox *musAction_5;
-    QPushButton *musSave_5;
-    QLabel *musLab6;
-    QLineEdit *musLine_6;
-    QComboBox *mus6m1;
-    QComboBox *mus6m2;
-    QComboBox *mus6m3;
-    QComboBox *mus6m4;
-    QComboBox *mus6m5;
-    QComboBox *mus6m6;
-    QLineEdit *musGer_6;
-    QComboBox *musAction_6;
-    QPushButton *musSave_6;
-    QLabel *musLab7;
-    QLineEdit *musLine_7;
-    QComboBox *mus7m1;
-    QComboBox *mus7m2;
-    QComboBox *mus7m3;
-    QComboBox *mus7m4;
-    QComboBox *mus7m5;
-    QComboBox *mus7m6;
-    QLineEdit *musGer_7;
-    QComboBox *musAction_7;
-    QPushButton *musSave_7;
-    QLabel *musLab8;
-    QLineEdit *musLine_8;
-    QComboBox *mus8m1;
-    QComboBox *mus8m2;
-    QComboBox *mus8m3;
-    QComboBox *mus8m4;
-    QComboBox *mus8m5;
-    QComboBox *mus8m6;
-    QLineEdit *musGer_8;
-    QComboBox *musAction_8;
-    QPushButton *musSave_8;
-    QLabel *musLab9;
-    QLineEdit *musLine_9;
-    QComboBox *mus9m1;
-    QComboBox *mus9m2;
-    QComboBox *mus9m3;
-    QComboBox *mus9m4;
-    QComboBox *mus9m5;
-    QComboBox *mus9m6;
-    QLineEdit *musGer_9;
-    QComboBox *musAction_9;
-    QPushButton *musSave_9;
-    QLabel *musLab10;
-    QLineEdit *musLine_10;
+    QPushButton *musSave;
+    QComboBox *musAction_10;
+    QPushButton *musClear;
+    QLineEdit *musGer_10;
+    QPushButton *musSave_10;
+    QComboBox *mus10m4;
+    QComboBox *mus10m5;
     QComboBox *mus10m1;
     QComboBox *mus10m2;
     QComboBox *mus10m3;
-    QComboBox *mus10m4;
-    QComboBox *mus10m5;
-    QComboBox *mus10m6;
-    QLineEdit *musGer_10;
-    QComboBox *musAction_10;
-    QPushButton *musSave_10;
-    QPushButton *musSave;
-    QPushButton *musClear;
+    QLineEdit *musLine_10;
+    QLabel *musLab10;
+    QPushButton *musSave_9;
+    QComboBox *musAction_9;
+    QLineEdit *musGer_9;
+    QComboBox *mus9m4;
+    QComboBox *mus9m5;
+    QComboBox *mus9m3;
+    QComboBox *mus9m1;
+    QLineEdit *musLine_9;
+    QComboBox *mus9m2;
+    QLabel *musLab9;
+    QLineEdit *musGer_8;
+    QPushButton *musSave_8;
+    QComboBox *musAction_8;
+    QComboBox *mus8m5;
+    QComboBox *mus8m3;
+    QComboBox *mus8m4;
+    QComboBox *mus8m2;
+    QComboBox *mus8m1;
+    QLabel *musLab8;
+    QLineEdit *musLine_8;
+    QPushButton *musSave_7;
+    QComboBox *musAction_7;
+    QLineEdit *musGer_7;
+    QComboBox *mus7m5;
+    QComboBox *mus7m4;
+    QComboBox *mus7m2;
+    QComboBox *mus7m3;
+    QLineEdit *musLine_7;
+    QComboBox *mus7m1;
+    QLabel *musLab7;
+    QPushButton *musSave_6;
+    QComboBox *musAction_6;
+    QLineEdit *musGer_6;
+    QComboBox *mus6m4;
+    QComboBox *mus6m2;
+    QComboBox *mus6m5;
+    QComboBox *mus6m3;
+    QLineEdit *musLine_6;
+    QComboBox *mus6m1;
+    QLabel *musLab6;
+    QPushButton *musSave_5;
+    QLineEdit *musGer_5;
+    QComboBox *musAction_5;
+    QComboBox *mus5m4;
+    QComboBox *mus5m2;
+    QComboBox *mus5m5;
+    QComboBox *mus5m3;
+    QLineEdit *musLine_5;
+    QPushButton *musSave_4;
+    QLabel *musLab5;
+    QComboBox *mus5m1;
+    QComboBox *musAction_4;
+    QComboBox *mus4m5;
+    QLineEdit *musGer_4;
+    QComboBox *mus4m4;
+    QComboBox *mus4m2;
+    QLineEdit *musLine_4;
+    QComboBox *mus4m3;
+    QLabel *musLab4;
+    QComboBox *mus4m1;
+    QPushButton *musSave_3;
+    QComboBox *musAction_3;
+    QLineEdit *musGer_3;
+    QComboBox *mus3m4;
+    QComboBox *mus3m3;
+    QComboBox *mus3m5;
+    QComboBox *mus3m2;
+    QComboBox *mus3m1;
+    QLineEdit *musLine_3;
+    QLabel *musLab3;
+    QComboBox *musAction_2;
+    QPushButton *musSave_2;
+    QLineEdit *musGer_2;
+    QComboBox *mus2m4;
+    QComboBox *mus2m3;
+    QComboBox *mus2m5;
+    QComboBox *mus2m1;
+    QComboBox *mus2m2;
+    QLineEdit *musLine_2;
+    QLabel *musLab2;
+    QPushButton *musSave_1;
+    QLineEdit *musGer_1;
+    QComboBox *musAction_1;
+    QComboBox *mus1m4;
+    QComboBox *mus1m3;
+    QComboBox *mus1m5;
+    QComboBox *mus1m2;
+    QLineEdit *musLine_1;
+    QComboBox *mus1m1;
+    QPushButton *musSave_0;
+    QLabel *musLab1;
+    QComboBox *musAction_0;
+    QLineEdit *musGer_0;
+    QComboBox *mus0m5;
+    QComboBox *mus0m3;
+    QComboBox *mus0m4;
+    QComboBox *mus0m2;
+    QComboBox *mus0m1;
+    QLineEdit *musLine_0;
+    QLabel *musLab0;
+    QLabel *label_49;
+    QLabel *label_50;
+    QLabel *label_48;
     QWidget *Geraete;
     QPushButton *GerSave;
     QFrame *line;
@@ -268,10 +257,10 @@ public:
     QPushButton *configPinDisconnect;
     QComboBox *configPinSound;
     QComboBox *configPinPieper;
-    QLabel *label_2;
-    QPushButton *configSaveBtn;
-    QLabel *label;
+    QPushButton *pushButton;
+    QLabel *configSoundWert;
     QPushButton *configPinDisconnect_3;
+    QPushButton *pushButton_2;
     QGroupBox *groupConfigInt;
     QWidget *layoutWidget4;
     QGridLayout *gridLayout;
@@ -292,6 +281,8 @@ public:
     QLabel *configIntAufnahmeWert;
     QSlider *configIntAufnahme;
     QLabel *configIntAufnahmeTitel;
+    QLabel *label_14;
+    QLabel *BefehleInArbeitWert;
     QMenuBar *menuBar;
     QMenu *menuKlatschsensor;
     QStatusBar *statusBar;
@@ -306,7 +297,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         TabMuster = new QTabWidget(centralWidget);
         TabMuster->setObjectName(QStringLiteral("TabMuster"));
-        TabMuster->setGeometry(QRect(-10, 10, 891, 541));
+        TabMuster->setGeometry(QRect(-10, 20, 891, 531));
         Steuerung = new QWidget();
         Steuerung->setObjectName(QStringLiteral("Steuerung"));
         layoutWidget = new QWidget(Steuerung);
@@ -570,630 +561,42 @@ public:
         gridLayout_8->setContentsMargins(11, 11, 11, 11);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        label_48 = new QLabel(layoutWidget1);
-        label_48->setObjectName(QStringLiteral("label_48"));
+        musSave = new QPushButton(layoutWidget1);
+        musSave->setObjectName(QStringLiteral("musSave"));
 
-        gridLayout_8->addWidget(label_48, 0, 1, 1, 2);
+        gridLayout_8->addWidget(musSave, 12, 0, 1, 2);
 
-        label_49 = new QLabel(layoutWidget1);
-        label_49->setObjectName(QStringLiteral("label_49"));
+        musAction_10 = new QComboBox(layoutWidget1);
+        musAction_10->setObjectName(QStringLiteral("musAction_10"));
 
-        gridLayout_8->addWidget(label_49, 0, 3, 1, 3);
+        gridLayout_8->addWidget(musAction_10, 11, 9, 1, 1);
 
-        label_50 = new QLabel(layoutWidget1);
-        label_50->setObjectName(QStringLiteral("label_50"));
+        musClear = new QPushButton(layoutWidget1);
+        musClear->setObjectName(QStringLiteral("musClear"));
 
-        gridLayout_8->addWidget(label_50, 0, 9, 1, 1);
+        gridLayout_8->addWidget(musClear, 12, 2, 1, 5);
 
-        musLab0 = new QLabel(layoutWidget1);
-        musLab0->setObjectName(QStringLiteral("musLab0"));
+        musGer_10 = new QLineEdit(layoutWidget1);
+        musGer_10->setObjectName(QStringLiteral("musGer_10"));
 
-        gridLayout_8->addWidget(musLab0, 1, 0, 1, 1);
+        gridLayout_8->addWidget(musGer_10, 11, 8, 1, 1);
 
-        musLine_0 = new QLineEdit(layoutWidget1);
-        musLine_0->setObjectName(QStringLiteral("musLine_0"));
+        musSave_10 = new QPushButton(layoutWidget1);
+        musSave_10->setObjectName(QStringLiteral("musSave_10"));
 
-        gridLayout_8->addWidget(musLine_0, 1, 1, 1, 2);
+        gridLayout_8->addWidget(musSave_10, 11, 10, 1, 1);
 
-        mus0m1 = new QComboBox(layoutWidget1);
-        mus0m1->setObjectName(QStringLiteral("mus0m1"));
+        mus10m4 = new QComboBox(layoutWidget1);
+        mus10m4->setObjectName(QStringLiteral("mus10m4"));
+        mus10m4->setEnabled(false);
 
-        gridLayout_8->addWidget(mus0m1, 1, 3, 1, 1);
+        gridLayout_8->addWidget(mus10m4, 11, 6, 1, 1);
 
-        mus0m2 = new QComboBox(layoutWidget1);
-        mus0m2->setObjectName(QStringLiteral("mus0m2"));
-        mus0m2->setEnabled(false);
+        mus10m5 = new QComboBox(layoutWidget1);
+        mus10m5->setObjectName(QStringLiteral("mus10m5"));
+        mus10m5->setEnabled(false);
 
-        gridLayout_8->addWidget(mus0m2, 1, 4, 1, 1);
-
-        mus0m3 = new QComboBox(layoutWidget1);
-        mus0m3->setObjectName(QStringLiteral("mus0m3"));
-        mus0m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus0m3, 1, 5, 1, 1);
-
-        mus0m4 = new QComboBox(layoutWidget1);
-        mus0m4->setObjectName(QStringLiteral("mus0m4"));
-        mus0m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus0m4, 1, 6, 1, 1);
-
-        mus0m5 = new QComboBox(layoutWidget1);
-        mus0m5->setObjectName(QStringLiteral("mus0m5"));
-        mus0m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus0m5, 1, 7, 1, 1);
-
-        mus0m6 = new QComboBox(layoutWidget1);
-        mus0m6->setObjectName(QStringLiteral("mus0m6"));
-        mus0m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus0m6, 1, 8, 1, 1);
-
-        musGer_0 = new QLineEdit(layoutWidget1);
-        musGer_0->setObjectName(QStringLiteral("musGer_0"));
-
-        gridLayout_8->addWidget(musGer_0, 1, 9, 1, 1);
-
-        musAction_0 = new QComboBox(layoutWidget1);
-        musAction_0->setObjectName(QStringLiteral("musAction_0"));
-
-        gridLayout_8->addWidget(musAction_0, 1, 10, 1, 1);
-
-        musSave_0 = new QPushButton(layoutWidget1);
-        musSave_0->setObjectName(QStringLiteral("musSave_0"));
-
-        gridLayout_8->addWidget(musSave_0, 1, 11, 1, 1);
-
-        musLab1 = new QLabel(layoutWidget1);
-        musLab1->setObjectName(QStringLiteral("musLab1"));
-
-        gridLayout_8->addWidget(musLab1, 2, 0, 1, 1);
-
-        musLine_1 = new QLineEdit(layoutWidget1);
-        musLine_1->setObjectName(QStringLiteral("musLine_1"));
-
-        gridLayout_8->addWidget(musLine_1, 2, 1, 1, 2);
-
-        mus1m1 = new QComboBox(layoutWidget1);
-        mus1m1->setObjectName(QStringLiteral("mus1m1"));
-
-        gridLayout_8->addWidget(mus1m1, 2, 3, 1, 1);
-
-        mus1m2 = new QComboBox(layoutWidget1);
-        mus1m2->setObjectName(QStringLiteral("mus1m2"));
-        mus1m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus1m2, 2, 4, 1, 1);
-
-        mus1m3 = new QComboBox(layoutWidget1);
-        mus1m3->setObjectName(QStringLiteral("mus1m3"));
-        mus1m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus1m3, 2, 5, 1, 1);
-
-        mus1m4 = new QComboBox(layoutWidget1);
-        mus1m4->setObjectName(QStringLiteral("mus1m4"));
-        mus1m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus1m4, 2, 6, 1, 1);
-
-        mus1m5 = new QComboBox(layoutWidget1);
-        mus1m5->setObjectName(QStringLiteral("mus1m5"));
-        mus1m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus1m5, 2, 7, 1, 1);
-
-        mus1m6 = new QComboBox(layoutWidget1);
-        mus1m6->setObjectName(QStringLiteral("mus1m6"));
-        mus1m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus1m6, 2, 8, 1, 1);
-
-        musGer_1 = new QLineEdit(layoutWidget1);
-        musGer_1->setObjectName(QStringLiteral("musGer_1"));
-
-        gridLayout_8->addWidget(musGer_1, 2, 9, 1, 1);
-
-        musAction_1 = new QComboBox(layoutWidget1);
-        musAction_1->setObjectName(QStringLiteral("musAction_1"));
-
-        gridLayout_8->addWidget(musAction_1, 2, 10, 1, 1);
-
-        musSave_1 = new QPushButton(layoutWidget1);
-        musSave_1->setObjectName(QStringLiteral("musSave_1"));
-
-        gridLayout_8->addWidget(musSave_1, 2, 11, 1, 1);
-
-        musLab2 = new QLabel(layoutWidget1);
-        musLab2->setObjectName(QStringLiteral("musLab2"));
-
-        gridLayout_8->addWidget(musLab2, 3, 0, 1, 1);
-
-        musLine_2 = new QLineEdit(layoutWidget1);
-        musLine_2->setObjectName(QStringLiteral("musLine_2"));
-
-        gridLayout_8->addWidget(musLine_2, 3, 1, 1, 2);
-
-        mus2m1 = new QComboBox(layoutWidget1);
-        mus2m1->setObjectName(QStringLiteral("mus2m1"));
-
-        gridLayout_8->addWidget(mus2m1, 3, 3, 1, 1);
-
-        mus2m2 = new QComboBox(layoutWidget1);
-        mus2m2->setObjectName(QStringLiteral("mus2m2"));
-        mus2m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus2m2, 3, 4, 1, 1);
-
-        mus2m3 = new QComboBox(layoutWidget1);
-        mus2m3->setObjectName(QStringLiteral("mus2m3"));
-        mus2m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus2m3, 3, 5, 1, 1);
-
-        mus2m4 = new QComboBox(layoutWidget1);
-        mus2m4->setObjectName(QStringLiteral("mus2m4"));
-        mus2m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus2m4, 3, 6, 1, 1);
-
-        mus2m5 = new QComboBox(layoutWidget1);
-        mus2m5->setObjectName(QStringLiteral("mus2m5"));
-        mus2m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus2m5, 3, 7, 1, 1);
-
-        mus2m6 = new QComboBox(layoutWidget1);
-        mus2m6->setObjectName(QStringLiteral("mus2m6"));
-        mus2m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus2m6, 3, 8, 1, 1);
-
-        musGer_2 = new QLineEdit(layoutWidget1);
-        musGer_2->setObjectName(QStringLiteral("musGer_2"));
-
-        gridLayout_8->addWidget(musGer_2, 3, 9, 1, 1);
-
-        musAction_2 = new QComboBox(layoutWidget1);
-        musAction_2->setObjectName(QStringLiteral("musAction_2"));
-
-        gridLayout_8->addWidget(musAction_2, 3, 10, 1, 1);
-
-        musSave_2 = new QPushButton(layoutWidget1);
-        musSave_2->setObjectName(QStringLiteral("musSave_2"));
-
-        gridLayout_8->addWidget(musSave_2, 3, 11, 1, 1);
-
-        musLab3 = new QLabel(layoutWidget1);
-        musLab3->setObjectName(QStringLiteral("musLab3"));
-
-        gridLayout_8->addWidget(musLab3, 4, 0, 1, 1);
-
-        musLine_3 = new QLineEdit(layoutWidget1);
-        musLine_3->setObjectName(QStringLiteral("musLine_3"));
-
-        gridLayout_8->addWidget(musLine_3, 4, 1, 1, 2);
-
-        mus3m1 = new QComboBox(layoutWidget1);
-        mus3m1->setObjectName(QStringLiteral("mus3m1"));
-
-        gridLayout_8->addWidget(mus3m1, 4, 3, 1, 1);
-
-        mus3m2 = new QComboBox(layoutWidget1);
-        mus3m2->setObjectName(QStringLiteral("mus3m2"));
-        mus3m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus3m2, 4, 4, 1, 1);
-
-        mus3m3 = new QComboBox(layoutWidget1);
-        mus3m3->setObjectName(QStringLiteral("mus3m3"));
-        mus3m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus3m3, 4, 5, 1, 1);
-
-        mus3m4 = new QComboBox(layoutWidget1);
-        mus3m4->setObjectName(QStringLiteral("mus3m4"));
-        mus3m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus3m4, 4, 6, 1, 1);
-
-        mus3m5 = new QComboBox(layoutWidget1);
-        mus3m5->setObjectName(QStringLiteral("mus3m5"));
-        mus3m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus3m5, 4, 7, 1, 1);
-
-        mus3m6 = new QComboBox(layoutWidget1);
-        mus3m6->setObjectName(QStringLiteral("mus3m6"));
-        mus3m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus3m6, 4, 8, 1, 1);
-
-        musGer_3 = new QLineEdit(layoutWidget1);
-        musGer_3->setObjectName(QStringLiteral("musGer_3"));
-
-        gridLayout_8->addWidget(musGer_3, 4, 9, 1, 1);
-
-        musAction_3 = new QComboBox(layoutWidget1);
-        musAction_3->setObjectName(QStringLiteral("musAction_3"));
-
-        gridLayout_8->addWidget(musAction_3, 4, 10, 1, 1);
-
-        musSave_3 = new QPushButton(layoutWidget1);
-        musSave_3->setObjectName(QStringLiteral("musSave_3"));
-
-        gridLayout_8->addWidget(musSave_3, 4, 11, 1, 1);
-
-        musLab4 = new QLabel(layoutWidget1);
-        musLab4->setObjectName(QStringLiteral("musLab4"));
-
-        gridLayout_8->addWidget(musLab4, 5, 0, 1, 1);
-
-        musLine_4 = new QLineEdit(layoutWidget1);
-        musLine_4->setObjectName(QStringLiteral("musLine_4"));
-
-        gridLayout_8->addWidget(musLine_4, 5, 1, 1, 2);
-
-        mus4m1 = new QComboBox(layoutWidget1);
-        mus4m1->setObjectName(QStringLiteral("mus4m1"));
-
-        gridLayout_8->addWidget(mus4m1, 5, 3, 1, 1);
-
-        mus4m2 = new QComboBox(layoutWidget1);
-        mus4m2->setObjectName(QStringLiteral("mus4m2"));
-        mus4m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus4m2, 5, 4, 1, 1);
-
-        mus4m3 = new QComboBox(layoutWidget1);
-        mus4m3->setObjectName(QStringLiteral("mus4m3"));
-        mus4m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus4m3, 5, 5, 1, 1);
-
-        mus4m4 = new QComboBox(layoutWidget1);
-        mus4m4->setObjectName(QStringLiteral("mus4m4"));
-        mus4m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus4m4, 5, 6, 1, 1);
-
-        mus4m5 = new QComboBox(layoutWidget1);
-        mus4m5->setObjectName(QStringLiteral("mus4m5"));
-        mus4m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus4m5, 5, 7, 1, 1);
-
-        mus4m6 = new QComboBox(layoutWidget1);
-        mus4m6->setObjectName(QStringLiteral("mus4m6"));
-        mus4m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus4m6, 5, 8, 1, 1);
-
-        musGer_4 = new QLineEdit(layoutWidget1);
-        musGer_4->setObjectName(QStringLiteral("musGer_4"));
-
-        gridLayout_8->addWidget(musGer_4, 5, 9, 1, 1);
-
-        musAction_4 = new QComboBox(layoutWidget1);
-        musAction_4->setObjectName(QStringLiteral("musAction_4"));
-
-        gridLayout_8->addWidget(musAction_4, 5, 10, 1, 1);
-
-        musSave_4 = new QPushButton(layoutWidget1);
-        musSave_4->setObjectName(QStringLiteral("musSave_4"));
-
-        gridLayout_8->addWidget(musSave_4, 5, 11, 1, 1);
-
-        musLab5 = new QLabel(layoutWidget1);
-        musLab5->setObjectName(QStringLiteral("musLab5"));
-
-        gridLayout_8->addWidget(musLab5, 6, 0, 1, 1);
-
-        musLine_5 = new QLineEdit(layoutWidget1);
-        musLine_5->setObjectName(QStringLiteral("musLine_5"));
-
-        gridLayout_8->addWidget(musLine_5, 6, 1, 1, 2);
-
-        mus5m1 = new QComboBox(layoutWidget1);
-        mus5m1->setObjectName(QStringLiteral("mus5m1"));
-
-        gridLayout_8->addWidget(mus5m1, 6, 3, 1, 1);
-
-        mus5m2 = new QComboBox(layoutWidget1);
-        mus5m2->setObjectName(QStringLiteral("mus5m2"));
-        mus5m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus5m2, 6, 4, 1, 1);
-
-        mus5m3 = new QComboBox(layoutWidget1);
-        mus5m3->setObjectName(QStringLiteral("mus5m3"));
-        mus5m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus5m3, 6, 5, 1, 1);
-
-        mus5m4 = new QComboBox(layoutWidget1);
-        mus5m4->setObjectName(QStringLiteral("mus5m4"));
-        mus5m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus5m4, 6, 6, 1, 1);
-
-        mus5m5 = new QComboBox(layoutWidget1);
-        mus5m5->setObjectName(QStringLiteral("mus5m5"));
-        mus5m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus5m5, 6, 7, 1, 1);
-
-        mus5m6 = new QComboBox(layoutWidget1);
-        mus5m6->setObjectName(QStringLiteral("mus5m6"));
-        mus5m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus5m6, 6, 8, 1, 1);
-
-        musGer_5 = new QLineEdit(layoutWidget1);
-        musGer_5->setObjectName(QStringLiteral("musGer_5"));
-
-        gridLayout_8->addWidget(musGer_5, 6, 9, 1, 1);
-
-        musAction_5 = new QComboBox(layoutWidget1);
-        musAction_5->setObjectName(QStringLiteral("musAction_5"));
-
-        gridLayout_8->addWidget(musAction_5, 6, 10, 1, 1);
-
-        musSave_5 = new QPushButton(layoutWidget1);
-        musSave_5->setObjectName(QStringLiteral("musSave_5"));
-
-        gridLayout_8->addWidget(musSave_5, 6, 11, 1, 1);
-
-        musLab6 = new QLabel(layoutWidget1);
-        musLab6->setObjectName(QStringLiteral("musLab6"));
-
-        gridLayout_8->addWidget(musLab6, 7, 0, 1, 1);
-
-        musLine_6 = new QLineEdit(layoutWidget1);
-        musLine_6->setObjectName(QStringLiteral("musLine_6"));
-
-        gridLayout_8->addWidget(musLine_6, 7, 1, 1, 2);
-
-        mus6m1 = new QComboBox(layoutWidget1);
-        mus6m1->setObjectName(QStringLiteral("mus6m1"));
-
-        gridLayout_8->addWidget(mus6m1, 7, 3, 1, 1);
-
-        mus6m2 = new QComboBox(layoutWidget1);
-        mus6m2->setObjectName(QStringLiteral("mus6m2"));
-        mus6m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus6m2, 7, 4, 1, 1);
-
-        mus6m3 = new QComboBox(layoutWidget1);
-        mus6m3->setObjectName(QStringLiteral("mus6m3"));
-        mus6m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus6m3, 7, 5, 1, 1);
-
-        mus6m4 = new QComboBox(layoutWidget1);
-        mus6m4->setObjectName(QStringLiteral("mus6m4"));
-        mus6m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus6m4, 7, 6, 1, 1);
-
-        mus6m5 = new QComboBox(layoutWidget1);
-        mus6m5->setObjectName(QStringLiteral("mus6m5"));
-        mus6m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus6m5, 7, 7, 1, 1);
-
-        mus6m6 = new QComboBox(layoutWidget1);
-        mus6m6->setObjectName(QStringLiteral("mus6m6"));
-        mus6m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus6m6, 7, 8, 1, 1);
-
-        musGer_6 = new QLineEdit(layoutWidget1);
-        musGer_6->setObjectName(QStringLiteral("musGer_6"));
-
-        gridLayout_8->addWidget(musGer_6, 7, 9, 1, 1);
-
-        musAction_6 = new QComboBox(layoutWidget1);
-        musAction_6->setObjectName(QStringLiteral("musAction_6"));
-
-        gridLayout_8->addWidget(musAction_6, 7, 10, 1, 1);
-
-        musSave_6 = new QPushButton(layoutWidget1);
-        musSave_6->setObjectName(QStringLiteral("musSave_6"));
-
-        gridLayout_8->addWidget(musSave_6, 7, 11, 1, 1);
-
-        musLab7 = new QLabel(layoutWidget1);
-        musLab7->setObjectName(QStringLiteral("musLab7"));
-
-        gridLayout_8->addWidget(musLab7, 8, 0, 1, 1);
-
-        musLine_7 = new QLineEdit(layoutWidget1);
-        musLine_7->setObjectName(QStringLiteral("musLine_7"));
-
-        gridLayout_8->addWidget(musLine_7, 8, 1, 1, 2);
-
-        mus7m1 = new QComboBox(layoutWidget1);
-        mus7m1->setObjectName(QStringLiteral("mus7m1"));
-
-        gridLayout_8->addWidget(mus7m1, 8, 3, 1, 1);
-
-        mus7m2 = new QComboBox(layoutWidget1);
-        mus7m2->setObjectName(QStringLiteral("mus7m2"));
-        mus7m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus7m2, 8, 4, 1, 1);
-
-        mus7m3 = new QComboBox(layoutWidget1);
-        mus7m3->setObjectName(QStringLiteral("mus7m3"));
-        mus7m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus7m3, 8, 5, 1, 1);
-
-        mus7m4 = new QComboBox(layoutWidget1);
-        mus7m4->setObjectName(QStringLiteral("mus7m4"));
-        mus7m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus7m4, 8, 6, 1, 1);
-
-        mus7m5 = new QComboBox(layoutWidget1);
-        mus7m5->setObjectName(QStringLiteral("mus7m5"));
-        mus7m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus7m5, 8, 7, 1, 1);
-
-        mus7m6 = new QComboBox(layoutWidget1);
-        mus7m6->setObjectName(QStringLiteral("mus7m6"));
-        mus7m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus7m6, 8, 8, 1, 1);
-
-        musGer_7 = new QLineEdit(layoutWidget1);
-        musGer_7->setObjectName(QStringLiteral("musGer_7"));
-
-        gridLayout_8->addWidget(musGer_7, 8, 9, 1, 1);
-
-        musAction_7 = new QComboBox(layoutWidget1);
-        musAction_7->setObjectName(QStringLiteral("musAction_7"));
-
-        gridLayout_8->addWidget(musAction_7, 8, 10, 1, 1);
-
-        musSave_7 = new QPushButton(layoutWidget1);
-        musSave_7->setObjectName(QStringLiteral("musSave_7"));
-
-        gridLayout_8->addWidget(musSave_7, 8, 11, 1, 1);
-
-        musLab8 = new QLabel(layoutWidget1);
-        musLab8->setObjectName(QStringLiteral("musLab8"));
-
-        gridLayout_8->addWidget(musLab8, 9, 0, 1, 1);
-
-        musLine_8 = new QLineEdit(layoutWidget1);
-        musLine_8->setObjectName(QStringLiteral("musLine_8"));
-
-        gridLayout_8->addWidget(musLine_8, 9, 1, 1, 2);
-
-        mus8m1 = new QComboBox(layoutWidget1);
-        mus8m1->setObjectName(QStringLiteral("mus8m1"));
-
-        gridLayout_8->addWidget(mus8m1, 9, 3, 1, 1);
-
-        mus8m2 = new QComboBox(layoutWidget1);
-        mus8m2->setObjectName(QStringLiteral("mus8m2"));
-        mus8m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus8m2, 9, 4, 1, 1);
-
-        mus8m3 = new QComboBox(layoutWidget1);
-        mus8m3->setObjectName(QStringLiteral("mus8m3"));
-        mus8m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus8m3, 9, 5, 1, 1);
-
-        mus8m4 = new QComboBox(layoutWidget1);
-        mus8m4->setObjectName(QStringLiteral("mus8m4"));
-        mus8m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus8m4, 9, 6, 1, 1);
-
-        mus8m5 = new QComboBox(layoutWidget1);
-        mus8m5->setObjectName(QStringLiteral("mus8m5"));
-        mus8m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus8m5, 9, 7, 1, 1);
-
-        mus8m6 = new QComboBox(layoutWidget1);
-        mus8m6->setObjectName(QStringLiteral("mus8m6"));
-        mus8m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus8m6, 9, 8, 1, 1);
-
-        musGer_8 = new QLineEdit(layoutWidget1);
-        musGer_8->setObjectName(QStringLiteral("musGer_8"));
-
-        gridLayout_8->addWidget(musGer_8, 9, 9, 1, 1);
-
-        musAction_8 = new QComboBox(layoutWidget1);
-        musAction_8->setObjectName(QStringLiteral("musAction_8"));
-
-        gridLayout_8->addWidget(musAction_8, 9, 10, 1, 1);
-
-        musSave_8 = new QPushButton(layoutWidget1);
-        musSave_8->setObjectName(QStringLiteral("musSave_8"));
-
-        gridLayout_8->addWidget(musSave_8, 9, 11, 1, 1);
-
-        musLab9 = new QLabel(layoutWidget1);
-        musLab9->setObjectName(QStringLiteral("musLab9"));
-
-        gridLayout_8->addWidget(musLab9, 10, 0, 1, 1);
-
-        musLine_9 = new QLineEdit(layoutWidget1);
-        musLine_9->setObjectName(QStringLiteral("musLine_9"));
-
-        gridLayout_8->addWidget(musLine_9, 10, 1, 1, 2);
-
-        mus9m1 = new QComboBox(layoutWidget1);
-        mus9m1->setObjectName(QStringLiteral("mus9m1"));
-
-        gridLayout_8->addWidget(mus9m1, 10, 3, 1, 1);
-
-        mus9m2 = new QComboBox(layoutWidget1);
-        mus9m2->setObjectName(QStringLiteral("mus9m2"));
-        mus9m2->setEnabled(false);
-
-        gridLayout_8->addWidget(mus9m2, 10, 4, 1, 1);
-
-        mus9m3 = new QComboBox(layoutWidget1);
-        mus9m3->setObjectName(QStringLiteral("mus9m3"));
-        mus9m3->setEnabled(false);
-
-        gridLayout_8->addWidget(mus9m3, 10, 5, 1, 1);
-
-        mus9m4 = new QComboBox(layoutWidget1);
-        mus9m4->setObjectName(QStringLiteral("mus9m4"));
-        mus9m4->setEnabled(false);
-
-        gridLayout_8->addWidget(mus9m4, 10, 6, 1, 1);
-
-        mus9m5 = new QComboBox(layoutWidget1);
-        mus9m5->setObjectName(QStringLiteral("mus9m5"));
-        mus9m5->setEnabled(false);
-
-        gridLayout_8->addWidget(mus9m5, 10, 7, 1, 1);
-
-        mus9m6 = new QComboBox(layoutWidget1);
-        mus9m6->setObjectName(QStringLiteral("mus9m6"));
-        mus9m6->setEnabled(false);
-
-        gridLayout_8->addWidget(mus9m6, 10, 8, 1, 1);
-
-        musGer_9 = new QLineEdit(layoutWidget1);
-        musGer_9->setObjectName(QStringLiteral("musGer_9"));
-
-        gridLayout_8->addWidget(musGer_9, 10, 9, 1, 1);
-
-        musAction_9 = new QComboBox(layoutWidget1);
-        musAction_9->setObjectName(QStringLiteral("musAction_9"));
-
-        gridLayout_8->addWidget(musAction_9, 10, 10, 1, 1);
-
-        musSave_9 = new QPushButton(layoutWidget1);
-        musSave_9->setObjectName(QStringLiteral("musSave_9"));
-
-        gridLayout_8->addWidget(musSave_9, 10, 11, 1, 1);
-
-        musLab10 = new QLabel(layoutWidget1);
-        musLab10->setObjectName(QStringLiteral("musLab10"));
-
-        gridLayout_8->addWidget(musLab10, 11, 0, 1, 1);
-
-        musLine_10 = new QLineEdit(layoutWidget1);
-        musLine_10->setObjectName(QStringLiteral("musLine_10"));
-
-        gridLayout_8->addWidget(musLine_10, 11, 1, 1, 2);
+        gridLayout_8->addWidget(mus10m5, 11, 7, 1, 1);
 
         mus10m1 = new QComboBox(layoutWidget1);
         mus10m1->setObjectName(QStringLiteral("mus10m1"));
@@ -1212,48 +615,570 @@ public:
 
         gridLayout_8->addWidget(mus10m3, 11, 5, 1, 1);
 
-        mus10m4 = new QComboBox(layoutWidget1);
-        mus10m4->setObjectName(QStringLiteral("mus10m4"));
-        mus10m4->setEnabled(false);
+        musLine_10 = new QLineEdit(layoutWidget1);
+        musLine_10->setObjectName(QStringLiteral("musLine_10"));
 
-        gridLayout_8->addWidget(mus10m4, 11, 6, 1, 1);
+        gridLayout_8->addWidget(musLine_10, 11, 1, 1, 2);
 
-        mus10m5 = new QComboBox(layoutWidget1);
-        mus10m5->setObjectName(QStringLiteral("mus10m5"));
-        mus10m5->setEnabled(false);
+        musLab10 = new QLabel(layoutWidget1);
+        musLab10->setObjectName(QStringLiteral("musLab10"));
 
-        gridLayout_8->addWidget(mus10m5, 11, 7, 1, 1);
+        gridLayout_8->addWidget(musLab10, 11, 0, 1, 1);
 
-        mus10m6 = new QComboBox(layoutWidget1);
-        mus10m6->setObjectName(QStringLiteral("mus10m6"));
-        mus10m6->setEnabled(false);
+        musSave_9 = new QPushButton(layoutWidget1);
+        musSave_9->setObjectName(QStringLiteral("musSave_9"));
 
-        gridLayout_8->addWidget(mus10m6, 11, 8, 1, 1);
+        gridLayout_8->addWidget(musSave_9, 10, 10, 1, 1);
 
-        musGer_10 = new QLineEdit(layoutWidget1);
-        musGer_10->setObjectName(QStringLiteral("musGer_10"));
+        musAction_9 = new QComboBox(layoutWidget1);
+        musAction_9->setObjectName(QStringLiteral("musAction_9"));
 
-        gridLayout_8->addWidget(musGer_10, 11, 9, 1, 1);
+        gridLayout_8->addWidget(musAction_9, 10, 9, 1, 1);
 
-        musAction_10 = new QComboBox(layoutWidget1);
-        musAction_10->setObjectName(QStringLiteral("musAction_10"));
+        musGer_9 = new QLineEdit(layoutWidget1);
+        musGer_9->setObjectName(QStringLiteral("musGer_9"));
 
-        gridLayout_8->addWidget(musAction_10, 11, 10, 1, 1);
+        gridLayout_8->addWidget(musGer_9, 10, 8, 1, 1);
 
-        musSave_10 = new QPushButton(layoutWidget1);
-        musSave_10->setObjectName(QStringLiteral("musSave_10"));
+        mus9m4 = new QComboBox(layoutWidget1);
+        mus9m4->setObjectName(QStringLiteral("mus9m4"));
+        mus9m4->setEnabled(false);
 
-        gridLayout_8->addWidget(musSave_10, 11, 11, 1, 1);
+        gridLayout_8->addWidget(mus9m4, 10, 6, 1, 1);
 
-        musSave = new QPushButton(layoutWidget1);
-        musSave->setObjectName(QStringLiteral("musSave"));
+        mus9m5 = new QComboBox(layoutWidget1);
+        mus9m5->setObjectName(QStringLiteral("mus9m5"));
+        mus9m5->setEnabled(false);
 
-        gridLayout_8->addWidget(musSave, 12, 0, 1, 2);
+        gridLayout_8->addWidget(mus9m5, 10, 7, 1, 1);
 
-        musClear = new QPushButton(layoutWidget1);
-        musClear->setObjectName(QStringLiteral("musClear"));
+        mus9m3 = new QComboBox(layoutWidget1);
+        mus9m3->setObjectName(QStringLiteral("mus9m3"));
+        mus9m3->setEnabled(false);
 
-        gridLayout_8->addWidget(musClear, 12, 2, 1, 5);
+        gridLayout_8->addWidget(mus9m3, 10, 5, 1, 1);
+
+        mus9m1 = new QComboBox(layoutWidget1);
+        mus9m1->setObjectName(QStringLiteral("mus9m1"));
+
+        gridLayout_8->addWidget(mus9m1, 10, 3, 1, 1);
+
+        musLine_9 = new QLineEdit(layoutWidget1);
+        musLine_9->setObjectName(QStringLiteral("musLine_9"));
+
+        gridLayout_8->addWidget(musLine_9, 10, 1, 1, 2);
+
+        mus9m2 = new QComboBox(layoutWidget1);
+        mus9m2->setObjectName(QStringLiteral("mus9m2"));
+        mus9m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus9m2, 10, 4, 1, 1);
+
+        musLab9 = new QLabel(layoutWidget1);
+        musLab9->setObjectName(QStringLiteral("musLab9"));
+
+        gridLayout_8->addWidget(musLab9, 10, 0, 1, 1);
+
+        musGer_8 = new QLineEdit(layoutWidget1);
+        musGer_8->setObjectName(QStringLiteral("musGer_8"));
+
+        gridLayout_8->addWidget(musGer_8, 9, 8, 1, 1);
+
+        musSave_8 = new QPushButton(layoutWidget1);
+        musSave_8->setObjectName(QStringLiteral("musSave_8"));
+
+        gridLayout_8->addWidget(musSave_8, 9, 10, 1, 1);
+
+        musAction_8 = new QComboBox(layoutWidget1);
+        musAction_8->setObjectName(QStringLiteral("musAction_8"));
+
+        gridLayout_8->addWidget(musAction_8, 9, 9, 1, 1);
+
+        mus8m5 = new QComboBox(layoutWidget1);
+        mus8m5->setObjectName(QStringLiteral("mus8m5"));
+        mus8m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus8m5, 9, 7, 1, 1);
+
+        mus8m3 = new QComboBox(layoutWidget1);
+        mus8m3->setObjectName(QStringLiteral("mus8m3"));
+        mus8m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus8m3, 9, 5, 1, 1);
+
+        mus8m4 = new QComboBox(layoutWidget1);
+        mus8m4->setObjectName(QStringLiteral("mus8m4"));
+        mus8m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus8m4, 9, 6, 1, 1);
+
+        mus8m2 = new QComboBox(layoutWidget1);
+        mus8m2->setObjectName(QStringLiteral("mus8m2"));
+        mus8m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus8m2, 9, 4, 1, 1);
+
+        mus8m1 = new QComboBox(layoutWidget1);
+        mus8m1->setObjectName(QStringLiteral("mus8m1"));
+
+        gridLayout_8->addWidget(mus8m1, 9, 3, 1, 1);
+
+        musLab8 = new QLabel(layoutWidget1);
+        musLab8->setObjectName(QStringLiteral("musLab8"));
+
+        gridLayout_8->addWidget(musLab8, 9, 0, 1, 1);
+
+        musLine_8 = new QLineEdit(layoutWidget1);
+        musLine_8->setObjectName(QStringLiteral("musLine_8"));
+
+        gridLayout_8->addWidget(musLine_8, 9, 1, 1, 2);
+
+        musSave_7 = new QPushButton(layoutWidget1);
+        musSave_7->setObjectName(QStringLiteral("musSave_7"));
+
+        gridLayout_8->addWidget(musSave_7, 8, 10, 1, 1);
+
+        musAction_7 = new QComboBox(layoutWidget1);
+        musAction_7->setObjectName(QStringLiteral("musAction_7"));
+
+        gridLayout_8->addWidget(musAction_7, 8, 9, 1, 1);
+
+        musGer_7 = new QLineEdit(layoutWidget1);
+        musGer_7->setObjectName(QStringLiteral("musGer_7"));
+
+        gridLayout_8->addWidget(musGer_7, 8, 8, 1, 1);
+
+        mus7m5 = new QComboBox(layoutWidget1);
+        mus7m5->setObjectName(QStringLiteral("mus7m5"));
+        mus7m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus7m5, 8, 7, 1, 1);
+
+        mus7m4 = new QComboBox(layoutWidget1);
+        mus7m4->setObjectName(QStringLiteral("mus7m4"));
+        mus7m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus7m4, 8, 6, 1, 1);
+
+        mus7m2 = new QComboBox(layoutWidget1);
+        mus7m2->setObjectName(QStringLiteral("mus7m2"));
+        mus7m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus7m2, 8, 4, 1, 1);
+
+        mus7m3 = new QComboBox(layoutWidget1);
+        mus7m3->setObjectName(QStringLiteral("mus7m3"));
+        mus7m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus7m3, 8, 5, 1, 1);
+
+        musLine_7 = new QLineEdit(layoutWidget1);
+        musLine_7->setObjectName(QStringLiteral("musLine_7"));
+
+        gridLayout_8->addWidget(musLine_7, 8, 1, 1, 2);
+
+        mus7m1 = new QComboBox(layoutWidget1);
+        mus7m1->setObjectName(QStringLiteral("mus7m1"));
+
+        gridLayout_8->addWidget(mus7m1, 8, 3, 1, 1);
+
+        musLab7 = new QLabel(layoutWidget1);
+        musLab7->setObjectName(QStringLiteral("musLab7"));
+
+        gridLayout_8->addWidget(musLab7, 8, 0, 1, 1);
+
+        musSave_6 = new QPushButton(layoutWidget1);
+        musSave_6->setObjectName(QStringLiteral("musSave_6"));
+
+        gridLayout_8->addWidget(musSave_6, 7, 10, 1, 1);
+
+        musAction_6 = new QComboBox(layoutWidget1);
+        musAction_6->setObjectName(QStringLiteral("musAction_6"));
+
+        gridLayout_8->addWidget(musAction_6, 7, 9, 1, 1);
+
+        musGer_6 = new QLineEdit(layoutWidget1);
+        musGer_6->setObjectName(QStringLiteral("musGer_6"));
+
+        gridLayout_8->addWidget(musGer_6, 7, 8, 1, 1);
+
+        mus6m4 = new QComboBox(layoutWidget1);
+        mus6m4->setObjectName(QStringLiteral("mus6m4"));
+        mus6m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus6m4, 7, 6, 1, 1);
+
+        mus6m2 = new QComboBox(layoutWidget1);
+        mus6m2->setObjectName(QStringLiteral("mus6m2"));
+        mus6m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus6m2, 7, 4, 1, 1);
+
+        mus6m5 = new QComboBox(layoutWidget1);
+        mus6m5->setObjectName(QStringLiteral("mus6m5"));
+        mus6m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus6m5, 7, 7, 1, 1);
+
+        mus6m3 = new QComboBox(layoutWidget1);
+        mus6m3->setObjectName(QStringLiteral("mus6m3"));
+        mus6m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus6m3, 7, 5, 1, 1);
+
+        musLine_6 = new QLineEdit(layoutWidget1);
+        musLine_6->setObjectName(QStringLiteral("musLine_6"));
+
+        gridLayout_8->addWidget(musLine_6, 7, 1, 1, 2);
+
+        mus6m1 = new QComboBox(layoutWidget1);
+        mus6m1->setObjectName(QStringLiteral("mus6m1"));
+
+        gridLayout_8->addWidget(mus6m1, 7, 3, 1, 1);
+
+        musLab6 = new QLabel(layoutWidget1);
+        musLab6->setObjectName(QStringLiteral("musLab6"));
+
+        gridLayout_8->addWidget(musLab6, 7, 0, 1, 1);
+
+        musSave_5 = new QPushButton(layoutWidget1);
+        musSave_5->setObjectName(QStringLiteral("musSave_5"));
+
+        gridLayout_8->addWidget(musSave_5, 6, 10, 1, 1);
+
+        musGer_5 = new QLineEdit(layoutWidget1);
+        musGer_5->setObjectName(QStringLiteral("musGer_5"));
+
+        gridLayout_8->addWidget(musGer_5, 6, 8, 1, 1);
+
+        musAction_5 = new QComboBox(layoutWidget1);
+        musAction_5->setObjectName(QStringLiteral("musAction_5"));
+
+        gridLayout_8->addWidget(musAction_5, 6, 9, 1, 1);
+
+        mus5m4 = new QComboBox(layoutWidget1);
+        mus5m4->setObjectName(QStringLiteral("mus5m4"));
+        mus5m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus5m4, 6, 6, 1, 1);
+
+        mus5m2 = new QComboBox(layoutWidget1);
+        mus5m2->setObjectName(QStringLiteral("mus5m2"));
+        mus5m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus5m2, 6, 4, 1, 1);
+
+        mus5m5 = new QComboBox(layoutWidget1);
+        mus5m5->setObjectName(QStringLiteral("mus5m5"));
+        mus5m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus5m5, 6, 7, 1, 1);
+
+        mus5m3 = new QComboBox(layoutWidget1);
+        mus5m3->setObjectName(QStringLiteral("mus5m3"));
+        mus5m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus5m3, 6, 5, 1, 1);
+
+        musLine_5 = new QLineEdit(layoutWidget1);
+        musLine_5->setObjectName(QStringLiteral("musLine_5"));
+
+        gridLayout_8->addWidget(musLine_5, 6, 1, 1, 2);
+
+        musSave_4 = new QPushButton(layoutWidget1);
+        musSave_4->setObjectName(QStringLiteral("musSave_4"));
+
+        gridLayout_8->addWidget(musSave_4, 5, 10, 1, 1);
+
+        musLab5 = new QLabel(layoutWidget1);
+        musLab5->setObjectName(QStringLiteral("musLab5"));
+
+        gridLayout_8->addWidget(musLab5, 6, 0, 1, 1);
+
+        mus5m1 = new QComboBox(layoutWidget1);
+        mus5m1->setObjectName(QStringLiteral("mus5m1"));
+
+        gridLayout_8->addWidget(mus5m1, 6, 3, 1, 1);
+
+        musAction_4 = new QComboBox(layoutWidget1);
+        musAction_4->setObjectName(QStringLiteral("musAction_4"));
+
+        gridLayout_8->addWidget(musAction_4, 5, 9, 1, 1);
+
+        mus4m5 = new QComboBox(layoutWidget1);
+        mus4m5->setObjectName(QStringLiteral("mus4m5"));
+        mus4m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus4m5, 5, 7, 1, 1);
+
+        musGer_4 = new QLineEdit(layoutWidget1);
+        musGer_4->setObjectName(QStringLiteral("musGer_4"));
+
+        gridLayout_8->addWidget(musGer_4, 5, 8, 1, 1);
+
+        mus4m4 = new QComboBox(layoutWidget1);
+        mus4m4->setObjectName(QStringLiteral("mus4m4"));
+        mus4m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus4m4, 5, 6, 1, 1);
+
+        mus4m2 = new QComboBox(layoutWidget1);
+        mus4m2->setObjectName(QStringLiteral("mus4m2"));
+        mus4m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus4m2, 5, 4, 1, 1);
+
+        musLine_4 = new QLineEdit(layoutWidget1);
+        musLine_4->setObjectName(QStringLiteral("musLine_4"));
+
+        gridLayout_8->addWidget(musLine_4, 5, 1, 1, 2);
+
+        mus4m3 = new QComboBox(layoutWidget1);
+        mus4m3->setObjectName(QStringLiteral("mus4m3"));
+        mus4m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus4m3, 5, 5, 1, 1);
+
+        musLab4 = new QLabel(layoutWidget1);
+        musLab4->setObjectName(QStringLiteral("musLab4"));
+
+        gridLayout_8->addWidget(musLab4, 5, 0, 1, 1);
+
+        mus4m1 = new QComboBox(layoutWidget1);
+        mus4m1->setObjectName(QStringLiteral("mus4m1"));
+
+        gridLayout_8->addWidget(mus4m1, 5, 3, 1, 1);
+
+        musSave_3 = new QPushButton(layoutWidget1);
+        musSave_3->setObjectName(QStringLiteral("musSave_3"));
+
+        gridLayout_8->addWidget(musSave_3, 4, 10, 1, 1);
+
+        musAction_3 = new QComboBox(layoutWidget1);
+        musAction_3->setObjectName(QStringLiteral("musAction_3"));
+
+        gridLayout_8->addWidget(musAction_3, 4, 9, 1, 1);
+
+        musGer_3 = new QLineEdit(layoutWidget1);
+        musGer_3->setObjectName(QStringLiteral("musGer_3"));
+
+        gridLayout_8->addWidget(musGer_3, 4, 8, 1, 1);
+
+        mus3m4 = new QComboBox(layoutWidget1);
+        mus3m4->setObjectName(QStringLiteral("mus3m4"));
+        mus3m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus3m4, 4, 6, 1, 1);
+
+        mus3m3 = new QComboBox(layoutWidget1);
+        mus3m3->setObjectName(QStringLiteral("mus3m3"));
+        mus3m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus3m3, 4, 5, 1, 1);
+
+        mus3m5 = new QComboBox(layoutWidget1);
+        mus3m5->setObjectName(QStringLiteral("mus3m5"));
+        mus3m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus3m5, 4, 7, 1, 1);
+
+        mus3m2 = new QComboBox(layoutWidget1);
+        mus3m2->setObjectName(QStringLiteral("mus3m2"));
+        mus3m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus3m2, 4, 4, 1, 1);
+
+        mus3m1 = new QComboBox(layoutWidget1);
+        mus3m1->setObjectName(QStringLiteral("mus3m1"));
+
+        gridLayout_8->addWidget(mus3m1, 4, 3, 1, 1);
+
+        musLine_3 = new QLineEdit(layoutWidget1);
+        musLine_3->setObjectName(QStringLiteral("musLine_3"));
+
+        gridLayout_8->addWidget(musLine_3, 4, 1, 1, 2);
+
+        musLab3 = new QLabel(layoutWidget1);
+        musLab3->setObjectName(QStringLiteral("musLab3"));
+
+        gridLayout_8->addWidget(musLab3, 4, 0, 1, 1);
+
+        musAction_2 = new QComboBox(layoutWidget1);
+        musAction_2->setObjectName(QStringLiteral("musAction_2"));
+
+        gridLayout_8->addWidget(musAction_2, 3, 9, 1, 1);
+
+        musSave_2 = new QPushButton(layoutWidget1);
+        musSave_2->setObjectName(QStringLiteral("musSave_2"));
+
+        gridLayout_8->addWidget(musSave_2, 3, 10, 1, 1);
+
+        musGer_2 = new QLineEdit(layoutWidget1);
+        musGer_2->setObjectName(QStringLiteral("musGer_2"));
+
+        gridLayout_8->addWidget(musGer_2, 3, 8, 1, 1);
+
+        mus2m4 = new QComboBox(layoutWidget1);
+        mus2m4->setObjectName(QStringLiteral("mus2m4"));
+        mus2m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus2m4, 3, 6, 1, 1);
+
+        mus2m3 = new QComboBox(layoutWidget1);
+        mus2m3->setObjectName(QStringLiteral("mus2m3"));
+        mus2m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus2m3, 3, 5, 1, 1);
+
+        mus2m5 = new QComboBox(layoutWidget1);
+        mus2m5->setObjectName(QStringLiteral("mus2m5"));
+        mus2m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus2m5, 3, 7, 1, 1);
+
+        mus2m1 = new QComboBox(layoutWidget1);
+        mus2m1->setObjectName(QStringLiteral("mus2m1"));
+
+        gridLayout_8->addWidget(mus2m1, 3, 3, 1, 1);
+
+        mus2m2 = new QComboBox(layoutWidget1);
+        mus2m2->setObjectName(QStringLiteral("mus2m2"));
+        mus2m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus2m2, 3, 4, 1, 1);
+
+        musLine_2 = new QLineEdit(layoutWidget1);
+        musLine_2->setObjectName(QStringLiteral("musLine_2"));
+
+        gridLayout_8->addWidget(musLine_2, 3, 1, 1, 2);
+
+        musLab2 = new QLabel(layoutWidget1);
+        musLab2->setObjectName(QStringLiteral("musLab2"));
+
+        gridLayout_8->addWidget(musLab2, 3, 0, 1, 1);
+
+        musSave_1 = new QPushButton(layoutWidget1);
+        musSave_1->setObjectName(QStringLiteral("musSave_1"));
+
+        gridLayout_8->addWidget(musSave_1, 2, 10, 1, 1);
+
+        musGer_1 = new QLineEdit(layoutWidget1);
+        musGer_1->setObjectName(QStringLiteral("musGer_1"));
+
+        gridLayout_8->addWidget(musGer_1, 2, 8, 1, 1);
+
+        musAction_1 = new QComboBox(layoutWidget1);
+        musAction_1->setObjectName(QStringLiteral("musAction_1"));
+
+        gridLayout_8->addWidget(musAction_1, 2, 9, 1, 1);
+
+        mus1m4 = new QComboBox(layoutWidget1);
+        mus1m4->setObjectName(QStringLiteral("mus1m4"));
+        mus1m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus1m4, 2, 6, 1, 1);
+
+        mus1m3 = new QComboBox(layoutWidget1);
+        mus1m3->setObjectName(QStringLiteral("mus1m3"));
+        mus1m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus1m3, 2, 5, 1, 1);
+
+        mus1m5 = new QComboBox(layoutWidget1);
+        mus1m5->setObjectName(QStringLiteral("mus1m5"));
+        mus1m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus1m5, 2, 7, 1, 1);
+
+        mus1m2 = new QComboBox(layoutWidget1);
+        mus1m2->setObjectName(QStringLiteral("mus1m2"));
+        mus1m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus1m2, 2, 4, 1, 1);
+
+        musLine_1 = new QLineEdit(layoutWidget1);
+        musLine_1->setObjectName(QStringLiteral("musLine_1"));
+
+        gridLayout_8->addWidget(musLine_1, 2, 1, 1, 2);
+
+        mus1m1 = new QComboBox(layoutWidget1);
+        mus1m1->setObjectName(QStringLiteral("mus1m1"));
+
+        gridLayout_8->addWidget(mus1m1, 2, 3, 1, 1);
+
+        musSave_0 = new QPushButton(layoutWidget1);
+        musSave_0->setObjectName(QStringLiteral("musSave_0"));
+
+        gridLayout_8->addWidget(musSave_0, 1, 10, 1, 1);
+
+        musLab1 = new QLabel(layoutWidget1);
+        musLab1->setObjectName(QStringLiteral("musLab1"));
+
+        gridLayout_8->addWidget(musLab1, 2, 0, 1, 1);
+
+        musAction_0 = new QComboBox(layoutWidget1);
+        musAction_0->setObjectName(QStringLiteral("musAction_0"));
+
+        gridLayout_8->addWidget(musAction_0, 1, 9, 1, 1);
+
+        musGer_0 = new QLineEdit(layoutWidget1);
+        musGer_0->setObjectName(QStringLiteral("musGer_0"));
+
+        gridLayout_8->addWidget(musGer_0, 1, 8, 1, 1);
+
+        mus0m5 = new QComboBox(layoutWidget1);
+        mus0m5->setObjectName(QStringLiteral("mus0m5"));
+        mus0m5->setEnabled(false);
+
+        gridLayout_8->addWidget(mus0m5, 1, 7, 1, 1);
+
+        mus0m3 = new QComboBox(layoutWidget1);
+        mus0m3->setObjectName(QStringLiteral("mus0m3"));
+        mus0m3->setEnabled(false);
+
+        gridLayout_8->addWidget(mus0m3, 1, 5, 1, 1);
+
+        mus0m4 = new QComboBox(layoutWidget1);
+        mus0m4->setObjectName(QStringLiteral("mus0m4"));
+        mus0m4->setEnabled(false);
+
+        gridLayout_8->addWidget(mus0m4, 1, 6, 1, 1);
+
+        mus0m2 = new QComboBox(layoutWidget1);
+        mus0m2->setObjectName(QStringLiteral("mus0m2"));
+        mus0m2->setEnabled(false);
+
+        gridLayout_8->addWidget(mus0m2, 1, 4, 1, 1);
+
+        mus0m1 = new QComboBox(layoutWidget1);
+        mus0m1->setObjectName(QStringLiteral("mus0m1"));
+
+        gridLayout_8->addWidget(mus0m1, 1, 3, 1, 1);
+
+        musLine_0 = new QLineEdit(layoutWidget1);
+        musLine_0->setObjectName(QStringLiteral("musLine_0"));
+
+        gridLayout_8->addWidget(musLine_0, 1, 1, 1, 2);
+
+        musLab0 = new QLabel(layoutWidget1);
+        musLab0->setObjectName(QStringLiteral("musLab0"));
+
+        gridLayout_8->addWidget(musLab0, 1, 0, 1, 1);
+
+        label_49 = new QLabel(layoutWidget1);
+        label_49->setObjectName(QStringLiteral("label_49"));
+
+        gridLayout_8->addWidget(label_49, 0, 3, 1, 3);
+
+        label_50 = new QLabel(layoutWidget1);
+        label_50->setObjectName(QStringLiteral("label_50"));
+
+        gridLayout_8->addWidget(label_50, 0, 8, 1, 1);
+
+        label_48 = new QLabel(layoutWidget1);
+        label_48->setObjectName(QStringLiteral("label_48"));
+
+        gridLayout_8->addWidget(label_48, 0, 1, 1, 2);
 
         TabMuster->addTab(tabMuster, QString());
         Geraete = new QWidget();
@@ -1462,7 +1387,7 @@ public:
         groupConfigPin->setGeometry(QRect(10, 10, 791, 271));
         layoutWidget3 = new QWidget(groupConfigPin);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(16, 19, 761, 181));
+        layoutWidget3->setGeometry(QRect(16, 19, 761, 205));
         gridLayout_2 = new QGridLayout(layoutWidget3);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -1522,18 +1447,23 @@ public:
 
         gridLayout_2->addWidget(configPinPieper, 1, 1, 1, 2);
 
-        label_2 = new QLabel(groupConfigPin);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 220, 551, 31));
-        configSaveBtn = new QPushButton(groupConfigPin);
-        configSaveBtn->setObjectName(QStringLiteral("configSaveBtn"));
-        configSaveBtn->setGeometry(QRect(340, 230, 105, 32));
-        label = new QLabel(groupConfigPin);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 240, 271, 16));
+        pushButton = new QPushButton(layoutWidget3);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 0, 3, 1, 1);
+
+        configSoundWert = new QLabel(layoutWidget3);
+        configSoundWert->setObjectName(QStringLiteral("configSoundWert"));
+        configSoundWert->setEnabled(true);
+
+        gridLayout_2->addWidget(configSoundWert, 0, 4, 1, 1);
+
         configPinDisconnect_3 = new QPushButton(groupConfigPin);
         configPinDisconnect_3->setObjectName(QStringLiteral("configPinDisconnect_3"));
         configPinDisconnect_3->setGeometry(QRect(560, 220, 152, 32));
+        pushButton_2 = new QPushButton(groupConfigPin);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(230, 230, 161, 32));
         groupConfigInt = new QGroupBox(Konfiguration);
         groupConfigInt->setObjectName(QStringLiteral("groupConfigInt"));
         groupConfigInt->setGeometry(QRect(10, 280, 791, 241));
@@ -1652,6 +1582,12 @@ public:
         gridLayout->addWidget(configIntAufnahmeTitel, 0, 0, 1, 1);
 
         TabMuster->addTab(Konfiguration, QString());
+        label_14 = new QLabel(centralWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(660, 0, 111, 16));
+        BefehleInArbeitWert = new QLabel(centralWidget);
+        BefehleInArbeitWert->setObjectName(QStringLiteral("BefehleInArbeitWert"));
+        BefehleInArbeitWert->setGeometry(QRect(770, 0, 111, 16));
         klatschui->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(klatschui);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -1670,7 +1606,7 @@ public:
 
         retranslateUi(klatschui);
 
-        TabMuster->setCurrentIndex(1);
+        TabMuster->setCurrentIndex(3);
         configPinArduino->setCurrentIndex(-1);
         configPinPieper->setCurrentIndex(0);
 
@@ -1726,450 +1662,27 @@ public:
         steuGerAus_0->setText(QApplication::translate("klatschui", "aus", 0));
         steuGerStatus_0->setText(QString());
         TabMuster->setTabText(TabMuster->indexOf(Steuerung), QApplication::translate("klatschui", "Steuerung", 0));
-        label_48->setText(QApplication::translate("klatschui", "Titel", 0));
-        label_49->setText(QApplication::translate("klatschui", "Muster", 0));
-        label_50->setText(QApplication::translate("klatschui", "Ger\303\244te (CSV)", 0));
-        musLab0->setText(QApplication::translate("klatschui", "0", 0));
-        mus0m1->clear();
-        mus0m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus0m2->clear();
-        mus0m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus0m3->clear();
-        mus0m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus0m4->clear();
-        mus0m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus0m5->clear();
-        mus0m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus0m6->clear();
-        mus0m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_0->clear();
-        musAction_0->insertItems(0, QStringList()
+        musSave->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_10->clear();
+        musAction_10->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "aus", 0)
          << QApplication::translate("klatschui", "an", 0)
          << QApplication::translate("klatschui", "toggle", 0)
         );
-        musSave_0->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab1->setText(QApplication::translate("klatschui", "1", 0));
-        mus1m1->clear();
-        mus1m1->insertItems(0, QStringList()
+        musClear->setText(QApplication::translate("klatschui", "Alle vom Arduino entfernen", 0));
+        musSave_10->setText(QApplication::translate("klatschui", "Speichern", 0));
+        mus10m4->clear();
+        mus10m4->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
          << QApplication::translate("klatschui", "k", 0)
          << QApplication::translate("klatschui", "l", 0)
         );
-        mus1m2->clear();
-        mus1m2->insertItems(0, QStringList()
+        mus10m5->clear();
+        mus10m5->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
          << QApplication::translate("klatschui", "k", 0)
          << QApplication::translate("klatschui", "l", 0)
         );
-        mus1m3->clear();
-        mus1m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus1m4->clear();
-        mus1m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus1m5->clear();
-        mus1m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus1m6->clear();
-        mus1m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_1->clear();
-        musAction_1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_1->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab2->setText(QApplication::translate("klatschui", "2", 0));
-        mus2m1->clear();
-        mus2m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus2m2->clear();
-        mus2m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus2m3->clear();
-        mus2m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus2m4->clear();
-        mus2m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus2m5->clear();
-        mus2m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus2m6->clear();
-        mus2m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_2->clear();
-        musAction_2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_2->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab3->setText(QApplication::translate("klatschui", "3", 0));
-        mus3m1->clear();
-        mus3m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus3m2->clear();
-        mus3m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus3m3->clear();
-        mus3m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus3m4->clear();
-        mus3m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus3m5->clear();
-        mus3m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus3m6->clear();
-        mus3m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_3->clear();
-        musAction_3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_3->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab4->setText(QApplication::translate("klatschui", "4", 0));
-        mus4m1->clear();
-        mus4m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus4m2->clear();
-        mus4m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus4m3->clear();
-        mus4m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus4m4->clear();
-        mus4m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus4m5->clear();
-        mus4m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus4m6->clear();
-        mus4m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_4->clear();
-        musAction_4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_4->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab5->setText(QApplication::translate("klatschui", "5", 0));
-        mus5m1->clear();
-        mus5m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus5m2->clear();
-        mus5m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus5m3->clear();
-        mus5m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus5m4->clear();
-        mus5m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus5m5->clear();
-        mus5m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus5m6->clear();
-        mus5m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_5->clear();
-        musAction_5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_5->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab6->setText(QApplication::translate("klatschui", "6", 0));
-        mus6m1->clear();
-        mus6m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus6m2->clear();
-        mus6m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus6m3->clear();
-        mus6m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus6m4->clear();
-        mus6m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus6m5->clear();
-        mus6m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus6m6->clear();
-        mus6m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_6->clear();
-        musAction_6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_6->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab7->setText(QApplication::translate("klatschui", "7", 0));
-        mus7m1->clear();
-        mus7m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus7m2->clear();
-        mus7m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus7m3->clear();
-        mus7m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus7m4->clear();
-        mus7m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus7m5->clear();
-        mus7m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus7m6->clear();
-        mus7m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_7->clear();
-        musAction_7->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_7->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab8->setText(QApplication::translate("klatschui", "8", 0));
-        mus8m1->clear();
-        mus8m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus8m2->clear();
-        mus8m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus8m3->clear();
-        mus8m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus8m4->clear();
-        mus8m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus8m5->clear();
-        mus8m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus8m6->clear();
-        mus8m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_8->clear();
-        musAction_8->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_8->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab9->setText(QApplication::translate("klatschui", "9", 0));
-        mus9m1->clear();
-        mus9m1->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus9m2->clear();
-        mus9m2->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus9m3->clear();
-        mus9m3->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus9m4->clear();
-        mus9m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus9m5->clear();
-        mus9m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus9m6->clear();
-        mus9m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_9->clear();
-        musAction_9->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "aus", 0)
-         << QApplication::translate("klatschui", "an", 0)
-         << QApplication::translate("klatschui", "toggle", 0)
-        );
-        musSave_9->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musLab10->setText(QApplication::translate("klatschui", "10", 0));
         mus10m1->clear();
         mus10m1->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
@@ -2188,33 +1701,390 @@ public:
          << QApplication::translate("klatschui", "k", 0)
          << QApplication::translate("klatschui", "l", 0)
         );
-        mus10m4->clear();
-        mus10m4->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus10m5->clear();
-        mus10m5->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        mus10m6->clear();
-        mus10m6->insertItems(0, QStringList()
-         << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "k", 0)
-         << QApplication::translate("klatschui", "l", 0)
-        );
-        musAction_10->clear();
-        musAction_10->insertItems(0, QStringList()
+        musLab10->setText(QApplication::translate("klatschui", "10", 0));
+        musSave_9->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_9->clear();
+        musAction_9->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "aus", 0)
          << QApplication::translate("klatschui", "an", 0)
          << QApplication::translate("klatschui", "toggle", 0)
         );
-        musSave_10->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musSave->setText(QApplication::translate("klatschui", "Speichern", 0));
-        musClear->setText(QApplication::translate("klatschui", "Alle vom Arduino entfernen", 0));
+        mus9m4->clear();
+        mus9m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus9m5->clear();
+        mus9m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus9m3->clear();
+        mus9m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus9m1->clear();
+        mus9m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus9m2->clear();
+        mus9m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab9->setText(QApplication::translate("klatschui", "9", 0));
+        musSave_8->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_8->clear();
+        musAction_8->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus8m5->clear();
+        mus8m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus8m3->clear();
+        mus8m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus8m4->clear();
+        mus8m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus8m2->clear();
+        mus8m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus8m1->clear();
+        mus8m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab8->setText(QApplication::translate("klatschui", "8", 0));
+        musSave_7->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_7->clear();
+        musAction_7->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus7m5->clear();
+        mus7m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus7m4->clear();
+        mus7m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus7m2->clear();
+        mus7m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus7m3->clear();
+        mus7m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus7m1->clear();
+        mus7m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab7->setText(QApplication::translate("klatschui", "7", 0));
+        musSave_6->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_6->clear();
+        musAction_6->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus6m4->clear();
+        mus6m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus6m2->clear();
+        mus6m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus6m5->clear();
+        mus6m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus6m3->clear();
+        mus6m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus6m1->clear();
+        mus6m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab6->setText(QApplication::translate("klatschui", "6", 0));
+        musSave_5->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_5->clear();
+        musAction_5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus5m4->clear();
+        mus5m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus5m2->clear();
+        mus5m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus5m5->clear();
+        mus5m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus5m3->clear();
+        mus5m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musSave_4->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musLab5->setText(QApplication::translate("klatschui", "5", 0));
+        mus5m1->clear();
+        mus5m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musAction_4->clear();
+        musAction_4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus4m5->clear();
+        mus4m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus4m4->clear();
+        mus4m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus4m2->clear();
+        mus4m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus4m3->clear();
+        mus4m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab4->setText(QApplication::translate("klatschui", "4", 0));
+        mus4m1->clear();
+        mus4m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musSave_3->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_3->clear();
+        musAction_3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus3m4->clear();
+        mus3m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus3m3->clear();
+        mus3m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus3m5->clear();
+        mus3m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus3m2->clear();
+        mus3m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus3m1->clear();
+        mus3m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab3->setText(QApplication::translate("klatschui", "3", 0));
+        musAction_2->clear();
+        musAction_2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        musSave_2->setText(QApplication::translate("klatschui", "Speichern", 0));
+        mus2m4->clear();
+        mus2m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus2m3->clear();
+        mus2m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus2m5->clear();
+        mus2m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus2m1->clear();
+        mus2m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus2m2->clear();
+        mus2m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab2->setText(QApplication::translate("klatschui", "2", 0));
+        musSave_1->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musAction_1->clear();
+        musAction_1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus1m4->clear();
+        mus1m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus1m3->clear();
+        mus1m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus1m5->clear();
+        mus1m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus1m2->clear();
+        mus1m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus1m1->clear();
+        mus1m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musSave_0->setText(QApplication::translate("klatschui", "Speichern", 0));
+        musLab1->setText(QApplication::translate("klatschui", "1", 0));
+        musAction_0->clear();
+        musAction_0->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "aus", 0)
+         << QApplication::translate("klatschui", "an", 0)
+         << QApplication::translate("klatschui", "toggle", 0)
+        );
+        mus0m5->clear();
+        mus0m5->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus0m3->clear();
+        mus0m3->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus0m4->clear();
+        mus0m4->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus0m2->clear();
+        mus0m2->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        mus0m1->clear();
+        mus0m1->insertItems(0, QStringList()
+         << QApplication::translate("klatschui", "-", 0)
+         << QApplication::translate("klatschui", "k", 0)
+         << QApplication::translate("klatschui", "l", 0)
+        );
+        musLab0->setText(QApplication::translate("klatschui", "0", 0));
+        label_49->setText(QApplication::translate("klatschui", "Muster", 0));
+        label_50->setText(QApplication::translate("klatschui", "Ger\303\244te (CSV)", 0));
+        label_48->setText(QApplication::translate("klatschui", "Titel", 0));
         TabMuster->setTabText(TabMuster->indexOf(tabMuster), QApplication::translate("klatschui", "Muster", 0));
         GerSave->setText(QApplication::translate("klatschui", "Speichern", 0));
         label_3->setText(QApplication::translate("klatschui", "Ger\303\244t", 0));
@@ -2521,10 +2391,10 @@ public:
          << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
-        label_2->setText(QApplication::translate("klatschui", "Nach neu Verbinden Standard Werte neu checken", 0));
-        configSaveBtn->setText(QApplication::translate("klatschui", "Save", 0));
-        label->setText(QApplication::translate("klatschui", "Idee: Save config to txt file", 0));
+        pushButton->setText(QApplication::translate("klatschui", "Wert anzeigen", 0));
+        configSoundWert->setText(QString());
         configPinDisconnect_3->setText(QApplication::translate("klatschui", "Fehlerhafter-Button", 0));
+        pushButton_2->setText(QApplication::translate("klatschui", "Probleml\303\266sung", 0));
         groupConfigInt->setTitle(QApplication::translate("klatschui", "Intervalle", 0));
         configIntAllDef->setText(QApplication::translate("klatschui", "Reset", 0));
         configIntToleranzDef->setText(QApplication::translate("klatschui", "Default", 0));
@@ -2540,6 +2410,8 @@ public:
         configIntAufnahmeWert->setText(QApplication::translate("klatschui", "Wert", 0));
         configIntAufnahmeTitel->setText(QApplication::translate("klatschui", "Aufnahmezeit", 0));
         TabMuster->setTabText(TabMuster->indexOf(Konfiguration), QApplication::translate("klatschui", "Konfiguration", 0));
+        label_14->setText(QApplication::translate("klatschui", "Befehle in Arbeit:", 0));
+        BefehleInArbeitWert->setText(QApplication::translate("klatschui", "0", 0));
         menuKlatschsensor->setTitle(QApplication::translate("klatschui", "Klatschsensor", 0));
     } // retranslateUi
 

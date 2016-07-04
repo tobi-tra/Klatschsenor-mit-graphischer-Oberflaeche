@@ -48,8 +48,6 @@ private slots:
 
     void on_configIntToleranzDef_clicked();
 
-    void on_configSaveBtn_clicked();
-
     void on_configPinAktualisierenBtn_clicked();
 
     void on_configPinVerbinden_clicked();
@@ -228,8 +226,21 @@ private slots:
 
     void Send(QByteArray data);
 
-
     void on_configPinDisconnect_3_clicked();
+
+    void on_sendTBtn_clicked();
+
+    void on_sendTBtn_2_clicked();
+
+    void on_sendTBtn_3_clicked();
+
+    void on_pushButton_pressed();
+
+    void on_pushButton_released();
+
+    void numberInStackToGUI(int);
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::klatschui *ui;
@@ -272,6 +283,7 @@ signals:
     void Connect(QString);
     void Close();
     void clearStack();
+    void fixProcessed();
 };
 
 #endif // KLATSCHUI_H
