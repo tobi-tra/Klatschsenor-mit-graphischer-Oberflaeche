@@ -124,8 +124,8 @@ void klatschui::closeArduinoPort()
 void klatschui::readArduinoData(QString text)
 {
     if (text.contains("StatusLampe")) {
-        int Delim         = text.contains("~");
-        int LampenId      = text.mid(11, Delim).toInt();
+        int Delim                  = text.contains("~");
+        int LampenId           = text.mid(11, Delim).toInt();
         int LampenZustand = text.mid(Delim+1).toInt();
 
         qDebug() << "Delim pos.: " + QString::number(Delim) + "; ID: " + QString::number(LampenId) + "; Zustand: " + QString::number(LampenZustand);
@@ -267,6 +267,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_0->setDisabled(0);
           ui->steuGerStatus_0->setText("🌑");
       }
+      send += '~';
 
   } else {
       continueProcess = 0;
@@ -275,7 +276,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_0->setText("");
   }
   if (ui->gerPin_1->currentText() != "-" && ui->gerStart_1->currentText() != "-" && continueProcess) {
-      send += '~';
+
       send += ui->gerPin_1->currentText();
       send += ',';
       if (ui->gerStart_1->currentText() == "an") {
@@ -289,6 +290,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_2->setDisabled(0);
           ui->steuGerStatus_2->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_2->setDisabled(1);
@@ -296,7 +298,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_2->setText("");
   }
   if (ui->gerPin_2->currentText() != "-" && ui->gerStart_2->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_2->currentText();
       send += ',';
       if (ui->gerStart_2->currentText() == "an") {
@@ -310,6 +311,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_4->setDisabled(0);
           ui->steuGerStatus_4->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_4->setDisabled(1);
@@ -317,7 +319,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_4->setText("");
   }
   if (ui->gerPin_3->currentText() != "-" && ui->gerStart_3->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_3->currentText();
       send += ',';
       if (ui->gerStart_3->currentText() == "an") {
@@ -331,6 +332,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_5->setDisabled(0);
           ui->steuGerStatus_5->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_5->setDisabled(1);
@@ -338,7 +340,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_5->setText("");
   }
   if (ui->gerPin_4->currentText() != "-" && ui->gerStart_4->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_4->currentText();
       send += ',';
       if (ui->gerStart_4->currentText() == "an") {
@@ -352,6 +353,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_6->setDisabled(0);
           ui->steuGerStatus_6->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_6->setDisabled(1);
@@ -359,7 +361,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_6->setText("");
   }
   if (ui->gerPin_5->currentText() != "-" && ui->gerStart_5->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_5->currentText();
       send += ',';
       if (ui->gerStart_5->currentText() == "an") {
@@ -373,6 +374,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_7->setDisabled(0);
           ui->steuGerStatus_7->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_7->setDisabled(1);
@@ -380,7 +382,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_7->setText("");
   }
   if (ui->gerPin_6->currentText() != "-" && ui->gerStart_6->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_6->currentText();
       send += ',';
       if (ui->gerStart_6->currentText() == "an") {
@@ -394,6 +395,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_8->setDisabled(0);
           ui->steuGerStatus_8->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_8->setDisabled(1);
@@ -401,7 +403,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_8->setText("");
   }
   if (ui->gerPin_7->currentText() != "-" && ui->gerStart_7->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_7->currentText();
       send += ',';
       if (ui->gerStart_7->currentText() == "an") {
@@ -415,6 +416,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_9->setDisabled(0);
           ui->steuGerStatus_9->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_9->setDisabled(1);
@@ -422,7 +424,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_9->setText("");
   }
   if (ui->gerPin_8->currentText() != "-" && ui->gerStart_8->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_8->currentText();
       send += ',';
       if (ui->gerStart_8->currentText() == "an") {
@@ -436,6 +437,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_10->setDisabled(0);
           ui->steuGerStatus_10->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_10->setDisabled(1);
@@ -443,7 +445,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_10->setText("");
   }
   if (ui->gerPin_9->currentText() != "-" && ui->gerStart_9->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_9->currentText();
       send += ',';
       if (ui->gerStart_9->currentText() == "an") {
@@ -457,6 +458,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_20->setDisabled(0);
           ui->steuGerStatus_20->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_20->setDisabled(1);
@@ -464,7 +466,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
       ui->steuGerStatus_20->setText("");
   }
   if (ui->gerPin_10->currentText() != "-" && ui->gerStart_10->currentText() != "-" && continueProcess) {
-      send += '~';
       send += ui->gerPin_10->currentText();
       send += ',';
       if (ui->gerStart_10->currentText() == "an") {
@@ -478,6 +479,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           ui->steuGerEin_21->setDisabled(0);
           ui->steuGerStatus_21->setText("🌑");
       }
+      send += '~';
   } else {
       continueProcess = 0;
       ui->steuGerAus_21->setDisabled(1);
