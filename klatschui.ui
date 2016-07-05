@@ -2152,16 +2152,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2212,6 +2202,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2219,6 +2214,9 @@
        </item>
        <item row="1" column="2">
         <widget class="QComboBox" name="gerStart_0">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2252,16 +2250,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2312,6 +2300,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2319,6 +2312,9 @@
        </item>
        <item row="2" column="2">
         <widget class="QComboBox" name="gerStart_1">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2352,16 +2348,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2412,6 +2398,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2419,6 +2410,9 @@
        </item>
        <item row="3" column="2">
         <widget class="QComboBox" name="gerStart_2">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2452,11 +2446,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>1</string>
           </property>
          </item>
@@ -2512,6 +2501,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2519,6 +2513,9 @@
        </item>
        <item row="4" column="2">
         <widget class="QComboBox" name="gerStart_3">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2552,16 +2549,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2612,6 +2599,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2619,6 +2611,9 @@
        </item>
        <item row="5" column="2">
         <widget class="QComboBox" name="gerStart_4">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2652,16 +2647,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2712,6 +2697,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2719,6 +2709,9 @@
        </item>
        <item row="6" column="2">
         <widget class="QComboBox" name="gerStart_5">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2752,16 +2745,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2812,6 +2795,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2819,6 +2807,9 @@
        </item>
        <item row="7" column="2">
         <widget class="QComboBox" name="gerStart_6">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2852,16 +2843,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -2912,6 +2893,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -2919,6 +2905,9 @@
        </item>
        <item row="8" column="2">
         <widget class="QComboBox" name="gerStart_7">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -2952,16 +2941,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -3012,6 +2991,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -3019,6 +3003,9 @@
        </item>
        <item row="9" column="2">
         <widget class="QComboBox" name="gerStart_8">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -3052,16 +3039,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -3112,6 +3089,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -3119,6 +3101,9 @@
        </item>
        <item row="10" column="2">
         <widget class="QComboBox" name="gerStart_9">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -3152,16 +3137,6 @@
          </item>
          <item>
           <property name="text">
-           <string>0</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>2</string>
           </property>
          </item>
@@ -3212,6 +3187,11 @@
          </item>
          <item>
           <property name="text">
+           <string>12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>13</string>
           </property>
          </item>
@@ -3219,6 +3199,9 @@
        </item>
        <item row="11" column="2">
         <widget class="QComboBox" name="gerStart_10">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
          <item>
           <property name="text">
            <string comment="-1">-</string>
@@ -3261,7 +3244,7 @@
          <x>16</x>
          <y>19</y>
          <width>761</width>
-         <height>205</height>
+         <height>215</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -3310,7 +3293,7 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="1" colspan="4">
+        <item row="6" column="1" colspan="4">
          <widget class="QLabel" name="configPinStatus1">
           <property name="enabled">
            <bool>true</bool>
@@ -3329,6 +3312,9 @@
         </item>
         <item row="0" column="1" colspan="2">
          <widget class="QComboBox" name="configPinSound">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
           <property name="maxVisibleItems">
            <number>6</number>
           </property>
@@ -3471,33 +3457,21 @@
           </property>
          </widget>
         </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>Problemlösung</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="configPinDisconnect_3">
+          <property name="text">
+           <string>Fehlerhafter-Button</string>
+          </property>
+         </widget>
+        </item>
        </layout>
-      </widget>
-      <widget class="QPushButton" name="configPinDisconnect_3">
-       <property name="geometry">
-        <rect>
-         <x>560</x>
-         <y>220</y>
-         <width>152</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Fehlerhafter-Button</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>230</y>
-         <width>161</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Problemlösung</string>
-       </property>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupConfigInt">

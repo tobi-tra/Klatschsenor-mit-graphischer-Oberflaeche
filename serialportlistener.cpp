@@ -54,9 +54,8 @@ void SerialPortListener::run() {
             data = pop();
             if (data != "-1" ) {
                 bytes = data.toUtf8();
-                qDebug() << "data in bytes: " << bytes  ;
+                qDebug() << "data in bytes: " << bytes;
                 emit sendDataToGuiToArduino(bytes);
-                //lastSend = QTime::currentTime();
                 waitingForAnswer = true;
             }
         }
@@ -71,8 +70,8 @@ void SerialPortListener::decodeSerialData() {
         return;
     }
     QByteArray bytes = serialPort->readAll();
-    QString text = QString::fromUtf8(bytes).trimmed();
-    //QString text = QString::fromUtf8(bytes);
+    //QString text = QString::fromUtf8(bytes).trimmed();
+    QString text = bytes;//QString::fromUtf8(bytes);
     if(text.isEmpty()) {
         return;
     }

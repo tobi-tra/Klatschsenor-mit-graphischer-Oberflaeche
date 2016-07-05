@@ -228,12 +228,6 @@ private slots:
 
     void on_configPinDisconnect_3_clicked();
 
-    void on_sendTBtn_clicked();
-
-    void on_sendTBtn_2_clicked();
-
-    void on_sendTBtn_3_clicked();
-
     void on_pushButton_pressed();
 
     void on_pushButton_released();

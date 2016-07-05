@@ -11,7 +11,7 @@ klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschu
 
     SerialPort = new QSerialPort(this);
 
-    SPL = new SerialPortListener(SerialPort, 200);
+    SPL = new SerialPortListener(SerialPort, 500);
 
     connect(this, SIGNAL(AvailablePorts()),
             SPL,  SLOT(AvailablePorts()));
@@ -116,24 +116,43 @@ void klatschui::closeArduinoPort()
 
 void klatschui::readArduinoData(QString text)
 {
-    if (text.indexOf("statusLampe") >= 0) {
-        QString input = text.mid(text.indexOf("statusLampe")+11);
-        int Delim         = input.indexOf("~");
-        int LampenId      = input.mid(0, Delim).toInt();
-        int LampenZustand = input.mid(Delim+1, 1).toInt();
-        // qDebug() << "delim:" << Delim << "id: " << LampenId << "zustan: " << LampenZustand;
-        qDebug() << "Delim pos.: " + QString::number(Delim) + "; ID: " + QString::number(LampenId) + "; Zustand: " + QString::number(LampenZustand);
+    if (text.indexOf("statusLampe", 0) >= 0) {
+        int pos = 0;
 
-        changeLampenUI(LampenId, LampenZustand);
+        while (1) {
+            if (text.indexOf("statusLampe", pos) == -1) {
+                break;
+            }
+            QString input = text.mid(text.indexOf("statusLampe", pos)+11);
+            int Delim         = input.indexOf("~");
+            int LampenId      = input.mid(0, Delim).toInt();
+            int LampenZustand = input.mid(Delim+1, 1).toInt();
+            // qDebug() << "delim:" << Delim << "id: " << LampenId << "zustan: " << LampenZustand;
+            qDebug() << "Delim pos.: " + QString::number(Delim) + "; ID: " + QString::number(LampenId) + "; Zustand: " + QString::number(LampenZustand);
+
+            changeLampenUI(LampenId, LampenZustand);
+
+            pos = text.indexOf("statusLampe", pos)+11+Delim+2;
+            qDebug() << pos;
+
+            qDebug() << "apödiufbvslrfböapidrbglsdrugvösg";
+
+
+        }
+
     } else if (text.indexOf("SoundWert") >= 0) {
         QString input = text.mid(text.indexOf("SoundWert")+9);
         ui->configSoundWert->setText(input.mid(0,4));
+        text = "";
     } else if (text.contains("Notice:")) {
       DisplayPopup(text.mid(7));
+      text="";
     } else if (text.contains("Error10")) {
+        text = "";
       DisplayPopup("Es ist ein Problem bei der Kommunikation aufgetreten. Der Befehl konnte nicht verarbeitet werden.");
     }/* else if (text.contains("Error")) {
         DisplayPopup(text);
+        text = "";
     }*/
 }
 
@@ -1850,21 +1869,6 @@ void klatschui::on_configPinAktualisierenBtn_clicked() // Signal an PL. PortList
 void klatschui::on_configPinDisconnect_3_clicked()
 {
     writeArduinoData("murks");
-}
-
-void klatschui::on_sendTBtn_clicked()
-{
-    writeToArduino("showInfo0");
-}
-
-void klatschui::on_sendTBtn_2_clicked()
-{
-    writeToArduino("showInfo1");
-}
-
-void klatschui::on_sendTBtn_3_clicked()
-{
-    writeToArduino("showInfo2");
 }
 
 void klatschui::on_pushButton_pressed()

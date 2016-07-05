@@ -259,8 +259,8 @@ public:
     QComboBox *configPinPieper;
     QPushButton *pushButton;
     QLabel *configSoundWert;
-    QPushButton *configPinDisconnect_3;
     QPushButton *pushButton_2;
+    QPushButton *configPinDisconnect_3;
     QGroupBox *groupConfigInt;
     QWidget *layoutWidget4;
     QGridLayout *gridLayout;
@@ -1387,7 +1387,7 @@ public:
         groupConfigPin->setGeometry(QRect(10, 10, 791, 271));
         layoutWidget3 = new QWidget(groupConfigPin);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(16, 19, 761, 205));
+        layoutWidget3->setGeometry(QRect(16, 19, 761, 215));
         gridLayout_2 = new QGridLayout(layoutWidget3);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -1428,7 +1428,7 @@ public:
         configPinStatus1->setObjectName(QStringLiteral("configPinStatus1"));
         configPinStatus1->setEnabled(true);
 
-        gridLayout_2->addWidget(configPinStatus1, 4, 1, 1, 4);
+        gridLayout_2->addWidget(configPinStatus1, 6, 1, 1, 4);
 
         configPinDisconnect = new QPushButton(layoutWidget3);
         configPinDisconnect->setObjectName(QStringLiteral("configPinDisconnect"));
@@ -1458,12 +1458,16 @@ public:
 
         gridLayout_2->addWidget(configSoundWert, 0, 4, 1, 1);
 
-        configPinDisconnect_3 = new QPushButton(groupConfigPin);
-        configPinDisconnect_3->setObjectName(QStringLiteral("configPinDisconnect_3"));
-        configPinDisconnect_3->setGeometry(QRect(560, 220, 152, 32));
-        pushButton_2 = new QPushButton(groupConfigPin);
+        pushButton_2 = new QPushButton(layoutWidget3);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(230, 230, 161, 32));
+
+        gridLayout_2->addWidget(pushButton_2, 4, 1, 1, 1);
+
+        configPinDisconnect_3 = new QPushButton(layoutWidget3);
+        configPinDisconnect_3->setObjectName(QStringLiteral("configPinDisconnect_3"));
+
+        gridLayout_2->addWidget(configPinDisconnect_3, 4, 2, 1, 1);
+
         groupConfigInt = new QGroupBox(Konfiguration);
         groupConfigInt->setObjectName(QStringLiteral("groupConfigInt"));
         groupConfigInt->setGeometry(QRect(10, 280, 791, 241));
@@ -1607,7 +1611,19 @@ public:
         retranslateUi(klatschui);
 
         TabMuster->setCurrentIndex(3);
+        gerStart_0->setCurrentIndex(1);
+        gerStart_1->setCurrentIndex(1);
+        gerStart_2->setCurrentIndex(1);
+        gerStart_3->setCurrentIndex(1);
+        gerStart_4->setCurrentIndex(1);
+        gerStart_5->setCurrentIndex(1);
+        gerStart_6->setCurrentIndex(1);
+        gerStart_7->setCurrentIndex(1);
+        gerStart_8->setCurrentIndex(1);
+        gerStart_9->setCurrentIndex(1);
+        gerStart_10->setCurrentIndex(1);
         configPinArduino->setCurrentIndex(-1);
+        configPinSound->setCurrentIndex(1);
         configPinPieper->setCurrentIndex(0);
 
 
@@ -2094,8 +2110,6 @@ public:
         gerPin_0->clear();
         gerPin_0->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2106,6 +2120,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_0->clear();
@@ -2118,8 +2133,6 @@ public:
         gerPin_1->clear();
         gerPin_1->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2130,6 +2143,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_1->clear();
@@ -2142,8 +2156,6 @@ public:
         gerPin_2->clear();
         gerPin_2->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2154,6 +2166,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_2->clear();
@@ -2166,7 +2179,6 @@ public:
         gerPin_3->clear();
         gerPin_3->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
          << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
@@ -2178,6 +2190,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_3->clear();
@@ -2190,8 +2203,6 @@ public:
         gerPin_4->clear();
         gerPin_4->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2202,6 +2213,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_4->clear();
@@ -2214,8 +2226,6 @@ public:
         gerPin_5->clear();
         gerPin_5->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2226,6 +2236,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_5->clear();
@@ -2238,8 +2249,6 @@ public:
         gerPin_6->clear();
         gerPin_6->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2250,6 +2259,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_6->clear();
@@ -2262,8 +2272,6 @@ public:
         gerPin_7->clear();
         gerPin_7->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2274,6 +2282,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_7->clear();
@@ -2286,8 +2295,6 @@ public:
         gerPin_8->clear();
         gerPin_8->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2298,6 +2305,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_8->clear();
@@ -2310,8 +2318,6 @@ public:
         gerPin_9->clear();
         gerPin_9->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2322,6 +2328,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_9->clear();
@@ -2334,8 +2341,6 @@ public:
         gerPin_10->clear();
         gerPin_10->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
-         << QApplication::translate("klatschui", "0", 0)
-         << QApplication::translate("klatschui", "1", 0)
          << QApplication::translate("klatschui", "2", 0)
          << QApplication::translate("klatschui", "3", 0)
          << QApplication::translate("klatschui", "4", 0)
@@ -2346,6 +2351,7 @@ public:
          << QApplication::translate("klatschui", "9", 0)
          << QApplication::translate("klatschui", "10", 0)
          << QApplication::translate("klatschui", "11", 0)
+         << QApplication::translate("klatschui", "12", 0)
          << QApplication::translate("klatschui", "13", 0)
         );
         gerStart_10->clear();
@@ -2393,8 +2399,8 @@ public:
         );
         pushButton->setText(QApplication::translate("klatschui", "Wert anzeigen", 0));
         configSoundWert->setText(QString());
-        configPinDisconnect_3->setText(QApplication::translate("klatschui", "Fehlerhafter-Button", 0));
         pushButton_2->setText(QApplication::translate("klatschui", "Probleml\303\266sung", 0));
+        configPinDisconnect_3->setText(QApplication::translate("klatschui", "Fehlerhafter-Button", 0));
         groupConfigInt->setTitle(QApplication::translate("klatschui", "Intervalle", 0));
         configIntAllDef->setText(QApplication::translate("klatschui", "Reset", 0));
         configIntToleranzDef->setText(QApplication::translate("klatschui", "Default", 0));
