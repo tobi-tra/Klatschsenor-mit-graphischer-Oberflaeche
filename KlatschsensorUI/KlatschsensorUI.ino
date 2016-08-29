@@ -11,13 +11,11 @@
 #include <stdint.h>
 
 /**   Funktionen   **/
-int  check_config();
-void schalten(uint8_t musterid);
-void auswertung(uint8_t signale[6]);
-void auswertung_vorbereiten();
-void zeit(uint8_t zustand);
-//vllt noch mehr Funktionen vorhanden
-
+int  check_config(); /** Überprüfung der angebenen Werte, ob Startbereit. */
+void schalten(uint8_t musterid); /** Ändert Lampenstatus der jeweiligen Lampe. */
+void auswertung(uint8_t signale[6]); /** Analyse der erkannten Pegel. */
+void auswertung_vorbereiten(); /** Mustervergleich mit Datenbank. */
+void zeit(uint8_t zustand); /** Pausenunterscheidung durch Zeitmessung. */
 
 /**   Variablen    **/
 
@@ -58,7 +56,7 @@ struct Muster {                     // Struct für eingespeicherte Muster
 struct Muster muster[10] = {};
 
 void setup() {
-  Serial.begin(9600);                                           // Serielle Verbindung initiieren
+  Serial.begin(9600);                           // Serielle Verbindung initiieren
 
   Serial.println(F("setPinModePieper2"));
   Serial.println(F("setPinModeSound10"));
@@ -166,14 +164,12 @@ void loop() {
     
       else if (input.substring(0,8) == "setLampe") //.readString
     {
-      // HaakeBeck ~ kkk    ~ 0,9,3,11 ~ 2
       // Hilfsvariablen für die Trennung der einzelnen Komponenten:
       delimName        = input.indexOf('~', 0);
       delimMuster      = input.indexOf('~', delimName+1);
       delimGeraete     = input.indexOf('~', delimMuster+1);
       delimAction      = input.indexOf('~', delimGeraete+1);
       
-      //inputName     = input.substring(8, delimName);                  // Name des Musters
       inputMuster   = input.substring(delimName+1, delimMuster);      // Muster der Lampe
       inputGeraete  = input.substring(delimMuster+1, delimGeraete);   // Angesteuerte Lampen
       inputAction   = input.substring(delimGeraete+1, delimAction);   // Aktion (An/Aus/Toggle)
@@ -210,26 +206,7 @@ void loop() {
       // Bildung der Checksumme:
       muster[muster_size].checksum = 1*muster[muster_size].rhythmus[0]+8*muster[muster_size].rhythmus[1]+27*muster[muster_size].rhythmus[2]+125*muster[muster_size].rhythmus[3]+343*muster[muster_size].rhythmus[4]+1331*muster[muster_size].rhythmus[5];
       Serial.println(muster[muster_size].checksum);
-      /*
-      // Serial.println(muster[muster_size].titel);
-      Serial.print(muster[muster_size].rhythmus[0]);
-      Serial.print(muster[muster_size].rhythmus[1]);
-      Serial.print(muster[muster_size].rhythmus[2]);
-      Serial.print(muster[muster_size].rhythmus[3]);
-      Serial.print(muster[muster_size].rhythmus[4]);
-      Serial.print(muster[muster_size].rhythmus[5]);
-      Serial.println(F(""));
-      Serial.print(F("CurrentCount: "));Serial.println(muster[muster_size].geraete_count);
-      Serial.print(muster[muster_size].geraete_ids[0]);Serial.print(" ");
-      Serial.print(muster[muster_size].geraete_ids[1]);Serial.print(" ");
-      Serial.print(muster[muster_size].geraete_ids[2]);Serial.print(" ");
-      Serial.print(muster[muster_size].geraete_ids[3]);Serial.print(" ");
-      Serial.print(muster[muster_size].geraete_ids[4]);Serial.print(" ");
-      Serial.println(F(""));
-      Serial.println(muster[muster_size].action);
-      Serial.println(muster[muster_size].geraete_count);
-      Serial.println(muster[muster_size].checksum);
-      */
+
       muster_size++;                  // Hochzählen der Anzahl der Muster
       Serial.println(F("processed"));    // Statusmeldung OK
       
@@ -264,8 +241,6 @@ void loop() {
       
       inputGeraetestring = input.substring(10);   // Substring mit Pins und Zuständen
       Serial.println(inputGeraetestring);
-      //Serial.print(F("Laenge:    "));Serial.println(inputGeraetestring.length());Serial.println("");
-
       for (int i = 0; i < geraete_size; i++) {    // Gerätespeicher leeren 
           digitalWrite(geraete[i].pin, 0);        // Beim Löschen eines Pins alle zurücksetzen
           geraete[i].pin = 0;
@@ -279,8 +254,7 @@ void loop() {
       inputEinGeraet = "";
             
       while (i < inputGeraetestring.length()) {     // Abspeichern von Pin und Zustand
-        //vllt hier Daten nur zwischenspeichern, auf Fehler überprüfen und erst am Ende speichern
-        
+       
         delimTilde = inputGeraetestring.indexOf('~',i);    // Aufteilen des Strings in "Untergeräte"
         Serial.print(F("delimTilde:        "));Serial.println(delimTilde);
         
@@ -290,7 +264,7 @@ void loop() {
         delimKomma = inputEinGeraet.indexOf(',',0);    // Aufteilen der "Untergeräte" in Pin und Zustand
         Serial.print(F("delimKomma:        "));Serial.println(delimKomma);
         
-        geraete[geraete_size].pin = inputEinGeraet.substring(0,delimKomma).toInt();    // Abspeichern des Gerätepins        Hier war der Fehler, Leerzeichen vor delimKomma.
+        geraete[geraete_size].pin = inputEinGeraet.substring(0,delimKomma).toInt();    // Abspeichern des Gerätepins. Hier war der Fehler, Leerzeichen vor delimKomma.
         Serial.print(F("Pin:               "));Serial.println(geraete[geraete_size].pin);
 
         Serial.print(F("iput.gerstr: "));Serial.println(inputGeraetestring);
@@ -318,7 +292,6 @@ void loop() {
           break;
         }
       }
-      //Serial.println(geraete_size);
       for (int i = 0; i < geraete_size; i++) {
         Serial.print(F("Pin: "));Serial.println(geraete[i].pin);
         Serial.print(F("Zustand: "));Serial.println(geraete[i].zustand);
@@ -332,14 +305,11 @@ void loop() {
       Serial.println(F("processed"));
     }
     
-    //if (!loaded_config) {
-      check_config();
-    //}
+    check_config();
   }
   
  
   if (!loaded_config) { //Falls keine Konfiguration geladen wurde: Auf neue Eingabe warten.
-    //Serial.println(F("Error01:Keine Konfiguration gefunden"));
     if (!just_shown) {
       Serial.println(F("Noch fehlen Daten."));
       just_shown = 1;
@@ -366,8 +336,6 @@ void loop() {
     if (debug == 1) {
       Serial.println(F("In Pegel"));
       debug = 0;
-      //lcd.clear();                   // Als Erkennung dafür, dass das Programm einen Pegel erkennt, geht die Hintergrundbeleuchtung des LC-Displays aus
-      //lcd.noBacklight();
     } 
     if (eingang == 0) {
       zeit(1);
@@ -386,8 +354,6 @@ void loop() {
     }
  
     if (eingang == 1) {
-      //lcd.clear();                   // Hintergrundbeleuchtung des LC-Displays geht nach einem Klatscher wieder an
-      //lcd.backlight();
       zeit(0);
       eingang = 0;
     }
@@ -417,8 +383,6 @@ void speichern(int zeit) {    // Speichern in Zeiten-Array
       zeiten[i] = zeit;       // Stillezeit wird in das Zeiten-Array geschrieben
       if ((i+1 ) == sechser_size) { // Falls letzer Klatscher gespeichert, beginne auszuwerten 
         Serial.println(F("Vorzeitiger Auswertungsbeginn, da maxiamale Anzahl an Klatschern erreicht."));
-        //lcd.clear();
-        //lcd.backlight();      // Hintergrundbeleuchtung des LC-Displays geht nach letztem Klatscher wieder an
         auswertung_vorbereiten();
       }
       break;
@@ -483,7 +447,6 @@ void auswertung(uint8_t signale[6]) {
   }
   if (fehler) { // Falls kein Muster erkannt wurde, wird eine Fehlermeldung auf dem seriellen Monitor sowie auf dem LC-Display ausgegeben
     Serial.println(F("Fehler: Muster nicht erkannt."));
-    //Serial.println("Da hat jemand keinen Rhythmus!");
     digitalWrite(PIEPER,1); // Zusätzlich akustisches Signal, dass Muster nicht erkannt
     delay(20);
     digitalWrite(PIEPER,0);
@@ -561,10 +524,6 @@ void SingleSchalten(int geraet, int action) {
 
 int check_config() {
   if (SOUNDSENSOR > -1) {
-    /*if (SOUNDSENSOR == PIPEPR) {
-      //Serial.println(F("Error02:Soundsensor-Pin fehlt"));
-      return 0;
-    }*/
     // Alles ok
   } else {
     Serial.println(F("Error05:Soundsensor-Pin fehlt"));
