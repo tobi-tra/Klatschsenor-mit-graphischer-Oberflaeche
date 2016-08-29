@@ -260,7 +260,6 @@ public:
     QPushButton *pushButton;
     QLabel *configSoundWert;
     QPushButton *pushButton_2;
-    QPushButton *configPinDisconnect_3;
     QGroupBox *groupConfigInt;
     QWidget *layoutWidget4;
     QGridLayout *gridLayout;
@@ -292,12 +291,12 @@ public:
     {
         if (klatschui->objectName().isEmpty())
             klatschui->setObjectName(QStringLiteral("klatschui"));
-        klatschui->resize(885, 618);
+        klatschui->resize(894, 618);
         centralWidget = new QWidget(klatschui);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         TabMuster = new QTabWidget(centralWidget);
         TabMuster->setObjectName(QStringLiteral("TabMuster"));
-        TabMuster->setGeometry(QRect(-10, 20, 891, 531));
+        TabMuster->setGeometry(QRect(10, 20, 881, 531));
         Steuerung = new QWidget();
         Steuerung->setObjectName(QStringLiteral("Steuerung"));
         layoutWidget = new QWidget(Steuerung);
@@ -1463,11 +1462,6 @@ public:
 
         gridLayout_2->addWidget(pushButton_2, 4, 1, 1, 1);
 
-        configPinDisconnect_3 = new QPushButton(layoutWidget3);
-        configPinDisconnect_3->setObjectName(QStringLiteral("configPinDisconnect_3"));
-
-        gridLayout_2->addWidget(configPinDisconnect_3, 4, 2, 1, 1);
-
         groupConfigInt = new QGroupBox(Konfiguration);
         groupConfigInt->setObjectName(QStringLiteral("groupConfigInt"));
         groupConfigInt->setGeometry(QRect(10, 280, 791, 241));
@@ -1595,7 +1589,7 @@ public:
         klatschui->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(klatschui);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 885, 22));
+        menuBar->setGeometry(QRect(0, 0, 894, 22));
         menuKlatschsensor = new QMenu(menuBar);
         menuKlatschsensor->setObjectName(QStringLiteral("menuKlatschsensor"));
         klatschui->setMenuBar(menuBar);
@@ -2368,7 +2362,7 @@ public:
         configPinSoundTitel->setText(QApplication::translate("klatschui", "Soundsensor", 0));
         configPinArduinoTitel->setText(QApplication::translate("klatschui", "Arduino-Port", 0));
         configPinStatus1->setText(QApplication::translate("klatschui", "<table><tr><td><span style='color:yellow;'>\342\227\211   </span>Status: Nicht Verbunden</td></tr><tr><td>&nbsp;</td></tr></table>", 0));
-        configPinDisconnect->setText(QApplication::translate("klatschui", "Disconnect", 0));
+        configPinDisconnect->setText(QApplication::translate("klatschui", "Trennen", 0));
         configPinSound->clear();
         configPinSound->insertItems(0, QStringList()
          << QApplication::translate("klatschui", "-", 0)
@@ -2400,7 +2394,6 @@ public:
         pushButton->setText(QApplication::translate("klatschui", "Wert anzeigen", 0));
         configSoundWert->setText(QString());
         pushButton_2->setText(QApplication::translate("klatschui", "Probleml\303\266sung", 0));
-        configPinDisconnect_3->setText(QApplication::translate("klatschui", "Fehlerhafter-Button", 0));
         groupConfigInt->setTitle(QApplication::translate("klatschui", "Intervalle", 0));
         configIntAllDef->setText(QApplication::translate("klatschui", "Reset", 0));
         configIntToleranzDef->setText(QApplication::translate("klatschui", "Default", 0));

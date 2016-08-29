@@ -30,11 +30,11 @@ klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschu
     connect(SPL,  SIGNAL(sendDataToGuiToArduino(QByteArray)),
             this, SLOT(Send(QByteArray)));
     connect(this, SIGNAL(clearStack()),
-            SPL, SLOT(clearStack()));
-    connect(SPL, SIGNAL(numberInStack(int)),
+            SPL,  SLOT(clearStack()));
+    connect(SPL,  SIGNAL(numberInStack(int)),
             this, SLOT(numberInStackToGUI(int)));
     connect(this, SIGNAL(fixProcessed()),
-            SPL, SLOT(fixProcessed()));
+            SPL,  SLOT(fixProcessed()));
 
     //connect(SerialPort, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(handleErrors(QSerialPort::SerialPortError)));
 
@@ -114,7 +114,7 @@ void klatschui::closeArduinoPort()
     // hier quit SPL implementieren
 }
 
-void klatschui::readArduinoData(QString text)
+void klatschui::readArduinoData(QString text) // vom Signal des SPL ausgelöst
 {
     if (text.indexOf("statusLampe", 0) >= 0) {
         int pos = 0;
@@ -134,17 +134,13 @@ void klatschui::readArduinoData(QString text)
 
             pos = text.indexOf("statusLampe", pos)+11+Delim+2;
             qDebug() << pos;
-
-            qDebug() << "apödiufbvslrfböapidrbglsdrugvösg";
-
-
         }
 
     } else if (text.indexOf("SoundWert") >= 0) {
         QString input = text.mid(text.indexOf("SoundWert")+9);
         ui->configSoundWert->setText(input.mid(0,4));
         text = "";
-    } else if (text.contains("Notice:")) {
+    } else if (text.contains("Notice:")) { // Prüfen ob immernoch versendet
       DisplayPopup(text.mid(7));
       text="";
     } else if (text.contains("Error10")) {
@@ -346,9 +342,6 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
           changeLampe3(1);
       } else if (ui->gerStart_3->currentText() == "aus") {
           send += "0";
-          ui->steuGerAus_5->setDisabled(1);
-          ui->steuGerEin_5->setDisabled(0);
-          ui->steuGerStatus_5->setText("🌑");
           changeLampe3(0);
       }
       send += '~';
@@ -494,8 +487,8 @@ int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QStr
     send += "~";
 
     if (R1 == "-") {
-        qDebug() << "R1 darf nicht leer sein";
-        DisplayPopup("R1 darf nicht leer sein");
+        qDebug() << "Muster darf nicht leer sein";
+        DisplayPopup("Muster darf nicht leer sein");
         return 1;
     } else {
         send += R1;
@@ -996,7 +989,6 @@ void klatschui::on_mus0m4_currentTextChanged(const QString &arg1)
       ui->mus0m5->setEnabled(0);
     }
 }
-
 void klatschui::on_mus1m1_currentTextChanged(const QString &arg1)
 {
       if (arg1 != "-") {

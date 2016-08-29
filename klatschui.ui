@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>885</width>
+    <width>894</width>
     <height>618</height>
    </rect>
   </property>
@@ -17,9 +17,9 @@
    <widget class="QTabWidget" name="TabMuster">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>10</x>
       <y>20</y>
-      <width>891</width>
+      <width>881</width>
       <height>531</height>
      </rect>
     </property>
@@ -3306,7 +3306,7 @@
         <item row="3" column="4">
          <widget class="QPushButton" name="configPinDisconnect">
           <property name="text">
-           <string>Disconnect</string>
+           <string>Trennen</string>
           </property>
          </widget>
         </item>
@@ -3461,13 +3461,6 @@
          <widget class="QPushButton" name="pushButton_2">
           <property name="text">
            <string>Problemlösung</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QPushButton" name="configPinDisconnect_3">
-          <property name="text">
-           <string>Fehlerhafter-Button</string>
           </property>
          </widget>
         </item>
@@ -3703,7 +3696,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>885</width>
+     <width>894</width>
      <height>22</height>
     </rect>
    </property>

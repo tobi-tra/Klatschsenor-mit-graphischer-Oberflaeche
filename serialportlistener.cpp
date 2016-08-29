@@ -70,8 +70,7 @@ void SerialPortListener::decodeSerialData() {
         return;
     }
     QByteArray bytes = serialPort->readAll();
-    //QString text = QString::fromUtf8(bytes).trimmed();
-    QString text = bytes;//QString::fromUtf8(bytes);
+    QString text = QString::fromUtf8(bytes).trimmed();
     if(text.isEmpty()) {
         return;
     }
@@ -110,13 +109,12 @@ void SerialPortListener::push(QString str)
 {
     mutex.lock();
     qDebug() << "got in Stack";
-    if (count_elem >= 200) {                    // Overflow verhindern
+    if (count_elem >= 400) {                    // Overflow verhindern
         qDebug() << "Overflow\n";
         mutex.unlock();
         return;
     }
-    queue[count_elem] = str;                     // Integer speichern
-    ++count_elem;				// Position des Kopfes um einen erhöhen
+    queue[count_elem++] = str;                     // Integer speichern; Position des Kopfes um einen erhöhen
     mutex.unlock();
     for(int i = 0; i < count_elem; i++) {
         qDebug() << queue[i] << "\n";

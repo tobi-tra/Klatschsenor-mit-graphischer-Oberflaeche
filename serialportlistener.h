@@ -7,11 +7,7 @@
 #include <QString>
 #include <QtDebug>
 #include <QMainWindow>
-#include <QTime>
-
 #include <QMutex>
-
-//#include "klatschui.h"
 
 class SerialPortListener : public QThread {
     Q_OBJECT
@@ -33,12 +29,11 @@ private:
     QString pop();
     QSerialPort * serialPort;
     ulong speed;
-    QString queue[200]; // Stack
+    QString queue[400]; // Stack
     int count_elem;
     QString data;
     QByteArray bytes;
     bool waitingForAnswer;
-    QTime lastSend;
 signals:
     void dataReceived(QString);
     void sendBackAvailablePorts(QList<QSerialPortInfo>, int, QString);
