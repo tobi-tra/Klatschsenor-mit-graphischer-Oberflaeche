@@ -28,7 +28,6 @@ public:
 
 private slots:
 
-    //void handleErrors(QSerialPort::SerialPortError);
     void on_configIntAufnahme_valueChanged();
     void on_configIntSchwelle_valueChanged();
     void on_configIntStille_valueChanged();
@@ -169,7 +168,7 @@ private:
 
 signals:
     void writeToArduino(QString);
-    void AvailablePorts(); /** Getriggert durch GUI. Sendet Liste mit verfügbaren Ports an GUI. */
+    void AvailablePorts();
     void Connect(QString);
     void Close(); /** Getriggert durch GUI. Löst Trennen der Verbindung mit dem Arduino aus. */
     void clearStack(); /** Löscht die ganze Warteschlange */
