@@ -4,7 +4,8 @@
 
 QMutex mutex;
 
-SerialPortListener::SerialPortListener(QSerialPort* serialPort, ulong speed) {
+SerialPortListener::SerialPortListener(QSerialPort* serialPort, ulong speed) /** Erzeugt den SPL mit den Übergebenen Daten. */
+{
     this->serialPort = serialPort;
     this->speed = speed;
     this->count_elem = 0;
@@ -12,11 +13,13 @@ SerialPortListener::SerialPortListener(QSerialPort* serialPort, ulong speed) {
     qDebug() << "SPL created\n";
 }
 
-SerialPortListener::~SerialPortListener() {
+SerialPortListener::~SerialPortListener() /** Löscht den SPL. */
+{
 
 }
 
-void SerialPortListener::Connect(QString checkedName) {
+void SerialPortListener::Connect(QString checkedName) /** Getriggert durch GUI. Löst Verbindungsversuch mit Arduino-Port aus. */
+{
     serialPort->setPortName(checkedName);
     serialPort->setBaudRate(QSerialPort::Baud9600);
     serialPort->setDataBits(QSerialPort::Data8);
@@ -33,18 +36,21 @@ void SerialPortListener::Connect(QString checkedName) {
     }
 }
 
-void SerialPortListener::Close() {
+void SerialPortListener::Close()
+{
     qDebug() << "Connection closed.";
     clearStack();
     serialPort->close();
 }
 
-void SerialPortListener::AvailablePorts() {
+void SerialPortListener::AvailablePorts() /** Getriggert durch GUI. Sendet Liste mit verfügbaren Ports an GUI. */
+{
     QList<QSerialPortInfo> portInfoList = QSerialPortInfo::availablePorts();
     emit sendBackAvailablePorts(portInfoList, serialPort->isOpen(), serialPort->portName());
 }
 
-void SerialPortListener::run() {
+void SerialPortListener::run() /** Wartet auf neuen Input des Arduino. */
+{
     if(serialPort == nullptr || !serialPort->isOpen()) {
         return;
     }
@@ -65,7 +71,8 @@ void SerialPortListener::run() {
     }
 }
 
-void SerialPortListener::decodeSerialData() {
+void SerialPortListener::decodeSerialData() /** Konvertiert und Analyiert Input. */
+{
     if(!serialPort->isDataTerminalReady()) {
         return;
     }
@@ -82,13 +89,13 @@ void SerialPortListener::decodeSerialData() {
     emit dataReceived(text);
 }
 
-void SerialPortListener::writeToQueue(QString text)
+void SerialPortListener::writeToQueue(QString text) /** Löst Funktion zum Hinzufügen von Befehlen in die Warteschlange zum Senden zum Arduino aus. */
 {
     qDebug() << "in queue";
     push(text);
 }
 
-QString SerialPortListener::pop()
+QString SerialPortListener::pop() /** Nimmt Befehle aus der Warteschlange. */
 {
     mutex.lock();
     if (count_elem-1 < 0) {                     // Underflow verhindern
@@ -105,7 +112,7 @@ QString SerialPortListener::pop()
     return (strbuffer);                         // Obersten Wert des Stacks zurückgeben
 }
 
-void SerialPortListener::push(QString str)
+void SerialPortListener::push(QString str) /** Fügt Befehle in Warteschlange */
 {
     mutex.lock();
     qDebug() << "got in Stack";
@@ -137,7 +144,8 @@ void SerialPortListener::clearStack()
   return;
 }
 
-void SerialPortListener::fixProcessed() {
+void SerialPortListener::fixProcessed()
+{
     waitingForAnswer = false;
     qDebug() << "Zeitüberschreitung/Übertragungsproblemlösung.";
 }

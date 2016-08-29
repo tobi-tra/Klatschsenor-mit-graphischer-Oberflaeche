@@ -35,11 +35,11 @@ private:
     QByteArray bytes;
     bool waitingForAnswer;
 signals:
-    void dataReceived(QString);
-    void sendBackAvailablePorts(QList<QSerialPortInfo>, int, QString);
-    void backToConnect(int, QString);
-    void sendDataToGuiToArduino(QByteArray);
-    void numberInStack(int);
+    void dataReceived(QString) /** Sendet empfangene Daten an GUI. */;
+    void sendBackAvailablePorts(QList<QSerialPortInfo>, int, QString) /** Sendet Portliste an GUI. */;
+    void backToConnect(int, QString) /** Sendet Verbingsversuchsstatus an die GUI. */;
+    void sendDataToGuiToArduino(QByteArray) /** Sendet Daten an GUI, dort wird sekundärer Thread erstellt und sendet Daetn an Arduino. */;
+    void numberInStack(int) /** Gibt die Anzahl an ausstehnden Befehlen zurück an die GUI. */;
 };
 
 #endif // SERIALPORTLISTENER_H

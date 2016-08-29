@@ -5,8 +5,9 @@
 //#include <QTextStream>
 #include <QMessageBox>
 
-klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschui) {
 
+klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschui) {
+    /** Konstruktor für Klasse, in der alle Oberflächensteueraktionen ausgeführt werden.*/
     ui->setupUi(this);
 
     SerialPort = new QSerialPort(this);
@@ -47,22 +48,22 @@ klatschui::klatschui(QWidget *parent) : QMainWindow(parent), ui(new Ui::klatschu
     ui->configPinDisconnect->setDisabled(1);
 }
 
-klatschui::~klatschui()
+klatschui::~klatschui() /** Löschen der Benutzeroberfläche beim Beenden des Threads */
 {
     delete ui;
 }
 
-void klatschui::Send(QByteArray data) // Daten direkt an den Arduino senden, keine Queuing
+void klatschui::Send(QByteArray data) /** Daten direkt aus der Oberfläche an den Arduino senden, keine Queuing. Keine Sicherheit, dass der Arduino grade empangsbereit ist. */
 {
     SerialPort->write(data);
 }
 
-void klatschui::on_configIntAllDef_clicked()
+void klatschui::on_configIntAllDef_clicked() /** Getriggert beim Klick auf "configAllDef". */
 {
     configResetAll();
 }
 
-void klatschui::PortListeAktualisieren(QList<QSerialPortInfo> portInfoList, int isOpen, QString portName) // Bekommt Daten von PL
+void klatschui::PortListeAktualisieren(QList<QSerialPortInfo> portInfoList, int isOpen, QString portName) /** Getriggert durch Signal "sendBackAvailablePorts" von SPL. Bekommt Daten von SPL und aktualisiert die GUI. */
 {
     ui->configPinArduino->clear(); // aktuelle Liste löschen
 
@@ -79,12 +80,12 @@ void klatschui::PortListeAktualisieren(QList<QSerialPortInfo> portInfoList, int 
     }
 }
 
-void klatschui::on_configPinVerbinden_clicked()
+void klatschui::on_configPinVerbinden_clicked() /** Getriggert beim Klick auf "configPinVerbinden". Simuliert Signal Connect mit Wert des aktuell ausgewählten Geräts. Löst "Connect" im SPL aus. */
 {
     emit Connect(ui->configPinArduino->currentText()); // ausgewähltes Gerät an PL übergeben
 }
 
-void klatschui::WhenHandledConnected(int connectedTrueFalse, QString portName) { // bei Signal von PL aufgerufen. Ändert Texte, startet Run-Funktion des PL
+void klatschui::WhenHandledConnected(int connectedTrueFalse, QString portName) { /** Getriggert durch Signal "backToConnect" von SPL. Prüft Verbindungsstatus. Bei erfolgreicher Verbindung: Aktualisiert GUI, startet Run-Funktion des SPL */
     if(connectedTrueFalse){
         emit clearStack();
             clearAllMuster();
@@ -98,12 +99,12 @@ void klatschui::WhenHandledConnected(int connectedTrueFalse, QString portName) {
     }
 }
 
-void klatschui::on_configPinDisconnect_clicked()
+void klatschui::on_configPinDisconnect_clicked() /** Getriggert beim Klick auf "configPinDisconnect". Führt Funktion zum Trennen der Verbindung aus. */
 {
     closeArduinoPort();
 }
 
-void klatschui::closeArduinoPort()
+void klatschui::closeArduinoPort() /** Aktualisiert GUI. Simuliert Signal "Close" an SPL und trennt dort die Verbindung zum Arduino. */
 {
     QString last_port = ui->configPinArduino->currentText();
     ui->configPinStatus1->setText("<table><tr><td><span style='color:yellow;'>◉  </span></td><td>Status: Nicht Verbunden</td></tr><tr><td>&nbsp;</td><td>Verbindung mit "+ last_port + " geschlossen.</td></tr></table>");
@@ -114,7 +115,7 @@ void klatschui::closeArduinoPort()
     // hier quit SPL implementieren
 }
 
-void klatschui::readArduinoData(QString text) // vom Signal des SPL ausgelöst
+void klatschui::readArduinoData(QString text) /** Getriggert durch Signal "dataReceived" vom SPL. Analysiert empangene Daten und löst Funktionen aus. */
 {
     if (text.indexOf("statusLampe", 0) >= 0) {
         int pos = 0;
@@ -152,7 +153,7 @@ void klatschui::readArduinoData(QString text) // vom Signal des SPL ausgelöst
     }*/
 }
 
-void klatschui::changeLampenUI(int LampenId, int LampenZustand) // Ruft die richtige Funktion auf, um die UI zu ändern
+void klatschui::changeLampenUI(int LampenId, int LampenZustand) /** Ruft die richtige Funktion auf, um die GUI zu ändern.  */
 {
     if (LampenId == 0) {
            changeLampe0(LampenZustand);
@@ -179,14 +180,15 @@ void klatschui::changeLampenUI(int LampenId, int LampenZustand) // Ruft die rich
     }
 }
 
-void klatschui::writeArduinoData(QString str)
+void klatschui::writeArduinoData(QString str) /** Sendet Daten über Queuing im SPL an den Arduino. */
 {
     qDebug() << "to SPL:" << str;
     QByteArray data = str.toUtf8();
     emit writeToArduino(data);
 }
 
-void klatschui::numberInStackToGUI(int elem) {
+void klatschui::numberInStackToGUI(int elem) /** Getriggert durch "numberInStack" vom SPL. Gibt die Anzahl der ausstehenden Befehle an. */
+{
     ui->BefehleInArbeitWert->setText(QString::number(elem));
 }
 
@@ -198,7 +200,7 @@ void klatschui::numberInStackToGUI(int elem) {
     }
 }*/
 
-void klatschui::sendCurrentValues()
+void klatschui::sendCurrentValues() /** Sendet alle auf der GUI angezeigten Werte nach Verbindungsaufbau an den Arduino. */
 {
     if (ui->configPinSound->currentIndex() != 0) {
         changeSound(ui->configPinSound->currentText());
@@ -216,8 +218,8 @@ void klatschui::sendCurrentValues()
     DisplayPopup("Alle Einstellungen wurden an das Gerät gesendet.");
 }
 
-// change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino
-void klatschui::changeAufnahme(int value, bool send) // send standardmäßig auf 1
+
+void klatschui::changeAufnahme(int value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configIntAufnahmeWert->setText(QString::number(value));
     ui->configIntAufnahme->setValue(value);
@@ -227,7 +229,7 @@ void klatschui::changeAufnahme(int value, bool send) // send standardmäßig auf
         writeArduinoData(send);
     }
 }
-void klatschui::changeSchwelle(int value, bool send)
+void klatschui::changeSchwelle(int value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configIntSchwelleWert->setText(QString::number(value));
     ui->configIntSchwelle->setValue(value);
@@ -237,7 +239,7 @@ void klatschui::changeSchwelle(int value, bool send)
         writeArduinoData(send);
     }
 }
-void klatschui::changeStille(int value, bool send)
+void klatschui::changeStille(int value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configIntStilleWert->setText(QString::number(value));
     ui->configIntStille->setValue(value);
@@ -247,7 +249,7 @@ void klatschui::changeStille(int value, bool send)
         writeArduinoData(send);
     }
 }
-void klatschui::changeToleranz(int value, bool send)
+void klatschui::changeToleranz(int value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configIntToleranzWert->setText(QString::number(value));
     ui->configIntToleranz->setValue(value);
@@ -257,7 +259,7 @@ void klatschui::changeToleranz(int value, bool send)
         writeArduinoData(send);
     }
 }
-void klatschui::changePieper(int value, bool send)
+void klatschui::changePieper(int value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configPinPieper->setCurrentText(QString::number(value));
     if (send) {
@@ -266,7 +268,7 @@ void klatschui::changePieper(int value, bool send)
         writeArduinoData(send);
     }
 }
-void klatschui::changeSound(QString value, bool send)
+void klatschui::changeSound(QString value, bool send) /** change*-Funktionen: Ändern einen Wert auf der GUI und im Arduino. "send" standardmäßig true. Bei send false wird nur die GUI aktualisiert; keine Daten werden an den Arduino gesendet. */
 {
     ui->configPinSound->setCurrentText(value);
     if (send) {
@@ -276,7 +278,7 @@ void klatschui::changeSound(QString value, bool send)
     }
 }
 
-void klatschui::gerSaveAll() // Speichert neue Geräte
+void klatschui::gerSaveAll() /** Speichert neue Geräte. Bei erster unkorrekt ausgefüllter/leerer Zeile wird Speichervorgang beendet. GUI wird aktualisiert. */
 {
   bool continueProcess = 1;
   QString send = "setGeraete";
@@ -473,7 +475,7 @@ void klatschui::gerSaveAll() // Speichert neue Geräte
   writeArduinoData(send);
 }
 
-int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString Geraete, QString Action) // analysiert eine Zeile. Erfolg: sendet an Arduino
+int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QString R4, QString R5, QString Geraete, QString Action) /** Analysiert eine Muster-Zeile. Falls valide: Sendet Daten an Arduino. */
 {
     int stopRythm = 0;
     QString send = "setLampe";
@@ -544,7 +546,7 @@ int klatschui::addMuster(QString titel, QString R1, QString R2, QString R3, QStr
     return 0;
 }
 
-void klatschui::saveAllMuster(bool showInfo = 1) // speichert alle validen Muster
+void klatschui::saveAllMuster(bool showInfo = 1) /** Speichert alle validen Muster. Ruft jedes mal "addMuster" auf. */
 {
   int count = 0;
   if (ui->musLine_0->text() != "" && ui->mus0m1->currentText() != "-" && ui->musGer_0->text() != "" && ui->musLine_0->isEnabled()) {
@@ -602,7 +604,7 @@ void klatschui::saveAllMuster(bool showInfo = 1) // speichert alle validen Muste
   }
 }
 
-void klatschui::clearAllMuster() // löscht alle Muster auf dem Arduino, macht UI wieder klickbar
+void klatschui::clearAllMuster() /** Löscht alle Muster auf dem Arduino, aktualisiert GUI. */
 {
     QString send = "clearAllMuster";
     writeArduinoData(send);
@@ -675,7 +677,7 @@ void klatschui::clearAllMuster() // löscht alle Muster auf dem Arduino, macht U
     ui->musSave_10->setDisabled(0);
 }
 
-void klatschui::DisplayPopup(QString text) // Lässt Popup-Meldung erscheinen mit "text"
+void klatschui::DisplayPopup(QString text) /** Lässt Popup-Meldung erscheinen mit var text. */
 {
     QMessageBox msgBox;
     msgBox.setText(text);
@@ -683,7 +685,7 @@ void klatschui::DisplayPopup(QString text) // Lässt Popup-Meldung erscheinen mi
 }
 
 /* Muster */
-void klatschui::on_musSave_0_clicked()
+void klatschui::on_musSave_0_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_0->text(),
               ui->mus0m1->currentText(),
@@ -705,7 +707,7 @@ void klatschui::on_musSave_0_clicked()
         ui->musSave_0->setDisabled(1);
     }
 }
-void klatschui::on_musSave_1_clicked()
+void klatschui::on_musSave_1_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_1->text(),
               ui->mus1m1->currentText(),
@@ -727,7 +729,7 @@ void klatschui::on_musSave_1_clicked()
         ui->musSave_1->setDisabled(1);
     }
 }
-void klatschui::on_musSave_2_clicked()
+void klatschui::on_musSave_2_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_2->text(),
               ui->mus2m1->currentText(),
@@ -749,7 +751,7 @@ void klatschui::on_musSave_2_clicked()
         ui->musSave_2->setDisabled(1);
     }
 }
-void klatschui::on_musSave_3_clicked()
+void klatschui::on_musSave_3_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_3->text(),
               ui->mus3m1->currentText(),
@@ -771,7 +773,7 @@ void klatschui::on_musSave_3_clicked()
         ui->musSave_3->setDisabled(1);
     }
 }
-void klatschui::on_musSave_4_clicked()
+void klatschui::on_musSave_4_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_4->text(),
               ui->mus4m1->currentText(),
@@ -793,7 +795,7 @@ void klatschui::on_musSave_4_clicked()
         ui->musSave_4->setDisabled(1);
     }
 }
-void klatschui::on_musSave_5_clicked()
+void klatschui::on_musSave_5_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_5->text(),
               ui->mus5m1->currentText(),
@@ -815,7 +817,7 @@ void klatschui::on_musSave_5_clicked()
         ui->musSave_5->setDisabled(1);
     }
 }
-void klatschui::on_musSave_6_clicked()
+void klatschui::on_musSave_6_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_6->text(),
               ui->mus6m1->currentText(),
@@ -837,7 +839,7 @@ void klatschui::on_musSave_6_clicked()
         ui->musSave_6->setDisabled(1);
     }
 }
-void klatschui::on_musSave_7_clicked()
+void klatschui::on_musSave_7_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_7->text(),
               ui->mus7m1->currentText(),
@@ -859,7 +861,7 @@ void klatschui::on_musSave_7_clicked()
         ui->musSave_7->setDisabled(1);
     }
 }
-void klatschui::on_musSave_8_clicked()
+void klatschui::on_musSave_8_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_8->text(),
               ui->mus8m1->currentText(),
@@ -881,7 +883,7 @@ void klatschui::on_musSave_8_clicked()
         ui->musSave_8->setDisabled(1);
     }
 }
-void klatschui::on_musSave_9_clicked()
+void klatschui::on_musSave_9_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_9->text(),
               ui->mus9m1->currentText(),
@@ -903,7 +905,7 @@ void klatschui::on_musSave_9_clicked()
         ui->musSave_9->setDisabled(1);
     }
 }
-void klatschui::on_musSave_10_clicked()
+void klatschui::on_musSave_10_clicked() /** Getriggert beim Klick auf "musSave_*". Aktualisiert GUI. Speichert auf Arduino.*/
 {
     if (!addMuster(ui->musLine_10->text(),
               ui->mus10m1->currentText(),
@@ -925,15 +927,15 @@ void klatschui::on_musSave_10_clicked()
         ui->musSave_10->setDisabled(1);
     }
 }
-void klatschui::on_musSave_clicked()
+void klatschui::on_musSave_clicked() /** Getriggert beim Klicken auf "musSave". Löst speicherung aller Muster aus. */
 {
     saveAllMuster();
 }
-void klatschui::on_musClear_clicked()
+void klatschui::on_musClear_clicked() /** Getriggert beim Klicken auf "musClear". Löscht alle Muster vom Arduino. Enabled alle Muster-Felder, löscht jedoch keinen Inhalt. */
 {
     clearAllMuster();
 }
-void klatschui::on_mus0m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus0m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus0m2->setEnabled(1);
@@ -953,7 +955,7 @@ void klatschui::on_mus0m1_currentTextChanged(const QString &arg1)
         ui->mus0m5->setEnabled(0);
       }
 }
-void klatschui::on_mus0m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus0m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus0m3->setEnabled(1);
@@ -969,7 +971,7 @@ void klatschui::on_mus0m2_currentTextChanged(const QString &arg1)
       ui->mus0m5->setEnabled(0);
     }
 }
-void klatschui::on_mus0m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus0m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus0m4->setEnabled(1);
@@ -981,7 +983,7 @@ void klatschui::on_mus0m3_currentTextChanged(const QString &arg1)
       ui->mus0m5->setEnabled(0);
     }
 }
-void klatschui::on_mus0m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus0m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus0m5->setEnabled(1);
@@ -989,7 +991,7 @@ void klatschui::on_mus0m4_currentTextChanged(const QString &arg1)
       ui->mus0m5->setEnabled(0);
     }
 }
-void klatschui::on_mus1m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus1m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus1m2->setEnabled(1);
@@ -1009,7 +1011,7 @@ void klatschui::on_mus1m1_currentTextChanged(const QString &arg1)
         ui->mus1m5->setEnabled(0);
       }
 }
-void klatschui::on_mus1m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus1m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus1m3->setEnabled(1);
@@ -1025,7 +1027,7 @@ void klatschui::on_mus1m2_currentTextChanged(const QString &arg1)
       ui->mus1m5->setEnabled(0);
     }
 }
-void klatschui::on_mus1m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus1m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus1m4->setEnabled(1);
@@ -1037,7 +1039,7 @@ void klatschui::on_mus1m3_currentTextChanged(const QString &arg1)
       ui->mus1m5->setEnabled(0);
     }
 }
-void klatschui::on_mus1m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus1m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus1m5->setEnabled(1);
@@ -1045,7 +1047,7 @@ void klatschui::on_mus1m4_currentTextChanged(const QString &arg1)
       ui->mus1m5->setEnabled(0);
     }
 }
-void klatschui::on_mus2m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus2m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus2m2->setEnabled(1);
@@ -1065,7 +1067,7 @@ void klatschui::on_mus2m1_currentTextChanged(const QString &arg1)
         ui->mus2m5->setEnabled(0);
       }
 }
-void klatschui::on_mus2m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus2m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus2m3->setEnabled(1);
@@ -1081,7 +1083,7 @@ void klatschui::on_mus2m2_currentTextChanged(const QString &arg1)
       ui->mus2m5->setEnabled(0);
     }
 }
-void klatschui::on_mus2m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus2m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus2m4->setEnabled(1);
@@ -1093,7 +1095,7 @@ void klatschui::on_mus2m3_currentTextChanged(const QString &arg1)
       ui->mus2m5->setEnabled(0);
     }
 }
-void klatschui::on_mus2m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus2m4_currentTextChanged(const QString &arg1)/** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus2m5->setEnabled(1);
@@ -1101,7 +1103,7 @@ void klatschui::on_mus2m4_currentTextChanged(const QString &arg1)
       ui->mus2m5->setEnabled(0);
     }
 }
-void klatschui::on_mus3m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus3m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus3m2->setEnabled(1);
@@ -1121,7 +1123,7 @@ void klatschui::on_mus3m1_currentTextChanged(const QString &arg1)
         ui->mus3m5->setEnabled(0);
       }
 }
-void klatschui::on_mus3m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus3m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus3m3->setEnabled(1);
@@ -1137,7 +1139,7 @@ void klatschui::on_mus3m2_currentTextChanged(const QString &arg1)
       ui->mus3m5->setEnabled(0);
     }
 }
-void klatschui::on_mus3m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus3m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus3m4->setEnabled(1);
@@ -1149,7 +1151,7 @@ void klatschui::on_mus3m3_currentTextChanged(const QString &arg1)
       ui->mus3m5->setEnabled(0);
     }
 }
-void klatschui::on_mus3m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus3m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus3m5->setEnabled(1);
@@ -1157,7 +1159,7 @@ void klatschui::on_mus3m4_currentTextChanged(const QString &arg1)
       ui->mus3m5->setEnabled(0);
     }
 }
-void klatschui::on_mus4m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus4m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus4m2->setEnabled(1);
@@ -1177,7 +1179,7 @@ void klatschui::on_mus4m1_currentTextChanged(const QString &arg1)
         ui->mus4m5->setEnabled(0);
       }
 }
-void klatschui::on_mus4m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus4m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus4m3->setEnabled(1);
@@ -1193,7 +1195,7 @@ void klatschui::on_mus4m2_currentTextChanged(const QString &arg1)
       ui->mus4m5->setEnabled(0);
     }
 }
-void klatschui::on_mus4m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus4m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus4m4->setEnabled(1);
@@ -1205,7 +1207,7 @@ void klatschui::on_mus4m3_currentTextChanged(const QString &arg1)
       ui->mus4m5->setEnabled(0);
     }
 }
-void klatschui::on_mus4m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus4m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus4m5->setEnabled(1);
@@ -1213,7 +1215,7 @@ void klatschui::on_mus4m4_currentTextChanged(const QString &arg1)
       ui->mus4m5->setEnabled(0);
     }
 }
-void klatschui::on_mus5m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus5m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus5m2->setEnabled(1);
@@ -1233,7 +1235,7 @@ void klatschui::on_mus5m1_currentTextChanged(const QString &arg1)
         ui->mus5m5->setEnabled(0);
       }
 }
-void klatschui::on_mus5m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus5m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus5m3->setEnabled(1);
@@ -1249,7 +1251,7 @@ void klatschui::on_mus5m2_currentTextChanged(const QString &arg1)
       ui->mus5m5->setEnabled(0);
     }
 }
-void klatschui::on_mus5m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus5m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus5m4->setEnabled(1);
@@ -1261,7 +1263,7 @@ void klatschui::on_mus5m3_currentTextChanged(const QString &arg1)
       ui->mus5m5->setEnabled(0);
     }
 }
-void klatschui::on_mus5m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus5m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus5m5->setEnabled(1);
@@ -1269,7 +1271,7 @@ void klatschui::on_mus5m4_currentTextChanged(const QString &arg1)
       ui->mus5m5->setEnabled(0);
     }
 }
-void klatschui::on_mus6m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus6m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus6m2->setEnabled(1);
@@ -1289,7 +1291,7 @@ void klatschui::on_mus6m1_currentTextChanged(const QString &arg1)
         ui->mus6m5->setEnabled(0);
       }
 }
-void klatschui::on_mus6m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus6m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus6m3->setEnabled(1);
@@ -1305,7 +1307,7 @@ void klatschui::on_mus6m2_currentTextChanged(const QString &arg1)
       ui->mus6m5->setEnabled(0);
     }
 }
-void klatschui::on_mus6m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus6m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus6m4->setEnabled(1);
@@ -1317,7 +1319,7 @@ void klatschui::on_mus6m3_currentTextChanged(const QString &arg1)
       ui->mus6m5->setEnabled(0);
     }
 }
-void klatschui::on_mus6m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus6m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus6m5->setEnabled(1);
@@ -1325,7 +1327,7 @@ void klatschui::on_mus6m4_currentTextChanged(const QString &arg1)
       ui->mus6m5->setEnabled(0);
     }
 }
-void klatschui::on_mus7m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus7m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus7m2->setEnabled(1);
@@ -1345,7 +1347,7 @@ void klatschui::on_mus7m1_currentTextChanged(const QString &arg1)
         ui->mus7m5->setEnabled(0);
       }
 }
-void klatschui::on_mus7m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus7m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus7m3->setEnabled(1);
@@ -1361,7 +1363,7 @@ void klatschui::on_mus7m2_currentTextChanged(const QString &arg1)
       ui->mus7m5->setEnabled(0);
     }
 }
-void klatschui::on_mus7m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus7m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus7m4->setEnabled(1);
@@ -1373,7 +1375,7 @@ void klatschui::on_mus7m3_currentTextChanged(const QString &arg1)
       ui->mus7m5->setEnabled(0);
     }
 }
-void klatschui::on_mus7m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus7m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus7m5->setEnabled(1);
@@ -1381,7 +1383,7 @@ void klatschui::on_mus7m4_currentTextChanged(const QString &arg1)
       ui->mus7m5->setEnabled(0);
     }
 }
-void klatschui::on_mus8m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus8m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus8m2->setEnabled(1);
@@ -1401,7 +1403,7 @@ void klatschui::on_mus8m1_currentTextChanged(const QString &arg1)
         ui->mus8m5->setEnabled(0);
       }
 }
-void klatschui::on_mus8m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus8m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus8m3->setEnabled(1);
@@ -1417,7 +1419,7 @@ void klatschui::on_mus8m2_currentTextChanged(const QString &arg1)
       ui->mus8m5->setEnabled(0);
     }
 }
-void klatschui::on_mus8m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus8m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus8m4->setEnabled(1);
@@ -1429,7 +1431,7 @@ void klatschui::on_mus8m3_currentTextChanged(const QString &arg1)
       ui->mus8m5->setEnabled(0);
     }
 }
-void klatschui::on_mus8m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus8m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus8m5->setEnabled(1);
@@ -1437,7 +1439,7 @@ void klatschui::on_mus8m4_currentTextChanged(const QString &arg1)
       ui->mus8m5->setEnabled(0);
     }
 }
-void klatschui::on_mus9m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus9m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus9m2->setEnabled(1);
@@ -1457,7 +1459,7 @@ void klatschui::on_mus9m1_currentTextChanged(const QString &arg1)
         ui->mus9m5->setEnabled(0);
       }
 }
-void klatschui::on_mus9m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus9m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus9m3->setEnabled(1);
@@ -1473,7 +1475,7 @@ void klatschui::on_mus9m2_currentTextChanged(const QString &arg1)
       ui->mus9m5->setEnabled(0);
     }
 }
-void klatschui::on_mus9m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus9m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus9m4->setEnabled(1);
@@ -1485,7 +1487,7 @@ void klatschui::on_mus9m3_currentTextChanged(const QString &arg1)
       ui->mus9m5->setEnabled(0);
     }
 }
-void klatschui::on_mus9m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus9m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus9m5->setEnabled(1);
@@ -1493,7 +1495,7 @@ void klatschui::on_mus9m4_currentTextChanged(const QString &arg1)
       ui->mus9m5->setEnabled(0);
     }
 }
-void klatschui::on_mus10m1_currentTextChanged(const QString &arg1)
+void klatschui::on_mus10m1_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
       if (arg1 != "-") {
         ui->mus10m2->setEnabled(1);
@@ -1513,7 +1515,7 @@ void klatschui::on_mus10m1_currentTextChanged(const QString &arg1)
         ui->mus10m5->setEnabled(0);
       }
 }
-void klatschui::on_mus10m2_currentTextChanged(const QString &arg1)
+void klatschui::on_mus10m2_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus10m3->setEnabled(1);
@@ -1529,7 +1531,7 @@ void klatschui::on_mus10m2_currentTextChanged(const QString &arg1)
       ui->mus10m5->setEnabled(0);
     }
 }
-void klatschui::on_mus10m3_currentTextChanged(const QString &arg1)
+void klatschui::on_mus10m3_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus10m4->setEnabled(1);
@@ -1541,7 +1543,7 @@ void klatschui::on_mus10m3_currentTextChanged(const QString &arg1)
       ui->mus10m5->setEnabled(0);
     }
 }
-void klatschui::on_mus10m4_currentTextChanged(const QString &arg1)
+void klatschui::on_mus10m4_currentTextChanged(const QString &arg1) /** Aktualisiert die GUI beim Reiter Muster. */
 {
   if (arg1 != "-") {
       ui->mus10m5->setEnabled(1);
@@ -1551,123 +1553,123 @@ void klatschui::on_mus10m4_currentTextChanged(const QString &arg1)
 }
 
 /* Geräte-Tab */
-void klatschui::on_GerSave_clicked()
+void klatschui::on_GerSave_clicked() /** Getriggert beim Klick auf "GerSave". Löst Speicherung aller Geräte aus. */
 {
   gerSaveAll();
 }
 
 /* Steuerung-Tab */
-void klatschui::on_steuGerEin_0_clicked()
+void klatschui::on_steuGerEin_0_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe0(1);
     setLampenMode(0,1);
 }
-void klatschui::on_steuGerEin_2_clicked()
+void klatschui::on_steuGerEin_2_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe1(1);
     setLampenMode(1,1);
 }
-void klatschui::on_steuGerEin_4_clicked()
+void klatschui::on_steuGerEin_4_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe2(1);
     setLampenMode(2,1);
 }
-void klatschui::on_steuGerEin_5_clicked()
+void klatschui::on_steuGerEin_5_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe3(1);
     setLampenMode(3,1);
 }
-void klatschui::on_steuGerEin_6_clicked()
+void klatschui::on_steuGerEin_6_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe4(1);
     setLampenMode(4,1);
 }
-void klatschui::on_steuGerEin_7_clicked()
+void klatschui::on_steuGerEin_7_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe5(1);
     setLampenMode(5,1);
 }
-void klatschui::on_steuGerEin_8_clicked()
+void klatschui::on_steuGerEin_8_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe6(1);
     setLampenMode(6,1);
 }
-void klatschui::on_steuGerEin_9_clicked()
+void klatschui::on_steuGerEin_9_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe7(1);
     setLampenMode(7,1);
 }
-void klatschui::on_steuGerEin_10_clicked()
+void klatschui::on_steuGerEin_10_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe8(1);
     setLampenMode(8,1);
 }
-void klatschui::on_steuGerEin_20_clicked()
+void klatschui::on_steuGerEin_20_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe9(1);
     setLampenMode(9,1);
 }
-void klatschui::on_steuGerEin_21_clicked()
+void klatschui::on_steuGerEin_21_clicked() /** Getriggert beim Klicken auf "steuGerEin_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
     changeLampe10(1);
     setLampenMode(10,1);
 }
-void klatschui::on_steuGerAus_0_clicked()
+void klatschui::on_steuGerAus_0_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe0(0);
   setLampenMode(0,0);
 }
-void klatschui::on_steuGerAus_2_clicked()
+void klatschui::on_steuGerAus_2_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe1(0);
   setLampenMode(1,0);
 }
-void klatschui::on_steuGerAus_4_clicked()
+void klatschui::on_steuGerAus_4_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe2(0);
   setLampenMode(2,0);
 }
-void klatschui::on_steuGerAus_5_clicked()
+void klatschui::on_steuGerAus_5_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe3(0);
   setLampenMode(3,0);
 }
-void klatschui::on_steuGerAus_6_clicked()
+void klatschui::on_steuGerAus_6_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe4(0);
   setLampenMode(4,0);
 }
-void klatschui::on_steuGerAus_7_clicked()
+void klatschui::on_steuGerAus_7_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe5(0);
   setLampenMode(5,0);
 }
-void klatschui::on_steuGerAus_8_clicked()
+void klatschui::on_steuGerAus_8_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe6(0);
   setLampenMode(6,0);
 }
-void klatschui::on_steuGerAus_9_clicked()
+void klatschui::on_steuGerAus_9_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe7(0);
   setLampenMode(7,0);
 }
-void klatschui::on_steuGerAus_10_clicked()
+void klatschui::on_steuGerAus_10_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe8(0);
   setLampenMode(8,0);
 }
-void klatschui::on_steuGerAus_20_clicked()
+void klatschui::on_steuGerAus_20_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe9(0);
   setLampenMode(9,0);
 }
-void klatschui::on_steuGerAus_21_clicked()
+void klatschui::on_steuGerAus_21_clicked() /** Getriggert beim Klicken auf "steuGerAus_*". Aktualisiert GUI bei Lampenliste. Sendet an Arduino. */
 {
   changeLampe10(0);
   setLampenMode(10,0);
 }
-void klatschui::changeLampe0(int LampenZustand)
+void klatschui::changeLampe0(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_0->setDisabled(0);
@@ -1679,7 +1681,7 @@ void klatschui::changeLampe0(int LampenZustand)
       ui->steuGerStatus_0->setText("🌑");
   }
 }
-void klatschui::changeLampe1(int LampenZustand)
+void klatschui::changeLampe1(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_2->setDisabled(0);
@@ -1691,7 +1693,7 @@ void klatschui::changeLampe1(int LampenZustand)
       ui->steuGerStatus_2->setText("🌑");
   }
 }
-void klatschui::changeLampe2(int LampenZustand)
+void klatschui::changeLampe2(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_4->setDisabled(0);
@@ -1703,7 +1705,7 @@ void klatschui::changeLampe2(int LampenZustand)
       ui->steuGerStatus_4->setText("🌑");
   }
 }
-void klatschui::changeLampe3(int LampenZustand)
+void klatschui::changeLampe3(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_5->setDisabled(0);
@@ -1715,7 +1717,7 @@ void klatschui::changeLampe3(int LampenZustand)
       ui->steuGerStatus_5->setText("🌑");
   }
 }
-void klatschui::changeLampe4(int LampenZustand)
+void klatschui::changeLampe4(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_6->setDisabled(0);
@@ -1727,7 +1729,7 @@ void klatschui::changeLampe4(int LampenZustand)
       ui->steuGerStatus_6->setText("🌑");
   }
 }
-void klatschui::changeLampe5(int LampenZustand)
+void klatschui::changeLampe5(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_7->setDisabled(0);
@@ -1739,7 +1741,7 @@ void klatschui::changeLampe5(int LampenZustand)
       ui->steuGerStatus_7->setText("🌑");
   }
 }
-void klatschui::changeLampe6(int LampenZustand)
+void klatschui::changeLampe6(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_8->setDisabled(0);
@@ -1751,7 +1753,7 @@ void klatschui::changeLampe6(int LampenZustand)
       ui->steuGerStatus_8->setText("🌑");
   }
 }
-void klatschui::changeLampe7(int LampenZustand)
+void klatschui::changeLampe7(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_9->setDisabled(0);
@@ -1763,7 +1765,7 @@ void klatschui::changeLampe7(int LampenZustand)
       ui->steuGerStatus_9->setText("🌑");
   }
 }
-void klatschui::changeLampe8(int LampenZustand)
+void klatschui::changeLampe8(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_10->setDisabled(0);
@@ -1775,7 +1777,7 @@ void klatschui::changeLampe8(int LampenZustand)
       ui->steuGerStatus_10->setText("🌑");
   }
 }
-void klatschui::changeLampe9(int LampenZustand)
+void klatschui::changeLampe9(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_20->setDisabled(0);
@@ -1787,7 +1789,7 @@ void klatschui::changeLampe9(int LampenZustand)
       ui->steuGerStatus_20->setText("🌑");
   }
 }
-void klatschui::changeLampe10(int LampenZustand)
+void klatschui::changeLampe10(int LampenZustand) /** Aktualisiert Lampenstatus auf der GUI. */
 {
   if (LampenZustand) {
       ui->steuGerAus_21->setDisabled(0);
@@ -1799,82 +1801,78 @@ void klatschui::changeLampe10(int LampenZustand)
       ui->steuGerStatus_21->setText("🌑");
   }
 }
-void klatschui::setLampenMode(int LampenId, int LampenZustand) {
+void klatschui::setLampenMode(int LampenId, int LampenZustand) /** Ändert Zustand der Lampe auf dem Arduino. */
+{
   QString send = "updateLampe" + QString::number(LampenId) + "~" + QString::number(LampenZustand);
   writeArduinoData(send);
 }
 
 /* Konfiguration-Tab */
-void klatschui::on_configIntAufnahme_valueChanged()
+void klatschui::on_configIntAufnahme_valueChanged() /** Getriggert durch Button. Aktualisiert GUI. */
 {
     changeAufnahme(ui->configIntAufnahme->value());
 }
-void klatschui::on_configIntSchwelle_valueChanged()
+void klatschui::on_configIntSchwelle_valueChanged()/** Getriggert durch Button. Aktualisiert GUI. */
 {
     changeSchwelle(ui->configIntSchwelle->value());
 }
-void klatschui::on_configIntStille_valueChanged()
+void klatschui::on_configIntStille_valueChanged() /** Getriggert durch Button. Aktualisiert GUI. */
 {
     changeStille(ui->configIntStille->value());
 }
-void klatschui::on_configIntToleranz_valueChanged()
+void klatschui::on_configIntToleranz_valueChanged() /** Getriggert durch Button. Aktualisiert GUI. */
 {
     changeToleranz(ui->configIntToleranz->value());
 }
-void klatschui::on_configIntAufnahmeDef_clicked() // Default Aufnahmewert
+void klatschui::on_configIntAufnahmeDef_clicked() /** Getriggert durch Button. Aktualisiert GUI. */ /** Default Aufnahmewert */
 {
     changeAufnahme(STD_AUFNAHME);
 }
-void klatschui::on_configIntSchwelleDef_clicked() // Default Schwellenwert
+void klatschui::on_configIntSchwelleDef_clicked() /** Getriggert durch Button. Aktualisiert GUI. */ /** Default Schwellenwert */
 {
     changeSchwelle(STD_SCHWELLE);
 }
-void klatschui::on_configIntStilleDef_clicked() // Default Stille-Wert
+void klatschui::on_configIntStilleDef_clicked() /** Getriggert durch Button. Aktualisiert GUI. */ /** Default Stille-Wert */
 {
     changeStille(STD_STILLE);
 }
-void klatschui::on_configIntToleranzDef_clicked() // Default Toleranzwert
+void klatschui::on_configIntToleranzDef_clicked() /** Getriggert durch Button. Aktualisiert GUI. */ /** Default Toleranzwert */
 {
     changeToleranz(STD_TOLERANZ);
 }
-void klatschui::configResetAll() // führt die Funktionen zum ändern der Config-Variablen aus
+void klatschui::configResetAll() /** Führt die Funktionen zum ändern der Config-Variablen aus. */
 {
     changeAufnahme(STD_AUFNAHME);
     changeSchwelle(STD_SCHWELLE);
     changeStille(STD_STILLE);
     changeToleranz(STD_TOLERANZ);
 }
-void klatschui::on_configPinSound_currentTextChanged(const QString &arg1)
+void klatschui::on_configPinSound_currentTextChanged(const QString &arg1) /** Getriggert durch Feldänderung. Aktualisiert GUI, sendet an Aurduino. */
 {
     changeSound(arg1);
 }
-void klatschui::on_configPinPieper_currentTextChanged(const QString &arg1)
+void klatschui::on_configPinPieper_currentTextChanged(const QString &arg1) /** Getriggert durch Feldänderung. Aktualisiert GUI, sendet an Aurduino. */
 {
 
     changePieper(arg1.toInt());
 }
-void klatschui::on_configPinAktualisierenBtn_clicked() // Signal an PL. PortListeAktualisieren() reagiert
+void klatschui::on_configPinAktualisierenBtn_clicked() /** Signal an SPL. PortListeAktualisieren() reagiert */
 {
     emit AvailablePorts();
 }
 
-void klatschui::on_configPinDisconnect_3_clicked()
-{
-    writeArduinoData("murks");
-}
-
-void klatschui::on_pushButton_pressed()
+void klatschui::on_pushButton_pressed() /** Getriggert durch Button halten. Sendet Startbefehl an Arduino, Sensorwerte zu übermitteln. */
 {
     writeToArduino("ConfigSoundStart");
 }
 
-void klatschui::on_pushButton_released()
+void klatschui::on_pushButton_released() /** Getiggert durch Button loslassen. Sendet Stopbefehl an Arduino, Sensorwerte nicht mehr zu senden. */
 {
     writeToArduino("ConfigSoundStop");
     ui->configSoundWert->setText("");
 }
 
-void klatschui::on_pushButton_2_clicked()
+void klatschui::on_pushButton_2_clicked() /** Simuliert Nachricht vom Arduino, dass dieser Empfangsbereit ist. Manchmal wird dieses Signal des Arduinos vom SPL nicht korrekt erkannt. Daher würden keine weiteren Befehler an den Arduino geschickt werden. Dies überbrückt der Knop. */
 {
     emit fixProcessed();
 }
